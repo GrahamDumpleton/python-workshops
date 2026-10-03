@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "id": "grahamdumpleton.me/python-fundamentals/your-own-types",
+  "title": "Your own types in Python",
+  "description": "Guided workshops that introduce classes: what a class is and why you would make one, objects that describe themselves, dataclasses, and building one class on another, using the spending tracker as the example.",
+  "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+  "tags": [
+    "python",
+    "beginners",
+    "classes",
+    "notebook"
+  ],
+  "ordered": true,
+  "analytics": {
+    "sink": "https://workshop-analytics.grumpys.work/events",
+    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+  },
+  "workshops": []
+}

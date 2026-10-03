@@ -1,0 +1,72 @@
+#!/bin/bash
+# Configure the Binder image so JupyterLab starts in the workshop browser
+# with the Python workshops listed as installed and ready to open, and
+# trusts them without asking, since the visitor is the one who chose the
+# link. A launch link naming a workshop still opens that workshop
+# directly. The disabled features keep visitors to the supplied
+# workshops: no other directories or URLs, no subscribing to collections
+# or catalogs, no removing and no editing; Restart puts a workshop back
+# as it started. Subscribing to the checkout's own collection indexes
+# lists the workshops under each collection's title, numbered in its
+# order; a collection added to this repository is added to the list
+# here. The welcome message in binder/welcome.md greets the visitor once
+# the session starts, with what the workshops are for and how to end it.
+#
+# The analytics setting reports every session's progress events to the
+# sink each collection index's analytics block names, the workshops'
+# own analytics service, without asking, so it can be seen where the
+# workshops are clear and where they are not. The sink and its token
+# are declared once, in collection.yaml, and carried into every index;
+# this only turns reporting on, and the events say they came from
+# Binder. Sessions are anonymous and the events never carry file
+# contents, cell output or form answers; the welcome message tells the
+# visitor that progress is reported.
+# The second block is JupyterLab's own: it turns off the question about
+# fetching Jupyter news, which a fresh container would otherwise put in
+# front of every visitor before the welcome message.
+#
+# There is no wheelhouse, unlike the other workshop repositories: no
+# workshop here builds an environment of its own from a requirements
+# file. The workshops of the last collection have the learner install
+# packages into a virtual environment they make themselves; if those
+# installs turn out slow on Binder, download the packages they name
+# into a wheelhouse here, as wrapt-workshops does.
+set -euo pipefail
+
+settings="${NB_PYTHON_PREFIX}/share/jupyter/lab/settings"
+
+mkdir -p "$settings"
+
+cat > "$settings/overrides.json" <<'JSON'
+{
+  "@jupyterlab-workshop/labextension:panel": {
+    "defaultWorkshop": "",
+    "browseOnStart": true,
+    "workshopsDirectory": "workshops",
+    "collections": [
+      "collections/first-steps/collection.json",
+      "collections/functions-and-data/collection.json",
+      "collections/working-with-data/collection.json",
+      "collections/your-own-types/collection.json",
+      "collections/notebook-to-program/collection.json",
+      "collections/working-like-a-developer/collection.json"
+    ],
+    "welcome": "binder/welcome.md",
+    "trustPolicy": { "forcedLevel": "trusted" },
+    "disabledFeatures": [
+      "open-directory",
+      "open-url",
+      "collections",
+      "catalogs",
+      "remove",
+      "author"
+    ],
+    "analytics": { "report": "always" }
+  },
+  "@jupyterlab/apputils-extension:notification": {
+    "fetchNews": "false"
+  }
+}
+JSON
+
+echo "Wrote the JupyterLab overrides to $settings/overrides.json"

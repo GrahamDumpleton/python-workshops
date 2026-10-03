@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "id": "grahamdumpleton.me/python-fundamentals/functions-and-data",
+  "title": "Python functions and data",
+  "description": "Guided workshops that teach you to organise Python code and data: functions, dictionaries, tuples and sets, loops over any kind of data, and how two names can share one list. You write most of the code yourself.",
+  "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+  "tags": [
+    "python",
+    "beginners",
+    "functions",
+    "notebook"
+  ],
+  "ordered": true,
+  "analytics": {
+    "sink": "https://workshop-analytics.grumpys.work/events",
+    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+  },
+  "workshops": []
+}

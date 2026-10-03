@@ -1,0 +1,117 @@
+# Publish the workshops that run in JupyterLite as a site on GitHub
+# Pages, but only after the test workflow has passed on main, so nothing
+# reaches the site that has not been linted and self-tested on both
+# frontends. The workflow_run trigger fires when test finishes; the
+# build job runs only when it finished successfully, and checks out the
+# exact commit test ran on rather than whatever main points at by then.
+#
+# The build is the same as `just site`. It carries every workshop whose
+# manifest lists jupyterlite in `frontends`, which is the workshops of
+# the first four collections, and the indexes of those four collections,
+# so the workshop browser lists them under each collection's title,
+# numbered in its order. Not the catalog, which would list the last two
+# collections as well, and they cannot run in JupyterLite. Until a
+# workshop that runs there exists, nothing is built or published.
+#
+# No trust level is forced, so opening a workshop on the site shows the
+# trust dialog, where the Binder image removes it. A Binder session is a
+# container somewhere else that is thrown away. A JupyterLite site runs
+# inside the visitor's own browser, on their network, so code in the tab
+# can send requests to whatever that browser can reach, their local
+# network included, and that is theirs to allow.
+#
+# `--settings lite/settings.json` builds two things into the site. Its
+# disabled features keep visitors to the supplied workshops, as the
+# Binder and Codespaces settings do. Its analytics setting has sessions
+# report anonymous progress events to the sink the collection indexes
+# name, as the Binder and Codespaces ones do. The sink and its token are
+# declared once, in collection.yaml; the token is public by
+# construction, since the site is, and the service lets it post only
+# from this site's origin. `--welcome lite/welcome.md` carries the
+# message a visitor is greeted with, which tells them that progress is
+# reported.
+name: pages
+
+on:
+  workflow_run:
+    workflows: [test]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time, and never cancel one part way: a half
+# published site is worse than an old one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      built: ${{ steps.site.outputs.built }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Install the locked environment
+        run: uv sync
+
+      - name: Build the JupyterLite site
+        id: site
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          workshops=()
+          for workshop in workshops/*/; do
+            if grep -qE '^frontends:.*jupyterlite' "$workshop/workshop.yaml"; then
+              workshops+=("$workshop")
+            fi
+          done
+          if [ ${#workshops[@]} -eq 0 ]; then
+            echo "No workshops that run in JupyterLite yet; nothing to publish"
+            echo "built=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          uv run jupyter workshop lite "${workshops[@]}" \
+            --out dist \
+            --no-terminal \
+            --collection collections/first-steps/collection.json \
+            --collection collections/functions-and-data/collection.json \
+            --collection collections/working-with-data/collection.json \
+            --collection collections/your-own-types/collection.json \
+            --settings lite/settings.json \
+            --welcome lite/welcome.md
+          echo "built=true" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/configure-pages@v5
+        if: steps.site.outputs.built == 'true'
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.site.outputs.built == 'true'
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.built == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

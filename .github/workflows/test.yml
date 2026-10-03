@@ -1,0 +1,80 @@
+# Lint and self-test the catalog, every collection index and every
+# workshop, which is what `just lint` and `just test-all` do locally. The
+# commands are spelled out rather than run through the Justfile so the
+# job needs nothing but uv.
+#
+# A workshop whose manifest lists jupyterlite in `frontends`, which is
+# every workshop of the first four collections, is linted and
+# self-tested on both frontends. The JupyterLite runs need no node, npm
+# or micromamba: those are the terminal's WebAssembly build step, and
+# the self-test leaves the terminal out for a workshop that declares no
+# terminal capability, which is every workshop that runs there.
+#
+# Linux only. The workshops of the last two collections run commands in
+# a terminal, and are written for the Linux of Binder and Codespaces
+# and for macOS. Some of them install packages from PyPI, so the
+# self-test needs network access.
+name: test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Install the locked environment and the self-test browser
+        run: |
+          uv sync
+          uv run playwright install --with-deps chromium
+
+      - name: Lint the catalog, every collection and every workshop
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          uv run jupyter workshop lint catalog.json
+          for index in collections/*/collection.json; do
+            uv run jupyter workshop lint "$index"
+          done
+          for workshop in workshops/*/; do
+            uv run jupyter workshop lint "$workshop"
+            if grep -qE '^frontends:.*jupyterlite' "$workshop/workshop.yaml"; then
+              uv run jupyter workshop lint "$workshop" --frontend jupyterlite
+            fi
+          done
+
+      - name: Self-test every workshop in JupyterLab
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          for workshop in workshops/*/; do
+            name=$(basename "$workshop")
+            uv run jupyter workshop test "$workshop" --junit "results-$name.xml"
+          done
+
+      - name: Self-test in JupyterLite every workshop that runs there
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          for workshop in workshops/*/; do
+            if grep -qE '^frontends:.*jupyterlite' "$workshop/workshop.yaml"; then
+              name=$(basename "$workshop")
+              uv run jupyter workshop test "$workshop" \
+                --frontend jupyterlite --junit "results-$name-lite.xml"
+            fi
+          done
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: results
+          path: results-*.xml
+          if-no-files-found: ignore

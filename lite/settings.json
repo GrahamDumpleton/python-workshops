@@ -1,0 +1,13 @@
+{
+  "@jupyterlab-workshop/labextension:panel": {
+    "disabledFeatures": [
+      "open-directory",
+      "open-url",
+      "collections",
+      "catalogs",
+      "remove",
+      "author"
+    ],
+    "analytics": { "report": "always" }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "title": "Python fundamentals workshops",
+  "description": "Guided JupyterLab workshops that teach Python to people new to programming, from a first line of code in a notebook to a tested project of their own in a virtual environment.",
+  "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+  "collections": [
+    {
+      "url": "collections/first-steps/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/first-steps",
+      "title": "Python first steps",
+      "description": "Guided workshops for people who have never written a program. Learn how these workshops work, then write your first Python: numbers, names, text, error messages, decisions, lists and loops, in a notebook in your browser.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "notebook"
+      ]
+    },
+    {
+      "url": "collections/functions-and-data/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/functions-and-data",
+      "title": "Python functions and data",
+      "description": "Guided workshops that teach you to organise Python code and data: functions, dictionaries, tuples and sets, loops over any kind of data, and how two names can share one list. You write most of the code yourself.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "functions",
+        "notebook"
+      ]
+    },
+    {
+      "url": "collections/working-with-data/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/working-with-data",
+      "title": "Working with real data in Python",
+      "description": "Guided workshops that use Python on real data: reading and writing files, handling errors, the standard library, CSV and JSON, and cleaning untidy text, while building a program that tracks spending.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "files",
+        "data",
+        "notebook"
+      ]
+    },
+    {
+      "url": "collections/your-own-types/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/your-own-types",
+      "title": "Your own types in Python",
+      "description": "Guided workshops that introduce classes: what a class is and why you would make one, objects that describe themselves, dataclasses, and building one class on another, using the spending tracker as the example.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "classes",
+        "notebook"
+      ]
+    },
+    {
+      "url": "collections/notebook-to-program/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/notebook-to-program",
+      "title": "From a Python notebook to a program",
+      "description": "Guided workshops that move your Python from a notebook into files you run in a terminal: modules, scripts, command line arguments, packages, how imports find code, and finding bugs.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "modules",
+        "terminal"
+      ]
+    },
+    {
+      "url": "collections/working-like-a-developer/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/working-like-a-developer",
+      "title": "Working like a Python developer",
+      "description": "Guided workshops on how Python projects are made and why: virtual environments and how they work, installing packages with pip and with uv, testing, project layout and tools, and a final project of your own.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "packaging",
+        "testing",
+        "terminal"
+      ]
+    }
+  ]
+}

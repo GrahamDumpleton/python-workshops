@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "id": "grahamdumpleton.me/python-fundamentals/notebook-to-program",
+  "title": "From a Python notebook to a program",
+  "description": "Guided workshops that move your Python from a notebook into files you run in a terminal: modules, scripts, command line arguments, packages, how imports find code, and finding bugs.",
+  "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+  "tags": [
+    "python",
+    "beginners",
+    "modules",
+    "terminal"
+  ],
+  "ordered": true,
+  "analytics": {
+    "sink": "https://workshop-analytics.grumpys.work/events",
+    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+  },
+  "workshops": []
+}

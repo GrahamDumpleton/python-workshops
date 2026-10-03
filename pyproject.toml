@@ -1,0 +1,30 @@
+# This repository is a collection of workshops, not a Python package: uv
+# manages the environment the workshops are written, checked and run in.
+# The runtime dependencies are what a learner needs, JupyterLab and the
+# extension; the dev group adds the MCP server, the self-test and the
+# JupyterLite site builder used while writing. jupyterlab-workshop is
+# pinned once, here, and the dev group's extras resolve to the same
+# release.
+#
+# Nothing the workshops teach is installed here. Collections 1 to 5 use
+# the standard library alone, and the packages of collection 6 are
+# installed by the learner, in a virtual environment they make inside
+# the workshop's workspace, since installing them is the lesson.
+[project]
+name = "python-workshops"
+version = "0.1.0"
+description = "Guided JupyterLab workshops teaching Python to people new to programming"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "jupyterlab>=4.6,<5",
+    "jupyterlab-workshop==0.20.1",
+]
+
+[dependency-groups]
+dev = [
+    "jupyterlab-workshop[mcp,test,lite]",
+]
+
+[tool.uv]
+package = false

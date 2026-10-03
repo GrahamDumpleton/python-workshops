@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "id": "grahamdumpleton.me/python-fundamentals/working-like-a-developer",
+  "title": "Working like a Python developer",
+  "description": "Guided workshops on how Python projects are made and why: virtual environments and how they work, installing packages with pip and with uv, testing, project layout and tools, and a final project of your own.",
+  "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+  "tags": [
+    "python",
+    "beginners",
+    "packaging",
+    "testing",
+    "terminal"
+  ],
+  "ordered": true,
+  "analytics": {
+    "sink": "https://workshop-analytics.grumpys.work/events",
+    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+  },
+  "workshops": []
+}

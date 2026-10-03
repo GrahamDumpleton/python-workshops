@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "id": "grahamdumpleton.me/python-fundamentals/working-with-data",
+  "title": "Working with real data in Python",
+  "description": "Guided workshops that use Python on real data: reading and writing files, handling errors, the standard library, CSV and JSON, and cleaning untidy text, while building a program that tracks spending.",
+  "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+  "tags": [
+    "python",
+    "beginners",
+    "files",
+    "data",
+    "notebook"
+  ],
+  "ordered": true,
+  "analytics": {
+    "sink": "https://workshop-analytics.grumpys.work/events",
+    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+  },
+  "workshops": []
+}

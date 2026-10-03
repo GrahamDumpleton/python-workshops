@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "id": "grahamdumpleton.me/python-fundamentals/first-steps",
+  "title": "Python first steps",
+  "description": "Guided workshops for people who have never written a program. Learn how these workshops work, then write your first Python: numbers, names, text, error messages, decisions, lists and loops, in a notebook in your browser.",
+  "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+  "tags": [
+    "python",
+    "beginners",
+    "notebook"
+  ],
+  "ordered": true,
+  "analytics": {
+    "sink": "https://workshop-analytics.grumpys.work/events",
+    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+  },
+  "workshops": []
+}
