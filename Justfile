@@ -266,7 +266,7 @@ catalog:
 # symlinks without a word. Each entry of the list below is a workshop
 # and the shared files it ships, as `workshop:file,file`. A workshop
 # not written yet is skipped.
-shared_files := "reading-and-writing-files:spending.csv when-the-data-is-wrong:spending-raw.csv csv-and-json:spending.csv,budgets.json cleaning-messy-text:spending-raw.csv,spending.csv where-the-money-went:spending-raw.csv,budgets.json"
+shared_files := "reading-and-writing-files:spending.csv when-the-data-is-wrong:spending-raw.csv csv-and-json:spending.csv,budgets.json cleaning-messy-text:spending-raw.csv,spending.csv where-the-money-went:spending-raw.csv,budgets.json spending-as-objects:spending.csv,budgets.json"
 
 # Copy the files under shared/ into the files/ directory of each workshop that ships them.
 shared:

@@ -13,7 +13,168 @@
   "ordered": true,
   "analytics": {
     "sink": "https://workshop-analytics.grumpys.work/events",
-    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmY2MyYWQ0YmFlYzc0NDFkODFjYzcwOTllOGYxZTUxMCIsInN1YiI6InB5dGhvbi13b3Jrc2hvcHMiLCJzY29wZSI6WyJpbmdlc3QiXSwibGFiZWxzIjp7fSwib3JpZ2lucyI6WyJodHRwczovL2dyYWhhbWR1bXBsZXRvbi5naXRodWIuaW8iXSwiaWF0IjoxNzkxMDkxODQzLCJuYmYiOjE3OTEwOTE4NDMsImV4cCI6MTgyMTU3MTE5OX0.8ynSmj_komUvq0UBC23tS2BvKd5dfFZX2c1nSOzZ3zI"
   },
-  "workshops": []
+  "workshops": [
+    {
+      "name": "your-first-class",
+      "title": "Your first class",
+      "description": "Learn how to make a new type of value of your own. A class describes what data each value of the type holds and what it can do. You make objects from a class that describes one purchase, read and change their attributes, write two methods yourself, and add up the amounts of a list of objects.",
+      "tags": [
+        "python",
+        "beginners",
+        "classes",
+        "objects"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/your-first-class",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/your-first-class"
+          }
+        }
+      ]
+    },
+    {
+      "name": "objects-that-explain-themselves",
+      "title": "Objects that explain themselves",
+      "description": "Learn how to make the objects of your own class show useful text and compare as equal. You write the special methods __repr__ and __eq__ by hand for a class that holds one purchase. Then you use a dataclass, where Python writes those methods for you, and you write a dataclass of your own.",
+      "tags": [
+        "python",
+        "beginners",
+        "classes",
+        "dataclasses"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/objects-that-explain-themselves",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/objects-that-explain-themselves"
+          }
+        }
+      ]
+    },
+    {
+      "name": "building-on-another-class",
+      "title": "Building on another class",
+      "description": "Learn two ways to build a class from classes that you already have. With inheritance, a child class starts with everything that its parent class has, and you add or replace only what is different. With composition, an object holds other objects as its attributes. You write methods for both, and you learn a plain rule that tells you which of the two to choose.",
+      "tags": [
+        "python",
+        "beginners",
+        "classes",
+        "inheritance"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/building-on-another-class",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/building-on-another-class"
+          }
+        }
+      ]
+    },
+    {
+      "name": "spending-as-objects",
+      "title": "Spending as objects",
+      "description": "Build a complete program in seven parts, with hints but without the code. You write a class for one purchase and a class for a ledger that holds many purchases. The ledger reads the purchases of one person from a file, and its methods give the totals, the largest purchase, the categories that cost more than their budget, and a report. It uses classes, objects, methods and dataclasses together.",
+      "tags": [
+        "python",
+        "beginners",
+        "project",
+        "classes"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/spending-as-objects",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/spending-as-objects"
+          }
+        }
+      ]
+    }
+  ]
 }

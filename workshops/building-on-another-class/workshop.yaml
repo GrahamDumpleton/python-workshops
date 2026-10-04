@@ -1,0 +1,59 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: building-on-another-class
+title: Building on another class
+version: 0.1.0
+description: Learn two ways to build a class from classes that you already have. With inheritance, a child class starts with everything that its parent class has, and you add or replace only what is different. With composition, an object holds other objects as its attributes. You write methods for both, and you learn a plain rule that tells you which of the two to choose.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/building-on-another-class
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, classes, inheritance]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now build a class from classes that you already have. With
+  inheritance, you write a child class that starts with the attributes
+  and the methods of its parent class. You can add a method, replace a
+  method, and give the child class an attribute of its own with
+  `super().__init__(...)`. With composition, you write a class whose
+  objects hold other objects as attributes. You also know the rule
+  that chooses between the two: "is a" means inheritance, and "has a"
+  means composition.
+
+  The next workshop is **Spending as objects**. It is the last
+  workshop of **Your own types in Python**. In it, you build the
+  spending tracker again from classes: a class for one purchase, and a
+  class that holds all the purchases and writes the report.
+
+  The Python tutorial covers inheritance in
+  [Inheritance](https://docs.python.org/3/tutorial/classes.html#inheritance).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: building-on-another-class.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-a-class-again.md
+  - pages/03-a-child-class.md
+  - pages/04-add-a-method.md
+  - pages/05-replace-a-method.md
+  - pages/06-an-attribute-of-its-own.md
+  - pages/07-repair-a-child-class.md
+  - pages/08-which-class-is-it.md
+  - pages/09-an-object-that-holds-objects.md
+  - pages/10-is-a-or-has-a.md
+  - pages/11-finish.md

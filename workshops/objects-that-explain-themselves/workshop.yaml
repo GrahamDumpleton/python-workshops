@@ -1,0 +1,57 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: objects-that-explain-themselves
+title: Objects that explain themselves
+version: 0.1.0
+description: Learn how to make the objects of your own class show useful text and compare as equal. You write the special methods __repr__ and __eq__ by hand for a class that holds one purchase. Then you use a dataclass, where Python writes those methods for you, and you write a dataclass of your own.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/objects-that-explain-themselves
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, classes, dataclasses]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now make the objects of your own class explain themselves.
+  You wrote the special method `__repr__`, which gives the text that
+  Python shows for an object, and the special method `__eq__`, which
+  says when two objects are equal. Then you used `@dataclass`, which
+  writes `__init__`, `__repr__` and `__eq__` for you, and you wrote a
+  dataclass of your own with a method.
+
+  The next workshop is **Building on another class**. In it, you make
+  a new class from a class that already exists, so that the new class
+  starts with all the attributes and methods of the first one.
+
+  The library reference describes dataclasses in
+  [dataclasses](https://docs.python.org/3/library/dataclasses.html),
+  and the language reference describes `__repr__` and `__eq__` in
+  [Basic customization](https://docs.python.org/3/reference/datamodel.html#basic-customization).
+  Both are written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: objects-that-explain-themselves.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-a-class-and-its-objects.md
+  - pages/03-what-print-shows.md
+  - pages/04-text-for-an-object.md
+  - pages/05-equal-or-the-same.md
+  - pages/06-when-two-objects-are-equal.md
+  - pages/07-python-writes-the-methods.md
+  - pages/08-type-hints.md
+  - pages/09-a-dataclass-of-your-own.md
+  - pages/10-finish.md

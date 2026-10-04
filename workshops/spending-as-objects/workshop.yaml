@@ -1,0 +1,81 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: spending-as-objects
+title: Spending as objects
+version: 0.1.0
+description: Build a complete program in seven parts, with hints but without the code. You write a class for one purchase and a class for a ledger that holds many purchases. The ledger reads the purchases of one person from a file, and its methods give the totals, the largest purchase, the categories that cost more than their budget, and a report. It uses classes, objects, methods and dataclasses together.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/spending-as-objects
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, project, classes]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+  data:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+        - { name: data, size: 0.35, tabs: ['file:spending.csv'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You have built a complete program from two classes of your own. A
+  `Purchase` object holds the data of one purchase, and a `Ledger`
+  object holds many purchases. The methods of the ledger add up the
+  totals, find the largest purchase, compare the totals with the
+  budgets, and make a report.
+
+  The set **Your own types in Python** is now complete. The next set of
+  workshops is **From a Python notebook to a program**. It begins with
+  the workshop **Files, editors and terminals**, which moves your code
+  from a notebook into files that you run yourself.
+
+  That set needs a terminal, and the site that runs in your web browser
+  has no terminal that can run Python. So the next set runs in
+  JupyterLab only. You can open JupyterLab in three ways:
+
+  - [on Binder](https://mybinder.org/v2/gh/GrahamDumpleton/python-workshops/main?urlpath=lab),
+    which is free and needs no account. It can take a few minutes to
+    start, and it deletes your work when the session ends.
+
+  - [in a codespace](https://codespaces.new/GrahamDumpleton/python-workshops?quickstart=1),
+    which needs a GitHub account and keeps your work between visits.
+
+  - on your own computer. The section
+    [Run locally](https://github.com/GrahamDumpleton/python-workshops#run-locally)
+    says how.
+
+  If you already work on Binder, in a codespace or on your own
+  computer, you can continue where you are: choose the next workshop
+  from the list of workshops.
+
+  The Python tutorial covers classes in
+  [Classes](https://docs.python.org/3/tutorial/classes.html), and the
+  library reference describes the module
+  [dataclasses](https://docs.python.org/3/library/dataclasses.html).
+  Both are written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: spending-as-objects.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-data.md
+  - pages/03-a-purchase.md
+  - pages/04-a-ledger.md
+  - pages/05-read-the-file.md
+  - pages/06-totals.md
+  - pages/07-months-and-the-largest.md
+  - pages/08-over-the-budget.md
+  - pages/09-the-report.md
+  - pages/10-finish.md

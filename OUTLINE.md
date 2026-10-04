@@ -895,7 +895,9 @@ empty, and a row with two fields). Cleaning the raw file gives the
 clean file exactly, which workshop 22 uses as its last step.
 `budgets.json` holds the budget of one month for each category, set
 so that four totals of a category in a month go over it. Workshops 18
-and 21 read the clean file, and 19, 22 and 23 the raw one.
+and 21 read the clean file, and 19, 22 and 23 the raw one. Workshop 27
+reads the clean file and the budgets, so that its work is the classes
+and not the cleaning.
 
 `Decimal` is introduced in workshop 22, where amounts are turned from
 text into numbers. Checks that compare a total compare it rounded to
@@ -912,6 +914,26 @@ the module `statistics` in workshop 20, as the module whose
 documentation the learner reads to find `mean()`; and the term
 "attribute" in workshop 20, for `.year`, `.month` and `.day` of a
 date.
+
+In collection 4 a purchase is an object of a class `Purchase`, with
+the attributes `date` (an ISO string), `description`, `amount` (a
+`Decimal`) and `category`, in that order. Workshops 24 and 26 write it
+by hand with `__init__`, workshop 25 writes it by hand and then as a
+dataclass, and workshop 27 writes it as a dataclass, with a `Ledger`
+written by hand that holds the purchases. The collection says
+"object", and says once in each workshop that needs it that
+programmers also say "instance"; "parent class" and "child class";
+"replace" a method, with "override" named once; and "make an object",
+never "instantiate".
+
+Things taught in collection 4 that its entries do not list: `type()`
+and `AttributeError` in workshop 24; `!r` in an f-string, a
+"decorator" (only what a line that begins with `@` means), a "type
+hint" and a "field" in workshop 25; `isinstance()` and `super()` in
+workshop 26; and a method that calls another method of its own object
+in workshop 27. Workshop 26 takes its composition example from a
+receipt that holds products, so that the `Ledger` is new in workshop
+27.
 
 `rich` is the third-party package, used for printing the report as a
 table, since it installs everywhere and shows a visible change.
@@ -1321,6 +1343,21 @@ it is open in the editor, so workshop 21 puts `budgets.json` back, for
 a learner whose code saved over it, with a `file-write` that copies
 the shipped file with `:from:`.
 
+**Classes in collection 4.** A cell that defines a class again makes
+a new class, and objects made before still belong to the old one. So
+a step in which the learner adds a method works in a cell that holds
+the whole class so far, inserted without being run, with a comment
+where the method goes and the methods of earlier steps given complete;
+the cell, or one beside it, makes the objects again; and the page says
+why. A check makes fresh objects of the learner's class inside itself,
+after it has tested that the name is a class and that the parameters
+fit, and reads attributes with `getattr()` so that a missing one gives
+a message. A check that looks at an object the learner made compares
+the name of its class, since the class may have been defined again
+since. The default text of an object holds a number that differs on
+every run and between the frontends, so pages write it as `0x...` and
+no quiz or check reads it.
+
 **No directory listings.** `os.listdir(".")` shows
 `.ipynb_checkpoints` in JupyterLab and not in JupyterLite, so no page
 prints a listing of the workspace.
@@ -1444,10 +1481,10 @@ Your own types:
 
 | # | Workshop | Status |
 | --- | --- | --- |
-| 24 | `your-first-class` | Planned |
-| 25 | `objects-that-explain-themselves` | Planned |
-| 26 | `building-on-another-class` | Planned |
-| 27 | `spending-as-objects` | Planned |
+| 24 | `your-first-class` | Done |
+| 25 | `objects-that-explain-themselves` | Done |
+| 26 | `building-on-another-class` | Done |
+| 27 | `spending-as-objects` | Done |
 
 From notebook to program:
 

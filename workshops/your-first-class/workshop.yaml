@@ -1,0 +1,57 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: your-first-class
+title: Your first class
+version: 0.1.0
+description: Learn how to make a new type of value of your own. A class describes what data each value of the type holds and what it can do. You make objects from a class that describes one purchase, read and change their attributes, write two methods yourself, and add up the amounts of a list of objects.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/your-first-class
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, classes, objects]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now make a type of value of your own. You know that a class
+  describes a new type, and that an object is a value made from a
+  class. You know that Python calls the method `__init__` when an
+  object is made, and that `self` is the name, inside a method, for
+  the object that the method was called on. You can read and change
+  the attributes of an object, write a method that returns a value,
+  and add up the amounts of a list of objects with a loop.
+
+  The next workshop is **Objects that explain themselves**. When you
+  show an object with `print()`, Python shows text such as
+  `<__main__.Purchase object at 0x...>`, which does not help you. The
+  next workshop shows how a class can say what `print()` shows, and
+  when two objects are equal.
+
+  The Python tutorial covers classes in
+  [A First Look at Classes](https://docs.python.org/3/tutorial/classes.html#a-first-look-at-classes).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: your-first-class.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-a-purchase-as-one-thing.md
+  - pages/03-a-class-and-an-object.md
+  - pages/04-init-and-self.md
+  - pages/05-attributes.md
+  - pages/06-a-method-of-your-own.md
+  - pages/07-a-method-with-a-parameter.md
+  - pages/08-a-list-of-objects.md
+  - pages/09-finish.md

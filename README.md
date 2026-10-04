@@ -10,8 +10,8 @@ Guided, hands-on workshops that teach the
 have never written a program before. You do not need to know anything
 about programming to start, and you do not need to install anything.
 
-**The workshops are being written.** The first three parts are ready,
-and their twenty-three workshops are listed under
+**The workshops are being written.** The first four parts are ready,
+and their twenty-seven workshops are listed under
 [The course](#the-course). The rest of this page describes the course
 as it is planned.
 
@@ -177,7 +177,29 @@ the next one.
 
 4. **Your own types in Python.** Classes: what a class is and why you
    would make one, objects that describe themselves, dataclasses, and
-   building one class on another.
+   building one class on another, using the spending tracker as the
+   example. In a notebook:
+
+   24. **Your first class** (`your-first-class`, 25 minutes). Learn
+       how to make a new type of value of your own. Make objects from
+       a class that describes one purchase, read and change their
+       attributes, and write methods of your own.
+
+   25. **Objects that explain themselves**
+       (`objects-that-explain-themselves`, 25 minutes). Make your
+       objects show useful text and compare as equal. Write the
+       special methods `__repr__` and `__eq__` by hand, and then use a
+       dataclass, where Python writes them for you.
+
+   26. **Building on another class** (`building-on-another-class`, 25
+       minutes). Learn two ways to build a class from classes that you
+       already have, inheritance and composition, and a plain rule
+       that tells you which of the two to choose.
+
+   27. **Spending as objects** (`spending-as-objects`, 25 minutes).
+       Build a complete program in seven parts, with hints but without
+       the code: a class for one purchase, and a ledger that holds all
+       the purchases and makes the report of where the money went.
 
 5. **From a Python notebook to a program.** Moving your code from a
    notebook into files that you run in a terminal: modules, scripts,
