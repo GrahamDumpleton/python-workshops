@@ -1,6 +1,6 @@
 ---
 title: The untidy file
-requires: [quiz:count-spellings, verify:raw-rows-read]
+requires: [verify:data-shown, quiz:count-spellings, verify:raw-rows-read]
 ---
 
 # The untidy file
@@ -28,10 +28,25 @@ The file has the name `spending-raw.csv`. The word "raw" means that
 nobody has cleaned the data yet. Click the action below. It shows the
 file under your notebook.
 
+```{attempt}
+:id: data-not-shown
+:check: data-shown
+:expect: The file is not open yet
+```
+
 ```{layout}
 :id: show-data
 :title: Show the file spending-raw.csv under the notebook
 :name: data
+```
+
+```{verify}
+:id: data-shown
+:label: The file spending-raw.csv is open under the notebook
+:substrate: ui
+:trigger: after:show-data
+:message: The file is not open yet. Click the action above to show the file under the notebook.
+file-open spending-raw.csv
 ```
 
 The file is a **CSV** file: a file of text in which each line is one

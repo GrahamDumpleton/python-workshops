@@ -183,24 +183,15 @@ it must be `budgets-new.json`.
 ````{hint}
 :title: I wrote to budgets.json by mistake
 If your program opened `budgets.json` with `"w"`, the file has
-changed. The action below runs a few lines of Python that write the file
-again as it was at the start. Click it, correct the name of the file in your program, and
+changed. The action below writes the file again as it was at the
+start. Click it, correct the name of the file in your program, and
 run your cell again.
 
-```{kernel-execute}
+```{file-write}
 :id: restore-budgets
 :title: Put the file budgets.json back as it was
-:path: {{ notebook }}
-with open("budgets.json", "w") as file:
-    file.write("""{
-  "rent": 650,
-  "food": 180,
-  "transport": 60,
-  "phone": 20,
-  "clothes": 50,
-  "hobbies": 30
-}
-""")
+:path: budgets.json
+:from: files/budgets.json
 ```
 ````
 
@@ -236,18 +227,9 @@ print(new_budgets)
 :check: new-budgets-file
 :expect: does not hold JSON
 
-```{kernel-execute}
-:path: {{ notebook }}
-with open("budgets.json", "w") as file:
-    file.write("""{
-  "rent": 650,
-  "food": 180,
-  "transport": 60,
-  "phone": 20,
-  "clothes": 50,
-  "hobbies": 30
-}
-""")
+```{file-write}
+:path: budgets.json
+:from: files/budgets.json
 ```
 
 ```{cell-insert}

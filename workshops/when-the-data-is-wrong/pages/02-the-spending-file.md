@@ -1,6 +1,6 @@
 ---
 title: The spending file
-requires: [verify:lines-counted, verify:one-line-read]
+requires: [verify:data-shown, verify:lines-counted, verify:one-line-read]
 ---
 
 # The spending file
@@ -19,10 +19,25 @@ workshop. There is no new idea on this page.
 
 Click the action below. It shows the file under your notebook.
 
+```{attempt}
+:id: data-not-shown
+:check: data-shown
+:expect: The file is not open yet
+```
+
 ```{layout}
 :id: show-data
 :title: Show the file spending-raw.csv under the notebook
 :name: data
+```
+
+```{verify}
+:id: data-shown
+:label: The file spending-raw.csv is open under the notebook
+:substrate: ui
+:trigger: after:show-data
+:message: The file is not open yet. Click the action above to show the file under the notebook.
+file-open spending-raw.csv
 ```
 
 The file has 41 lines. The first line is the **header**: it gives the

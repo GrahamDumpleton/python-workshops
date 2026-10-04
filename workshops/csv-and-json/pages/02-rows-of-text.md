@@ -1,6 +1,6 @@
 ---
 title: Rows of text
-requires: [verify:lines-read, quiz:predict-fields, verify:fields-split]
+requires: [verify:data-shown, verify:lines-read, quiz:predict-fields, verify:fields-split]
 ---
 
 # Rows of text
@@ -34,10 +34,25 @@ table, written as plain text.
 Mariam keeps her purchases in the file `spending.csv`. Click the
 action below. It shows the file under your notebook.
 
+```{attempt}
+:id: data-not-shown
+:check: data-shown
+:expect: The file is not open yet
+```
+
 ```{layout}
 :id: show-data
 :title: Show the file spending.csv under the notebook
 :name: data
+```
+
+```{verify}
+:id: data-shown
+:label: The file spending.csv is open under the notebook
+:substrate: ui
+:trigger: after:show-data
+:message: The file is not open yet. Click the action above to show the file under the notebook.
+file-open spending.csv
 ```
 
 Read the first lines of the file. The first line is the header row.

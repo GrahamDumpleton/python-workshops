@@ -1,6 +1,6 @@
 ---
 title: What a file is
-requires: [quiz:coat-amount]
+requires: [verify:data-shown, quiz:coat-amount]
 ---
 
 # What a file is
@@ -53,10 +53,25 @@ appears under the notebook, and it shows the text of the file
 `spending.csv`. This part is an editor: a tool that shows the text of
 a file. You can scroll in it to see the whole file.
 
+```{attempt}
+:id: data-not-shown
+:check: data-shown
+:expect: The file is not open yet
+```
+
 ```{layout}
 :id: show-data
 :title: Show the file spending.csv under the notebook
 :name: data
+```
+
+```{verify}
+:id: data-shown
+:label: The file spending.csv is open under the notebook
+:substrate: ui
+:trigger: after:show-data
+:message: The file is not open yet. Click the action above to show the file under the notebook.
+file-open spending.csv
 ```
 
 Do not type in the editor. In this workshop, only your code changes

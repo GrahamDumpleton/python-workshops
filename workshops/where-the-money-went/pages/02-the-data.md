@@ -1,6 +1,6 @@
 ---
 title: The data
-requires: [verify:clean-row-ran, quiz:predict-bad-row, verify:bad-row-ran]
+requires: [verify:data-shown, verify:clean-row-ran, quiz:predict-bad-row, verify:bad-row-ran]
 ---
 
 # The data
@@ -16,10 +16,25 @@ already in the folder of this workshop. Click the action below. It
 shows the file under your notebook, so that you can see what your
 program reads.
 
+```{attempt}
+:id: data-not-shown
+:check: data-shown
+:expect: The file is not open yet
+```
+
 ```{layout}
 :id: show-data
 :title: Show the file spending-raw.csv under the notebook
 :name: data
+```
+
+```{verify}
+:id: data-shown
+:label: The file spending-raw.csv is open under the notebook
+:substrate: ui
+:trigger: after:show-data
+:message: The file is not open yet. Click the action above to show the file under the notebook.
+file-open spending-raw.csv
 ```
 
 The file is a **CSV** file. A CSV file holds rows of text. Each line of

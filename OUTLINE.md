@@ -1312,7 +1312,14 @@ file, and the page that first talks about the file applies it with a
 written, are shown with `file-open` and `:area: data`. The editor does
 not follow a file that changes, so a page shows a file again after a
 cell has written it. Two placeholder areas in one layout are a lint
-error, which is why the second area names a file.
+error, which is why the second area names a file. From release 0.22.1
+the action that applies the layout is followed by a `ui` check,
+`file-open` with the name of the file and a `:message:`, triggered by
+`after:` the action, and the page requires it. From the same release
+an action can write a file that the learner's code has changed while
+it is open in the editor, so workshop 21 puts `budgets.json` back, for
+a learner whose code saved over it, with a `file-write` that copies
+the shipped file with `:from:`.
 
 **No directory listings.** `os.listdir(".")` shows
 `.ipynb_checkpoints` in JupyterLab and not in JupyterLite, so no page
@@ -1371,30 +1378,15 @@ the `contents` or `ui` substrate takes `:message:`. See "A Watch cell
 that leaves no name" above for where the workshops use it.
 
 Two problems were found on 2026-10-04 with 0.22.0, while collection 3
-was written. Both were confirmed with a probe workshop, and both are
-open:
-
-**A `ui` check does not find a CSV file that is open in the editor.**
-After a layout or a `file-open` action has opened `spending.csv` in
-the text editor, the predicate `file-open spending.csv` says that the
-file is not open. For `report.txt` it passes. The predicate looks for
-the file with `docManager.findWidget(path)`, which seems to look only
-for the viewer that JupyterLab would choose for the file by default,
-and for a `.csv` file that is the table viewer, not the editor. In
-the meantime the pages that show a data file have no check on the
-action that shows it, and gate the page on a quiz about what the file
-holds.
-
-**An action cannot write a file that is open and that the kernel has
-changed.** When a file is open in the editor, a cell changes it on
-disk, and a `file-write` action then writes the same file, JupyterLab
-shows its "File Changed" dialog. The self-test stops there, and a
-learner would be asked a question that the page does not explain. In
-the meantime no action writes a file that the learner's code may have
-written. Workshop 21 puts `budgets.json` back, for a learner whose
-code saved over it, with a `kernel-execute` that writes the file from
-the learner's kernel. A `kernel-execute` is given `:path:` with the
-notebook, since without it the code does not run in the workspace.
+was written, and release 0.22.1 settled both the next day. A `ui`
+check with `file-open spending.csv` said that the file was not open
+when it was open in the text editor, because the predicate looked only
+for the viewer that JupyterLab chooses for a `.csv` file by default.
+And a `file-write` action on a file that was open in the editor, after
+a cell had changed it on disk, raised JupyterLab's "File Changed"
+dialog. Both were confirmed gone on both frontends with the probe
+workshop. The workshops took up both fixes: see "A data file under
+the notebook" above.
 
 **Symlinks in `files/` are dropped on install.** See "Shared files are
 copies, not symlinks" above.
