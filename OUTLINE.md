@@ -67,7 +67,7 @@ A catalog of six ordered collections. Each collection is numbered in
 the workshop browser and each Finish dialog offers the next workshop,
 and the last workshop of each collection names the first of the next.
 Fifteen to twenty-five minutes per workshop, since explaining each
-concept properly takes time, and forty-two workshops, so roughly
+concept properly takes time, and forty-three workshops, so roughly
 thirteen to fifteen hours in total.
 
 **1. First steps** (1 to 9). How the workshop environment works, then
@@ -88,13 +88,13 @@ This is a place where clickable actions earn their keep: a class is a
 lot of lines to type before anything happens, so the boilerplate
 arrives by click and the learner writes the methods that matter.
 
-**5. From notebook to program** (28 to 35). The move from notebook to
+**5. From notebook to program** (28 to 36). The move from notebook to
 files, editor and terminal: modules, scripts, command line arguments,
 packages, how imports are found, and debugging. The clicks that create
 files and run commands are withdrawn over the collection until the
 learner does both.
 
-**6. Working like a Python developer** (36 to 42). Why virtual
+**6. Working like a Python developer** (37 to 43). Why virtual
 environments exist and how they work, installing packages with pip and
 then uv, testing, project layout and tools, and a project of the
 learner's own from a short brief.
@@ -132,7 +132,7 @@ several subscribed in one JupyterLab and the browser matches a local
 directory to a collection by name. The siblings are
 `decorator-workshops`, `wrapt-workshops`, `wrapture-workshops`,
 `claude-sdk-workshops`, `tachyon-workshops`, `wsgi-workshops` and
-`jupyterlab-workshop-showcase`. On 2026-10-03 none of the forty-two
+`jupyterlab-workshop-showcase`. On 2026-10-03 none of the forty-three
 names in this outline was used by any of them. Check again before
 adding or renaming a workshop.
 
@@ -172,7 +172,13 @@ descriptions, the finish text, and comments inside inserted code.
   not the reader's English.
 
 - **No "just", "simply", "easy" or "obviously".** A learner who finds
-  the step hard is told they are failing at something easy.
+  the step hard is told they are failing at something easy. "Easier to
+  follow", said of a workshop and not of a task, is allowed.
+
+- **Words in their usual sense.** A word that is correct but unusual
+  in its context makes a reader stop, and a translation tool may pick
+  the wrong meaning. A workshop is "easier to follow" and a notebook is
+  "convenient"; neither is "comfortable".
 
 - **Code stays in code formatting.** Every name, value and piece of
   syntax in prose is in a code span, so that a translation tool leaves
@@ -266,15 +272,17 @@ goes on.
 | Mode | The learner | Built from |
 |------|-------------|------------|
 | Watch | reads a worked example as it runs | `cell-insert` with `:run: true` |
-| Predict | commits to an answer before seeing it | `quiz` before the `cell-insert` that answers it |
+| Predict | commits to an answer before seeing it | `quiz` before the `cell-insert` that answers it, with the answer typed where it can be |
 | Modify | fixes or extends code that is nearly right | `cell-insert` with `:run: false`, a gap or a bug in it; a verify triggered by `cell-executed` |
 | Write | fills an empty cell or file from a short spec | `cell-insert` of a tagged cell holding only a comment saying what to write; a verify on behaviour |
 | Make | builds something from a goal, no starting code | the goal in prose; a verify; layered hints |
 
 Every Write and Make step has a way out, so nobody is ever stuck: a
 `hint` saying what to look at, a second `hint` that gets closer, and
-then a "Show a solution" `cell-insert` that puts a working answer in a
-separate cell, for the learner to read and compare with their own.
+then a "Show me a solution" `hint` that holds a `cell-insert`, which
+puts a working answer in a separate cell for the learner to read and
+compare with their own. The solution stays locked until the check of
+the step has run once, so the learner tries first.
 Gating is `soft`, so a learner can move on, and the page records that
 they did.
 
@@ -310,7 +318,8 @@ solves a problem a different way from the author still passes.
 A failing check names the most likely misconception rather than saying
 that something is wrong. The common beginner errors are known and few,
 and each check should be written against the one it is most likely to
-meet.
+meet. Each of those messages is tested with an `attempt`, so no
+message a learner can see is untried.
 
 Checks do not depend on the exact wording of Python's own error
 messages, which change between Python versions and differ between
@@ -347,13 +356,20 @@ this browser on this computer, and reloading the page starts Python
 again, so the workshop asks whether to restart or continue. On a
 codespace or their own machine, the work is in files that stay.
 
+One page sets the notebook in context, after the learner has seen a
+cell run. It is a Jupyter notebook, widely used for data science,
+scientific computing and machine learning. It is not the only way to
+use Python or the most common: most programs are written in files and
+run from the command line, and Python can also be used directly there.
+The course starts in a notebook because it is the most convenient
+place to learn the first steps, and it moves to files, an editor and
+the terminal later, in collection 5. The Python is the same in both.
+
 It ends by saying what the course will ask of them: the clicks are
 there to save time on things that are not the lesson, and as the course
 goes on they will do more of the typing themselves, on purpose.
 
 - Format: notebook, with a `tour` of the panel.
-- Modes: Watch, then one Modify.
-- Length: 10 to 15 minutes.
 
 #### 2. `talking-to-python`: Talking to Python
 
@@ -639,12 +655,47 @@ way. Exactly which keys work for copying and pasting on each platform
 is to be confirmed in JupyterLab before the page is written.
 
 Later workshops that run a program in the terminal, such as a server
-or the flashcard drill of workshop 42, remind the learner of Ctrl+C
+or the flashcard drill of workshop 43, remind the learner of Ctrl+C
 the first time it is needed.
 
 - Modes: Watch, then typed commands.
 
-#### 29. `code-in-a-file`: Code in a file
+#### 29. `python-in-the-terminal`: Python in the terminal
+
+Python without the notebook. Workshop 1 tells the learner that the
+notebook is a convenience for learning, and that programmers mostly
+use Python from the command line. This is where the course keeps that
+promise.
+
+The learner types `python` in the terminal and meets the `>>>` prompt
+of the interactive interpreter, which is where most Python programmers
+try a line of code. The Python is all familiar, expressions and names
+from collection 1, so that the tool is the only new thing. What is the
+same as a notebook cell: a line is run and its value is shown. What is
+different: every expression shows its value as soon as it is entered,
+where a notebook cell shows only the value of its last line (workshop
+2 tells the learner that this rule belongs to the notebook, and this
+is where they see it, and the workshop that first runs a program from
+a file completes it: a program shows nothing unless it prints); each
+line runs when Enter is pressed, the `...` prompt
+appears inside a block, the up arrow brings back an earlier line, and
+nothing is kept as a document. How to leave, with `exit()`. Also
+`python --version`, and the idea that the terminal runs one particular
+Python.
+
+It ends on the limit that the next workshop answers: leave the
+interpreter and everything typed is gone, so code worth keeping
+belongs in a file.
+
+- Modes: Watch, then typed by the learner.
+
+- To settle when it is written: how the pages and the self-test drive
+  a program that waits for input. The interpreter is started in the
+  terminal and lines are sent to it, and checks can only read what the
+  terminal printed, with `terminal-output` triggers, since nothing
+  outside the interpreter can see its state.
+
+#### 30. `code-in-a-file`: Code in a file
 
 Functions moved from the notebook into a `.py` file and imported back
 into the notebook. Why a file: code that outlives a notebook and can be
@@ -652,7 +703,7 @@ shared. The file is created by click; the learner moves the code.
 
 - Modes: Modify, Write.
 
-#### 30. `running-a-script`: Running a script
+#### 31. `running-a-script`: Running a script
 
 `python app.py` in the terminal. What `__name__` is and why
 `if __name__ == "__main__"` exists, shown by importing the same file
@@ -660,21 +711,21 @@ both ways. Commands run by click first, then typed by the learner.
 
 - Modes: Watch, Write, typed commands.
 
-#### 31. `taking-arguments`: Taking arguments
+#### 32. `taking-arguments`: Taking arguments
 
 `sys.argv` first, to see what a program receives, then `argparse`. The
 spending tracker learns to report on one month or one category.
 
 - Modes: Write.
 
-#### 32. `splitting-into-modules`: Splitting into modules
+#### 33. `splitting-into-modules`: Splitting into modules
 
 A program across several files and the imports between them. The
 learner creates the files this time, checked with `exists`.
 
 - Modes: Make, with files created by the learner.
 
-#### 33. `where-imports-come-from`: Where imports come from
+#### 34. `where-imports-come-from`: Where imports come from
 
 How `import` finds a module: `sys.path`, the current directory, the
 standard library, `site-packages`, and the shadowing bug of a file
@@ -683,14 +734,14 @@ virtual environment is a different `site-packages`.
 
 - Modes: Predict, Investigate.
 
-#### 34. `making-a-package`: Making a package
+#### 35. `making-a-package`: Making a package
 
 A package directory, `__init__.py`, relative imports and `python -m`.
 The spending tracker becomes a package.
 
 - Modes: Make.
 
-#### 35. `finding-the-bug`: Finding the bug
+#### 36. `finding-the-bug`: Finding the bug
 
 Tracebacks across several files, `print` debugging, and `breakpoint()`
 with the few `pdb` commands worth knowing.
@@ -703,17 +754,17 @@ The emphasis is on why and how. Every tool here is shown working, then
 opened up so the learner sees what it changed, then broken so they see
 what goes wrong without it.
 
-#### 36. `why-an-environment`: Why an environment
+#### 37. `why-an-environment`: Why an environment
 
 The problem before the solution: one Python shared by every project,
 two projects needing different versions of the same package, and an
 install that breaks something unrelated. Shown with what the learner
-already knows from workshop 33: where `site-packages` is and what is in
+already knows from workshop 34: where `site-packages` is and what is in
 it.
 
 - Modes: Predict, Investigate.
 
-#### 37. `an-environment-of-your-own`: An environment of your own
+#### 38. `an-environment-of-your-own`: An environment of your own
 
 `python -m venv`, then a look inside: the interpreter, `site-packages`,
 `pyvenv.cfg`. What activating does, which is to put a directory first
@@ -725,7 +776,7 @@ the bare Python.
 
 - Modes: typed commands throughout.
 
-#### 38. `installing-packages`: Installing packages
+#### 39. `installing-packages`: Installing packages
 
 `pip install` into the environment, where the package went, `pip list`
 and `pip freeze`, and `requirements.txt` as a record of what a project
@@ -734,7 +785,7 @@ a table.
 
 - Modes: typed commands, Write.
 
-#### 39. `the-same-with-uv`: The same with uv
+#### 40. `the-same-with-uv`: The same with uv
 
 uv doing what the last three workshops did by hand: making the
 environment, installing, locking. Taught as the same ideas with a
@@ -743,14 +794,14 @@ is matched to the pip workflow it stands for.
 
 - Modes: typed commands, Make.
 
-#### 40. `testing-your-code`: Testing your code
+#### 41. `testing-your-code`: Testing your code
 
 What a test is for, then `assert`, then `pytest`: writing tests for the
 spending tracker and reading a failure.
 
 - Modes: Write, Make.
 
-#### 41. `a-proper-project`: A proper project
+#### 42. `a-proper-project`: A proper project
 
 `pyproject.toml`, the `src` layout and why it exists, installing the
 project into its own environment, a formatter and linter (`ruff`), and
@@ -758,7 +809,7 @@ type hints as documentation that a tool can check.
 
 - Modes: Make.
 
-#### 42. `your-own-project`: Your own project
+#### 43. `your-own-project`: Your own project
 
 Graduation. The learner picks one of four briefs with a `choice`, and
 builds it with checks and nothing else: no inserted code, no clicks
@@ -840,7 +891,7 @@ log, weather readings and a to-do list. The recipe box was the closest
 alternative, but units of measure differ between countries. The others
 each fit only part of the course.
 
-### The briefs for workshop 42
+### The briefs for workshop 43
 
 A `choice` at the start picks one of four. A track is worth its cost
 here, since the learner's own choice is much of the point of a final
@@ -914,6 +965,15 @@ and recorded here. The ones known so far are under open questions.
 first five collections. Collection 6 installs packages, and the
 learner installs them, since that is the lesson.
 
+**The notebook is a convenience, and the learner is told so.**
+Collections 1 to 4 use a notebook because it needs no setup, keeps
+code and result together, and lets the workshop add cells and check
+them. Workshop 1 says this plainly, and says that programmers mostly
+work in files and at the command line. Collection 5 moves there, and
+workshop 29 teaches the interactive interpreter in the terminal, so
+that a learner does not finish the course knowing Python only through
+notebooks.
+
 **Learners type code, on purpose.** This departs from the other
 workshop repositories, where every cell arrives by click. The modes
 above say when.
@@ -930,9 +990,10 @@ learner on their own machine may be on Windows, and collections 5 and
 
 **Self-test.** A workshop is done when `jupyter workshop test` is green
 on it, on both frontends for collections 1 to 4. Exercises in Write and
-Make mode need the self-test to run their "Show a solution" action
-before the check, so that the solution is what passes under test, and
-each solution is therefore tested on every run.
+Make mode put their solution before the check on the page, so that
+the self-test runs it and the solution is what passes under test. The
+wrong answers a check has a message for are tested by `attempt` blocks
+above the solution.
 
 **Shared files are copies, not symlinks.** The spending data, and the
 state of the running project at the start of each workshop, are needed
@@ -997,6 +1058,13 @@ wheelhouse, since no workshop builds an environment from a
 requirements file. If the installs of collection 6 turn out slow on
 Binder, the packages they name can be put in one.
 
+**Seeing where learners need help.** The extension records a
+`hint-opened` event when a hint is opened, and an `action-executed`
+event when the action inside a solution hint is clicked, each with the
+id of the block. A learner who opened a solution can so be told from
+one who ran it. So the analytics show which exercises needed their hints and
+their solutions, with nothing more to build.
+
 **Analytics.** `collection.yaml` at the root declares the analytics
 sink once, and `just index` carries the block into every collection
 index. The deployments turn reporting on with `report: always`. The
@@ -1017,11 +1085,117 @@ GitHub.
 Patterns to settle as the first workshops are written, recorded here so
 each workshop does not rediscover them. These are first thoughts.
 
+These were settled by writing the first two workshops, and revised on
+2026-10-04 for release 0.21.0 of the extension. Both workshops pass
+the self-test on both frontends with them.
+
 **Notebook pages.** As in `decorator-workshops`: the welcome page
 creates the notebook with `notebook-create`, steps add cells with
 `cell-insert` and a tag, and checks are `learner-kernel` verifies
-triggered by `cell-executed <tag>`. Write-mode cells are inserted with
-`:run: false` and hold only a comment saying what to write.
+triggered by `cell-executed <tag>`.
+
+**A Watch step** is a `cell-insert` with `:run: true`, whose `:title:`
+says in plain words what the cell does.
+
+**A Predict step** is a `quiz` and then the Watch step that answers
+it. Where the question is what Python will show, and the learner could
+reasonably arrive at it, the quiz is `:type: text`: the learner types
+the value, and it is matched exactly, so `4` is not `4.0`. Each `wrong`
+entry names the mistake that leads to that answer, with entries for a
+decimal comma and other near misses, and `otherwise` gives a pointer
+for any other answer. Every `answer` and `text` is quoted. A question
+whose answer nobody could guess, such as the value of `0.1 + 0.2`,
+keeps its options, as do the recap questions. Workshop 1 teaches both
+kinds of question.
+
+**A Modify step** inserts the code to change in a cell of its own,
+with `:run: false`. The code is not put in a cell that has already
+run, because the check is triggered when that cell runs, and would
+show a failure before the learner has started. Workshop 1 does this
+once on purpose, on the page that follows the one about checks, and
+says so.
+
+**A Write step** inserts a cell with `:run: false` that holds only a
+comment saying where to write, and an empty line under it for the
+learner to click on. One blank line after the comment in the body of
+the action leaves that empty line in the cell, from release 0.21.1 of
+the extension.
+
+**The way out of a Modify or Write step** is, in this order on the
+page: the task, one or two `hint` blocks, the `attempt` blocks, a
+`hint` titled "Show me a solution", and then the check. The solution
+hint holds a `cell-insert` with `:run: true` and a tag of its own, and
+the check lists both tags in its `:trigger:`. The hint is locked until
+the check has run once, whatever the result:
+
+```
+:unlock: "total-cost" in failed_checks or "total-cost" in passed_checks
+:locked: Try the task first. This opens after the check below has run.
+```
+
+A learner who is stuck before running anything can click `Check`,
+which fails and unlocks the solution. A learner who passed can open it
+too, to compare. Since the solution comes before the check, the
+self-test runs it, and the check passes on it. Workshop 1 explains the
+lock on the page that introduces hints.
+
+**What an action box shows.** A clicked action shows the word `done`
+at its right side and a green bar on its left edge; `running` with an
+orange bar while it works; `failed` with a red bar and a message when
+it goes wrong. It shows no tick or cross: only a check shows `✓` and
+`✗`. Under the title the box shows the body of the action, which for a
+`cell-insert` is the code. For a `tour` it shows what each step says,
+numbered, and for a `notebook-create` the content of each cell, so the
+notebook of every workshop starts with a title cell.
+
+**The tour is checked, not run.** The self-test skips a `tour`, since
+it needs a person, but reports a step whose selector matches nothing.
+The four selectors of the tour in workshop 1 pass that test.
+
+**A step the learner does by hand**, such as running a cell with
+`Shift` and `Enter`, has a `cell-run` action beside it titled "Run the
+cell for me", for the learner who has a problem and for the self-test.
+
+**Checks before names are taught.** Workshop 2 has no variables, so a
+check cannot read a name. It reads `Out`, the record that the kernel
+keeps of every value a cell has shown, which exists in both the
+JupyterLab kernel and the Pyodide kernel: `44 in Out.values()`. Three
+rules follow. Every value that a check looks for is different from
+every other value the workshop's cells produce, so one cell cannot
+pass the check of another. A check that must tell an integer from a
+float tests the type as well, since `4 == 4.0`. From workshop 3 a
+check reads names.
+
+**Pass on any cell, diagnose the latest.** A check passes when the
+value it looks for is anywhere in `Out`, so a pass stays a pass. Its
+messages for wrong answers read `_`, the value the last cell showed,
+so a learner who gets it wrong twice is told about the second mistake
+and not the first again. The extension keeps the check's own closing
+expression out of `Out` and `_`, which is what makes both safe. Where
+the value before the learner has started is itself a likely wrong
+answer, as on the parentheses step of workshop 2, the message is
+worded to be true in both situations: "The last cell that ran gives
+14".
+
+**Check messages.** A `learner-kernel` check prints one message when
+it passes and another when it fails, and ends with the expression that
+decides. The failure message says what was found and what to do next.
+Where a wrong answer is likely, the check looks for it and names the
+mistake, as the last check of workshop 2 does for four wrong totals.
+A check assigns no names, so it leaves nothing in the learner's
+kernel.
+
+**Every failure message has an attempt.** The self-test follows the
+correct path, so each message a check can give on a wrong answer is
+tested by an `attempt`: a block the learner never sees, holding a
+`cell-insert` of the wrong answer, the id of the check, and part of
+the message expected. The first attempt of a check holds no actions
+and tests the message shown before the learner has done anything.
+Attempts go above the solution, and one with `:result: pass` goes last
+among them, for a right answer written another way. Nothing is undone
+between attempts, so a wrong answer whose value would pass a later
+check on the page cannot be an attempt. The report prints what each
+check said, which is the place to read every message in one pass.
 
 **Layouts.** As in `decorator-workshops`, collections 1 to 4 use a
 layout with one named placeholder area for the notebook, never the
@@ -1054,13 +1228,32 @@ naming the next workshop. `resumable` is left unset in collections 1 to
 `write-files` and `kernel-exec` throughout, plus `terminal` from
 collection 5.
 
+## Extension problems and suggestions
+
+Things found in jupyterlab-workshop while writing these workshops, and
+what the workshops do about each in the meantime. Remove an entry when
+a release settles it, and undo the workaround it names.
+
+Release 0.21.0 settled seven of the eight entries found on 2026-10-03
+with 0.20.1, and the workshops were revised for it on 2026-10-04: the
+docs now describe what an action box shows; a `tour` and a
+`notebook-create` show a readable form of their body; a hint can hold
+an action and stay locked; a quiz can take a typed answer; the
+self-test checks a tour's selectors and can point at the panel; an
+`attempt` tests what a check says on a wrong answer; and the
+JupyterLite site starts with jupyterlite-core 0.8.5, so the pin on
+0.8.3 is gone. One entry remains.
+
+**Symlinks in `files/` are dropped on install.** See "Shared files are
+copies, not symlinks" above.
+
 ## Status
 
 The repository was set up on 2026-10-03, from `wrapt-workshops` and
 `claude-sdk-workshops`, with the JupyterLite parts from
 `decorator-workshops`: the Justfile, the uv project pinned to
 jupyterlab-workshop 0.20.1 with its reference submodule at the same
-tag, the six collection index stubs and the catalog, `collection.yaml`
+tag (both moved to 0.21.1 on 2026-10-04), the six collection index stubs and the catalog, `collection.yaml`
 with a placeholder token, the Binder, Codespaces and JupyterLite
 files, the two workflows, AGENTS.md and the README. No workshop is
 written yet.
@@ -1075,8 +1268,8 @@ Status is one of: planned, in progress, written (lint clean), tested
 
 | # | Workshop | Status |
 |---|----------|--------|
-| 1 | `how-this-works` | planned |
-| 2 | `talking-to-python` | planned |
+| 1 | `how-this-works` | tested with 0.21.1, 24 pass on both frontends, 1 skipped (the tour) |
+| 2 | `talking-to-python` | tested with 0.21.1, 62 pass on both frontends |
 | 3 | `naming-things` | planned |
 | 4 | `working-with-text` | planned |
 | 5 | `when-things-go-wrong` | planned |
@@ -1103,20 +1296,21 @@ Status is one of: planned, in progress, written (lint clean), tested
 | 26 | `building-on-another-class` | planned |
 | 27 | `spending-as-objects` | planned |
 | 28 | `files-editors-and-terminals` | planned |
-| 29 | `code-in-a-file` | planned |
-| 30 | `running-a-script` | planned |
-| 31 | `taking-arguments` | planned |
-| 32 | `splitting-into-modules` | planned |
-| 33 | `where-imports-come-from` | planned |
-| 34 | `making-a-package` | planned |
-| 35 | `finding-the-bug` | planned |
-| 36 | `why-an-environment` | planned |
-| 37 | `an-environment-of-your-own` | planned |
-| 38 | `installing-packages` | planned |
-| 39 | `the-same-with-uv` | planned |
-| 40 | `testing-your-code` | planned |
-| 41 | `a-proper-project` | planned |
-| 42 | `your-own-project` | planned |
+| 29 | `python-in-the-terminal` | planned |
+| 30 | `code-in-a-file` | planned |
+| 31 | `running-a-script` | planned |
+| 32 | `taking-arguments` | planned |
+| 33 | `splitting-into-modules` | planned |
+| 34 | `where-imports-come-from` | planned |
+| 35 | `making-a-package` | planned |
+| 36 | `finding-the-bug` | planned |
+| 37 | `why-an-environment` | planned |
+| 38 | `an-environment-of-your-own` | planned |
+| 39 | `installing-packages` | planned |
+| 40 | `the-same-with-uv` | planned |
+| 41 | `testing-your-code` | planned |
+| 42 | `a-proper-project` | planned |
+| 43 | `your-own-project` | planned |
 
 ## Open questions
 
@@ -1151,25 +1345,15 @@ workshop.
 - **Windows and the learner's own machine.** Whether the course
   supports JupyterLab on Windows, which changes every shell command in
   collections 5 and 6, or keeps to codespaces and Binder and covers
-  the learner's own machine only in workshop 42.
+  the learner's own machine only in workshop 43.
 
-- **uv in the image.** Workshop 39 needs uv installed where the
+- **uv in the image.** Workshop 40 needs uv installed where the
   learner's terminal can find it, declared in `requires.tools`.
-
-- **A free-response quiz.** The extension's quizzes are single or
-  multiple choice, which tests recognising an answer rather than
-  producing one. A quiz type where the learner types what a cell will
-  print would suit the Predict mode better. Worth raising for the
-  extension, or approximating with a `form` and a check.
-
-- **Seeing where learners need help.** Whether opening a hint or
-  revealing a solution is recorded as a progress event. If not, it
-  would be worth adding, since it shows which exercises are too hard.
 
 - **Placement.** Whether a learner who already knows some Python can
   skip ahead, with a short quiz at the start of each collection
   pointing them to where to begin.
 
-- **Course length.** Forty-two workshops at fifteen to twenty-five
+- **Course length.** Forty-three workshops at fifteen to twenty-five
   minutes each. Whether any should be merged, split or dropped once
   the first collection is written and timed.

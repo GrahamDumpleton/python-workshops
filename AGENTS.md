@@ -298,10 +298,15 @@ above:
 - Every step that involves code is one of the five modes in OUTLINE.md:
   Watch, Predict, Modify, Write or Make. A Write or Make step has a way
   out: a `hint` saying what to look at, a second `hint` that gets
-  closer, and a "Show a solution" `cell-insert` that puts a working
-  answer in a separate cell. The solution action comes before the
-  check on the page, so that the self-test runs it and the check passes
-  on the solution.
+  closer, and a "Show me a solution" `hint` holding a `cell-insert`
+  that puts a working answer in a separate cell. The solution hint is
+  locked until the check of the step has run once, and comes before
+  the check on the page, so that the self-test runs it and the check
+  passes on the solution. OUTLINE.md gives the exact form.
+
+- Every message a check can give on a wrong answer is tested by an
+  `attempt` block above the solution, starting with one that holds no
+  actions, for the message shown before the learner has done anything.
 
 - Checks test behaviour, not the text of the code, so a learner who
   solves a problem another way still passes. They test the type of an

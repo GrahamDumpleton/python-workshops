@@ -36,7 +36,7 @@ your_own_types := "your-first-class objects-that-explain-themselves building-on-
 notebook_to_program_id := "grahamdumpleton.me/python-fundamentals/notebook-to-program"
 notebook_to_program_title := "From a Python notebook to a program"
 notebook_to_program_description := "Guided workshops that move your Python from a notebook into files you run in a terminal: modules, scripts, command line arguments, packages, how imports find code, and finding bugs."
-notebook_to_program := "files-editors-and-terminals code-in-a-file running-a-script taking-arguments splitting-into-modules where-imports-come-from making-a-package finding-the-bug"
+notebook_to_program := "files-editors-and-terminals python-in-the-terminal code-in-a-file running-a-script taking-arguments splitting-into-modules where-imports-come-from making-a-package finding-the-bug"
 
 working_like_a_developer_id := "grahamdumpleton.me/python-fundamentals/working-like-a-developer"
 working_like_a_developer_title := "Working like a Python developer"
@@ -84,12 +84,14 @@ skill:
 # as installed, and the MCP live tools open workshops by paths relative
 # to this root, such as workshops/<name>.
 # Start JupyterLab from the checkout, listing the workshops in each collection's order.
+[positional-arguments]
 lab *ARGS:
-    uv run jupyter lab --config=jupyter_lab_config.py {{ARGS}}
+    uv run jupyter lab --config=jupyter_lab_config.py "$@"
 
 # Scaffold a new workshop under workshops/; extra args go to `jupyter workshop init`.
+[positional-arguments]
 new NAME *ARGS:
-    uv run jupyter workshop init workshops/{{NAME}} {{ARGS}}
+    shift; uv run jupyter workshop init workshops/{{NAME}} "$@"
 
 # A workshop of the first four collections is linted twice: once
 # plainly, and once for the frontend that has no server, no subprocess
@@ -126,23 +128,26 @@ lint *NAMES:
     done
 
 # Render one workshop as HTML to check what a page looks like; extra args go to `jupyter workshop render`.
+[positional-arguments]
 render NAME *ARGS:
-    uv run jupyter workshop render workshops/{{NAME}} {{ARGS}}
+    shift; uv run jupyter workshop render workshops/{{NAME}} "$@"
 
 # The self-test runs the workshop's actions and checks for real, as you,
 # on this machine; only the workshop directory is protected, by a
 # temporary copy. Read the workshop first.
 # Self-test one workshop in a JupyterLab of its own; extra args go to `jupyter workshop test`.
+[positional-arguments]
 test NAME *ARGS:
-    uv run jupyter workshop test workshops/{{NAME}} {{ARGS}}
+    shift; uv run jupyter workshop test workshops/{{NAME}} "$@"
 
 # The JupyterLite self-test builds a site, serves it and drives it in a
 # headless browser with the Pyodide kernel, which is what a learner who
 # opens the site gets. A workshop of the first four collections is not
 # done until this is green too.
 # Self-test one workshop in JupyterLite; extra args go to `jupyter workshop test`.
+[positional-arguments]
 test-lite NAME *ARGS:
-    uv run jupyter workshop test workshops/{{NAME}} --frontend jupyterlite {{ARGS}}
+    shift; uv run jupyter workshop test workshops/{{NAME}} --frontend jupyterlite "$@"
 
 # Self-test every workshop, on both frontends where it runs on both, writing a JUnit report for each.
 test-all:
@@ -166,6 +171,7 @@ test-all:
 # the welcome message says so. No terminal: no workshop on the site
 # runs a command.
 # Build the JupyterLite site into dist/, carrying the workshops that run there.
+[positional-arguments]
 site *ARGS:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -180,11 +186,12 @@ site *ARGS:
         echo "No workshops that run in JupyterLite under workshops/ yet"
         exit 0
     fi
-    uv run jupyter workshop lite "${dirs[@]}" --out dist --no-terminal {{lite_collections}} --settings lite/settings.json --welcome lite/welcome.md {{ARGS}}
+    uv run jupyter workshop lite "${dirs[@]}" --out dist --no-terminal {{lite_collections}} --settings lite/settings.json --welcome lite/welcome.md "$@"
 
 # Build the JupyterLite site and serve it locally to try it out.
+[positional-arguments]
 site-serve *ARGS:
-    just site --serve {{ARGS}}
+    just site --serve "$@"
 
 # Write or refresh every collection index and the catalog.
 index: index-first-steps index-functions-and-data index-working-with-data index-your-own-types index-notebook-to-program index-working-like-a-developer catalog

@@ -1,0 +1,54 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: talking-to-python
+title: Talking to Python
+version: 0.1.0
+description: Learn what a program is and what Python does with it. Then use Python as a calculator. Add, subtract, multiply and divide, learn which part of a calculation Python does first, and write a calculation of your own.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/talking-to-python
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, numbers]
+duration: 20m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You have written your first Python. You know that a program is a list
+  of instructions, and that the Python interpreter reads and performs
+  them. You can write an expression with numbers and operators, you
+  know which part Python calculates first, and you know that a cell
+  shows only its last value.
+
+  The next workshop is **Naming things**. It shows how a program
+  remembers a value by giving it a name, so that you can use the value
+  again later.
+
+  The Python tutorial covers the same ideas in
+  [Using Python as a Calculator](https://docs.python.org/3/tutorial/introduction.html#numbers).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: talking-to-python.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-what-is-a-program.md
+  - pages/03-your-first-calculations.md
+  - pages/04-whole-and-decimal-numbers.md
+  - pages/05-what-is-calculated-first.md
+  - pages/06-sharing-into-whole-parts.md
+  - pages/07-a-surprise-with-decimals.md
+  - pages/08-only-the-last-value.md
+  - pages/09-your-own-calculation.md
+  - pages/10-finish.md

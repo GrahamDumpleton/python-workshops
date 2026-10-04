@@ -1,0 +1,50 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: how-this-works
+title: How these workshops work
+version: 0.1.0
+description: Start here. Learn how to use these workshops before you learn Python. Read a page, click an action, run code in a notebook, change code yourself, and see how checks, hints and questions help you.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/how-this-works
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, getting-started]
+duration: 15m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You now know how to use these workshops. You can read a page, click
+  an action, run a cell yourself, change code and run it again, and use
+  a check, a hint and a question.
+
+  The next workshop is **Talking to Python**. It explains what a
+  program is, and you write your first Python calculations.
+
+  If you want to read more about notebooks, the
+  [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/user/notebook.html)
+  describes them in detail. You do not need to read it to continue.
+variables:
+  - name: notebook
+    type: path
+    default: how-this-works.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-notebook.md
+  - pages/03-why-a-notebook.md
+  - pages/04-run-a-cell-yourself.md
+  - pages/05-checks.md
+  - pages/06-change-the-code.md
+  - pages/07-if-you-need-help.md
+  - pages/08-questions.md
+  - pages/09-starting-again.md
+  - pages/10-finish.md

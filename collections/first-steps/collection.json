@@ -14,5 +14,84 @@
     "sink": "https://workshop-analytics.grumpys.work/events",
     "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
   },
-  "workshops": []
+  "workshops": [
+    {
+      "name": "how-this-works",
+      "title": "How these workshops work",
+      "description": "Start here. Learn how to use these workshops before you learn Python. Read a page, click an action, run code in a notebook, change code yourself, and see how checks, hints and questions help you.",
+      "tags": [
+        "python",
+        "beginners",
+        "getting-started"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "15m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/how-this-works",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/how-this-works"
+          }
+        }
+      ]
+    },
+    {
+      "name": "talking-to-python",
+      "title": "Talking to Python",
+      "description": "Learn what a program is and what Python does with it. Then use Python as a calculator. Add, subtract, multiply and divide, learn which part of a calculation Python does first, and write a calculation of your own.",
+      "tags": [
+        "python",
+        "beginners",
+        "numbers"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "20m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/talking-to-python",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/talking-to-python"
+          }
+        }
+      ]
+    }
+  ]
 }

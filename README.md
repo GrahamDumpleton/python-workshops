@@ -10,9 +10,9 @@ Guided, hands-on workshops that teach the
 have never written a program before. You do not need to know anything
 about programming to start, and you do not need to install anything.
 
-**The workshops are being written.** None is available yet. This page
-describes the course as it is planned, and the links above will work
-once the first workshops are published.
+**The workshops are being written.** The first two are ready, and are
+listed under [The course](#the-course). The rest of this page
+describes the course as it is planned.
 
 ## How the workshops work
 
@@ -43,7 +43,18 @@ the next one.
 
 1. **Python first steps.** How these workshops work, and then your
    first Python: numbers, names, text, reading error messages,
-   decisions, lists and loops. In a notebook.
+   decisions, lists and loops. In a notebook. Written so far:
+
+   1. **How these workshops work** (`how-this-works`, 15 minutes).
+      Start here. Learn how to use the workshops before you learn
+      Python: read a page, click an action, run a cell in a notebook,
+      change code yourself, and see how checks, hints and questions
+      help you.
+
+   2. **Talking to Python** (`talking-to-python`, 20 minutes). Learn
+      what a program is and what Python does with it. Then use Python
+      as a calculator, learn which part of a calculation Python does
+      first, and write a calculation of your own.
 
 2. **Python functions and data.** Organising code with functions, and
    data with dictionaries, tuples and sets. Looping over any kind of
