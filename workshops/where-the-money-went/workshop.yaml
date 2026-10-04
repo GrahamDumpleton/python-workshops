@@ -1,0 +1,62 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: where-the-money-went
+title: Where the money went
+version: 0.1.0
+description: Build a complete program in six parts, with hints but without the code. From an untidy file that holds the purchases of one person in three months, and a file of budgets, your program makes a report. The report gives the total for each category, the total for each month, the largest purchase, and the categories that cost more than their budget. It uses files, exceptions, functions and dictionaries together.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/where-the-money-went
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, project, data]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+  data:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+        - { name: data, size: 0.35, tabs: ['file:spending-raw.csv'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You have built a complete program that turns an untidy file of data
+  into a report. You can now read the rows of a CSV file, skip the rows
+  that cannot be read, add up totals for groups with a dictionary, find
+  the largest value, compare totals with the values of a JSON file, and
+  write the results to a text file.
+
+  The set **Working with real data in Python** is now complete. The
+  next set of workshops is **Your own types in Python**. It begins with
+  the workshop **Your first class**, which shows how to make a new kind
+  of value of your own, such as a purchase that knows its date, its
+  amount and its category.
+
+  The Python tutorial covers files in
+  [Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files),
+  and the library reference describes the module
+  [csv](https://docs.python.org/3/library/csv.html). Both are written
+  for people who already program, so do not worry if some of it is
+  difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: where-the-money-went.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-data.md
+  - pages/03-read-the-purchases.md
+  - pages/04-the-total-for-each-category.md
+  - pages/05-the-total-for-each-month.md
+  - pages/06-the-largest-purchase.md
+  - pages/07-over-the-budget.md
+  - pages/08-write-the-report.md
+  - pages/09-finish.md

@@ -152,8 +152,11 @@ For every workshop:
   false` for the learner to run, read and fix.
 
 - Files shared by several workshops, such as the spending data and the
-  state of the running project, are kept once and copied into each
-  workshop's `files/`. Never use a symlink: installing a workshop from
+  state of the running project, are kept once, under `shared/`, and
+  copied into each workshop's `files/` by `just shared`, from the list
+  in the Justfile of which workshop ships which file. Edit the file
+  under `shared/`, never a copy; CI fails when a copy differs. Never
+  use a symlink: installing a workshop from
   a collection drops symlinks without a word. OUTLINE.md records why.
 
 ## Writing for the reader
@@ -220,6 +223,9 @@ and prefer them over the underlying commands:
 
 - `just site` builds the JupyterLite site into `dist/` and `just
   site-serve` serves it locally.
+
+- `just shared` copies the files under `shared/` into the workshops
+  that ship them, and `just shared-check` fails when a copy differs.
 
 - `just requirements` relocks and rewrites `binder/requirements.txt`
   after a dependency change; `just bump <version>` moves the

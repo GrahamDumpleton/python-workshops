@@ -260,6 +260,51 @@ catalog:
     uv run jupyter workshop catalog catalog-lite.json collections/first-steps/collection.json collections/functions-and-data/collection.json collections/working-with-data/collection.json collections/your-own-types/collection.json --relative --title "{{catalog_title}}" --description "The parts of the course that run in the browser, in a notebook, with nothing to install." --homepage "{{repo}}"
     uv run jupyter workshop catalog catalog.json collections/first-steps/collection.json collections/functions-and-data/collection.json collections/working-with-data/collection.json collections/your-own-types/collection.json collections/notebook-to-program/collection.json collections/working-like-a-developer/collection.json --relative --title "{{catalog_title}}" --description "{{catalog_description}}" --homepage "{{repo}}"
 
+# The spending data of the running project is needed in the files/
+# directory of many workshops. It is kept once, under shared/, and
+# copied, never linked: installing a workshop from a collection drops
+# symlinks without a word. Each entry of the list below is a workshop
+# and the shared files it ships, as `workshop:file,file`. A workshop
+# not written yet is skipped.
+shared_files := "reading-and-writing-files:spending.csv when-the-data-is-wrong:spending-raw.csv csv-and-json:spending.csv,budgets.json cleaning-messy-text:spending-raw.csv,spending.csv where-the-money-went:spending-raw.csv,budgets.json"
+
+# Copy the files under shared/ into the files/ directory of each workshop that ships them.
+shared:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    for entry in {{shared_files}}; do
+        name="${entry%%:*}"
+        if [ ! -d "workshops/$name" ]; then
+            continue
+        fi
+        mkdir -p "workshops/$name/files"
+        IFS=',' read -ra files <<< "${entry#*:}"
+        for file in "${files[@]}"; do
+            cp "shared/$file" "workshops/$name/files/$file"
+            echo "shared/$file -> workshops/$name/files/$file"
+        done
+    done
+
+# Fail if a copy of a shared file in a workshop differs from the one under shared/.
+shared-check:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    status=0
+    for entry in {{shared_files}}; do
+        name="${entry%%:*}"
+        if [ ! -d "workshops/$name" ]; then
+            continue
+        fi
+        IFS=',' read -ra files <<< "${entry#*:}"
+        for file in "${files[@]}"; do
+            if ! cmp -s "shared/$file" "workshops/$name/files/$file"; then
+                echo "workshops/$name/files/$file differs from shared/$file; run 'just shared'"
+                status=1
+            fi
+        done
+    done
+    exit $status
+
 # Binder and Codespaces install from binder/requirements.txt, so it is
 # the locked runtime set (no dev group) exported from uv.lock, and is
 # regenerated whenever the lock changes.

@@ -1,0 +1,65 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: cleaning-messy-text
+title: Cleaning messy text
+version: 0.1.0
+description: Learn why real data is untidy, and how a program makes it clean. Remove extra spaces, give every category one spelling, turn amounts of money into exact numbers with Decimal, and skip the rows that cannot be read. You build a function that cleans one row of a file of spending, step by step, and you write the clean rows to a new file.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/cleaning-messy-text
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, text, data]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+  data:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+        - { name: data, size: 0.35, tabs: ['file:spending-raw.csv'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now make untidy data clean. You can remove the spaces around
+  a field with `strip()`, give every word one spelling with `lower()`
+  and a dictionary of other spellings, and turn an amount of money
+  into an exact number with `Decimal`. You built the function
+  `clean_row` from small functions, you skipped the rows that cannot
+  be read, and you wrote the clean rows to a new file.
+
+  The next workshop is **Where the money went**. It is the last
+  workshop of **Working with real data in Python**. In it, you build a
+  complete program that reads the untidy file of spending and writes a
+  report: the total for each category, the total for each month, and
+  the categories that went over their budget.
+
+  The Python tutorial covers `Decimal` in
+  [Decimal Floating-Point Arithmetic](https://docs.python.org/3/tutorial/stdlib2.html#decimal-floating-point-arithmetic),
+  and the library reference lists every method of a string in
+  [String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods).
+  Both are written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: cleaning-messy-text.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-untidy-file.md
+  - pages/03-spaces-around-a-field.md
+  - pages/04-one-way-to-write-a-word.md
+  - pages/05-other-spellings.md
+  - pages/06-amounts-are-numbers.md
+  - pages/07-exact-money-with-decimal.md
+  - pages/08-clean-one-row.md
+  - pages/09-rows-that-cannot-be-read.md
+  - pages/10-write-the-clean-file.md
+  - pages/11-finish.md

@@ -36,6 +36,19 @@ jobs:
           uv sync
           uv run playwright install --with-deps chromium
 
+      - name: Check that the copies of the shared files match
+        run: |
+          set -euo pipefail
+          status=0
+          for copy in workshops/*/files/*; do
+            shared="shared/$(basename "$copy")"
+            if [ -f "$shared" ] && ! cmp -s "$shared" "$copy"; then
+              echo "$copy differs from $shared; run 'just shared'"
+              status=1
+            fi
+          done
+          exit $status
+
       - name: Lint the catalog, every collection and every workshop
         run: |
           set -euo pipefail

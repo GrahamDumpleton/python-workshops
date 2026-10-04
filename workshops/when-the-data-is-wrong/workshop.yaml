@@ -1,0 +1,62 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: when-the-data-is-wrong
+title: When the data is wrong
+version: 0.1.0
+description: Real data has mistakes in it, and a program must not stop at the first one. Learn what an exception is, how to handle one with try and except, why you name the type of exception that you expect, and how to raise an exception of your own. You write a function that reads a file of spending, skips the rows that cannot be read, and counts them.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/when-the-data-is-wrong
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, errors, exceptions]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+  data:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+        - { name: data, size: 0.35, tabs: ['file:spending-raw.csv'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now write a program that continues when its data has
+  mistakes. You know that an exception is an error that stops a
+  program while it runs, and that `try` and `except` handle an
+  exception. You know why the `except` line names the type of
+  exception that you expect, and why an `except` line with no type
+  hides the mistakes in your own code. You can raise an exception of
+  your own with `raise`, and you wrote a function that skips the rows
+  that cannot be read and counts them.
+
+  The next workshop is **The batteries included**. It shows the code
+  that comes with Python and is ready for you to use: code for
+  mathematics, for random choices, for dates and for counting.
+
+  The Python tutorial covers exceptions in
+  [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html#handling-exceptions).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: when-the-data-is-wrong.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-spending-file.md
+  - pages/03-a-row-that-stops-the-program.md
+  - pages/04-try-and-except.md
+  - pages/05-another-type-of-exception.md
+  - pages/06-a-bug-is-not-bad-data.md
+  - pages/07-a-file-that-does-not-exist.md
+  - pages/08-raising-an-exception.md
+  - pages/09-a-function-that-skips-bad-rows.md
+  - pages/10-finish.md

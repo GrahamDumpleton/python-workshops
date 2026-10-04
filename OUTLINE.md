@@ -883,6 +883,36 @@ to show `Decimal`, which completes the `0.1 + 0.2` story that workshop
 2 starts: money should not be added as floats. It is something a
 learner can use for their own spending after the course.
 
+The data, written with collection 3, is three files under `shared/`.
+`spending.csv` is the clean data: 37 purchases of one person, Mariam,
+from January to March 2026, in six categories, with no field that
+holds a comma. `spending-raw.csv` is the same purchases as they might
+have been typed: spaces round fields, categories in other cases and
+two other spellings (`groceries` for `food`, `travel` for
+`transport`), amounts written without their decimal places, and three
+rows that cannot be read (an amount that is a word, an amount that is
+empty, and a row with two fields). Cleaning the raw file gives the
+clean file exactly, which workshop 22 uses as its last step.
+`budgets.json` holds the budget of one month for each category, set
+so that four totals of a category in a month go over it. Workshops 18
+and 21 read the clean file, and 19, 22 and 23 the raw one.
+
+`Decimal` is introduced in workshop 22, where amounts are turned from
+text into numbers. Checks that compare a total compare it rounded to
+two places, so a float and a `Decimal` both pass.
+
+`Decimal("unknown")` raises `decimal.InvalidOperation`, which is not a
+`ValueError`. So workshop 19, which reads amounts with `float()`,
+handles `ValueError`, and workshops 22 and 23, which use `Decimal`,
+handle `InvalidOperation`. Both 22 and 23 say why.
+
+Three things are taught in collection 3 that its entries do not list:
+`file.readline()` in workshop 19, to read the header before the loop;
+the module `statistics` in workshop 20, as the module whose
+documentation the learner reads to find `mean()`; and the term
+"attribute" in workshop 20, for `.year`, `.month` and `.day` of a
+date.
+
 `rich` is the third-party package, used for printing the report as a
 table, since it installs everywhere and shows a visible change.
 
@@ -1008,11 +1038,12 @@ above the solution.
 
 **Shared files are copies, not symlinks.** The spending data, and the
 state of the running project at the start of each workshop, are needed
-in the `files/` directory of many workshops. They are kept once at the
-top of the repository and copied into each workshop by a Justfile
-recipe, with a check in CI that the copies match. The recipe and the
-check are written with collection 3, which is the first to need them.
-Symlinks were
+in the `files/` directory of many workshops. They are kept once, under
+`shared/` at the top of the repository, and copied into each workshop
+by `just shared`, from a list in the Justfile that says which workshop
+ships which file. `just shared-check` fails when a copy differs, and
+the `test` workflow makes the same comparison for every file under a
+workshop's `files/` that has the name of a shared file. Symlinks were
 considered and do not work. Filling the workspace locally follows a
 symlink, since it reads through the contents API. But installing a
 workshop from a collection, which is how Binder, a codespace and the
@@ -1263,7 +1294,29 @@ Collections 5 and 6 use a layout with the editor above a terminal.
 **Checks on files in collections 3 and 4.** These run in JupyterLite,
 where there is no `subprocess` and no `script` check, so files the
 learner writes are checked with `contents` predicates, or by reading
-them from a `learner-kernel` check.
+them from a `learner-kernel` check. Tried on both frontends on
+2026-10-04 with a probe workshop: the kernel starts in the workspace,
+so a shipped file is opened by its plain name; a file that a cell
+writes is seen at once by a `contents` check and by `file-open`; and
+a file that a `file-write` action writes is read by the next cell. A
+check never calls a learner's function that writes a file under a
+name the learner uses. A file that a check writes for its own input
+has a name that begins with `_check_`, stays in the workspace and is
+removed when the check ends.
+
+**A data file under the notebook.** A workshop of collection 3 that
+shows a file declares a second layout, `data`, with the notebook's
+placeholder area above an area named `data` that holds the shipped
+file, and the page that first talks about the file applies it with a
+`layout` action. Other files, and files the learner's code has
+written, are shown with `file-open` and `:area: data`. The editor does
+not follow a file that changes, so a page shows a file again after a
+cell has written it. Two placeholder areas in one layout are a lint
+error, which is why the second area names a file.
+
+**No directory listings.** `os.listdir(".")` shows
+`.ipynb_checkpoints` in JupyterLab and not in JupyterLite, so no page
+prints a listing of the workspace.
 
 **Checks on files in collections 5 and 6.** The learner's code is in
 files. A `kernel` check that imports the learner's module would keep the
@@ -1317,6 +1370,32 @@ was written, and release 0.22.0 took it up the same day: a `verify` of
 the `contents` or `ui` substrate takes `:message:`. See "A Watch cell
 that leaves no name" above for where the workshops use it.
 
+Two problems were found on 2026-10-04 with 0.22.0, while collection 3
+was written. Both were confirmed with a probe workshop, and both are
+open:
+
+**A `ui` check does not find a CSV file that is open in the editor.**
+After a layout or a `file-open` action has opened `spending.csv` in
+the text editor, the predicate `file-open spending.csv` says that the
+file is not open. For `report.txt` it passes. The predicate looks for
+the file with `docManager.findWidget(path)`, which seems to look only
+for the viewer that JupyterLab would choose for the file by default,
+and for a `.csv` file that is the table viewer, not the editor. In
+the meantime the pages that show a data file have no check on the
+action that shows it, and gate the page on a quiz about what the file
+holds.
+
+**An action cannot write a file that is open and that the kernel has
+changed.** When a file is open in the editor, a cell changes it on
+disk, and a `file-write` action then writes the same file, JupyterLab
+shows its "File Changed" dialog. The self-test stops there, and a
+learner would be asked a question that the page does not explain. In
+the meantime no action writes a file that the learner's code may have
+written. Workshop 21 puts `budgets.json` back, for a learner whose
+code saved over it, with a `kernel-execute` that writes the file from
+the learner's kernel. A `kernel-execute` is given `:path:` with the
+notebook, since without it the code does not run in the workspace.
+
 **Symlinks in `files/` are dropped on install.** See "Shared files are
 copies, not symlinks" above.
 
@@ -1362,12 +1441,12 @@ Working with real data:
 
 | # | Workshop | Status |
 | --- | --- | --- |
-| 18 | `reading-and-writing-files` | Planned |
-| 19 | `when-the-data-is-wrong` | Planned |
-| 20 | `the-batteries-included` | Planned |
-| 21 | `csv-and-json` | Planned |
-| 22 | `cleaning-messy-text` | Planned |
-| 23 | `where-the-money-went` | Planned |
+| 18 | `reading-and-writing-files` | Done |
+| 19 | `when-the-data-is-wrong` | Done |
+| 20 | `the-batteries-included` | Done |
+| 21 | `csv-and-json` | Done |
+| 22 | `cleaning-messy-text` | Done |
+| 23 | `where-the-money-went` | Done |
 
 Your own types:
 
@@ -1421,15 +1500,20 @@ answer in the section it belongs to.
 
 ### Pyodide differences to discuss
 
-These are expected from how JupyterLite works and are not yet confirmed
-by a test. Each needs agreement before a workaround goes into a
-workshop.
+Each needs agreement before a workaround goes into a workshop.
 
-- **Reading the shipped files (collection 3).** Opening `spending.csv`
-  by a relative path from the notebook should work in JupyterLite as it
-  does in JupyterLab, since the kernel starts in the notebook's
-  directory. To be confirmed by a small test before collection 3 is
-  written.
+- **The number in a `FileNotFoundError`.** Found on 2026-10-04 while
+  collection 3 was written. Opening a file that does not exist gives
+  `[Errno 2] No such file or directory: 'missing.txt'` in JupyterLab
+  and `[Errno 44] No such file or directory: 'missing.txt'` in
+  JupyterLite, since Emscripten numbers its errors differently. The
+  pages of collection 3 that show this error say that the number can
+  differ and does not matter, and no quiz or check reads it. To be
+  agreed, since it is a way round a difference.
+
+Reading the shipped files, which was the question here before
+collection 3, is settled: see "Checks on files in collections 3 and
+4".
 
 ### Other questions
 

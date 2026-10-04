@@ -1,0 +1,57 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: the-batteries-included
+title: The batteries included
+version: 0.1.0
+description: Learn to use code that comes with Python and is ready for your program. Learn what a module is and what import does, then use four modules of the standard library, for mathematics, random choices, dates and counting. At the end you read the Python documentation to find a function that nobody has shown you.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/the-batteries-included
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, modules, library]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now use code that comes with Python. You know that a module
+  is a file of Python code that is ready to use, and that the standard
+  library is the set of modules that comes with Python. You can import
+  a module with `import`, and import one name with `from`. You have
+  used the modules `math`, `random`, `datetime` and `collections`, and
+  you have found a function in the Python documentation without help.
+
+  The next workshop is **CSV and JSON**. It uses two more modules of
+  the standard library to read and write data in the two formats that
+  programs use most often to exchange data.
+
+  The Python tutorial shows more modules in
+  [Brief Tour of the Standard Library](https://docs.python.org/3/tutorial/stdlib.html#brief-tour-of-the-standard-library),
+  and the page
+  [The Python Standard Library](https://docs.python.org/3/library/index.html)
+  lists every module. Both are written for people who already program,
+  so do not worry if some parts are difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: the-batteries-included.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-code-that-is-ready-to-use.md
+  - pages/03-whole-numbers-and-circles.md
+  - pages/04-one-name-from-a-module.md
+  - pages/05-choosing-by-chance.md
+  - pages/06-a-date-is-a-value.md
+  - pages/07-the-days-between-two-dates.md
+  - pages/08-counting-with-a-counter.md
+  - pages/09-reading-the-documentation.md
+  - pages/10-finish.md

@@ -10,8 +10,8 @@ Guided, hands-on workshops that teach the
 have never written a program before. You do not need to know anything
 about programming to start, and you do not need to install anything.
 
-**The workshops are being written.** The first two parts are ready,
-and their seventeen workshops are listed under
+**The workshops are being written.** The first three parts are ready,
+and their twenty-three workshops are listed under
 [The course](#the-course). The rest of this page describes the course
 as it is planned.
 
@@ -138,7 +138,42 @@ the next one.
 
 3. **Working with real data in Python.** Reading and writing files,
    handling errors, the standard library, CSV and JSON, and cleaning
-   untidy text, while you build a program that tracks spending.
+   untidy text, while you build a program that tracks spending. In a
+   notebook, with the data files shown under it:
+
+   18. **Reading and writing files** (`reading-and-writing-files`, 25
+       minutes). Learn how a program keeps data in a file, so that the
+       data lasts longer than the program. Open a file, read it, turn
+       its text into numbers, write a new file, and add lines to a
+       file.
+
+   19. **When the data is wrong** (`when-the-data-is-wrong`, 25
+       minutes). Real data has mistakes in it, and a program must not
+       stop at the first one. Handle an exception with `try` and
+       `except`, name the type that you expect, and raise an exception
+       of your own.
+
+   20. **The batteries included** (`the-batteries-included`, 25
+       minutes). Use code that comes with Python. Learn what a module
+       is and what `import` does, use modules for mathematics, random
+       choices, dates and counting, and read the Python documentation
+       to find a function yourself.
+
+   21. **CSV and JSON** (`csv-and-json`, 25 minutes). Learn the two
+       formats that most data files use. Read and write CSV files
+       with the module `csv`, and read, change and save a file of
+       budgets with the module `json`.
+
+   22. **Cleaning messy text** (`cleaning-messy-text`, 25 minutes).
+       Learn why real data is untidy, and how a program makes it
+       clean. Remove extra spaces, give every category one spelling,
+       keep amounts of money exact with `Decimal`, and skip the rows
+       that cannot be read.
+
+   23. **Where the money went** (`where-the-money-went`, 25 minutes).
+       Build a complete program in six parts, with hints but without
+       the code. From an untidy file of purchases and a file of
+       budgets, it makes a report of where the money went.
 
 4. **Your own types in Python.** Classes: what a class is and why you
    would make one, objects that describe themselves, dataclasses, and
@@ -284,6 +319,7 @@ catalog-lite.json         names the four parts the JupyterLite site carries
 collection.yaml           the analytics block carried into every index
 collections/<name>/       the ordered index of each part, written by `just index`
 workshops/<name>/         one workshop: workshop.yaml, pages/ and files/
+shared/                   the spending data, copied into workshops by `just shared`
 reference/                the jupyterlab-workshop repository, at the pinned release
 binder/                   the Binder image: requirements, settings, welcome message
 .devcontainer/            the codespace: setup, start and welcome message
@@ -305,6 +341,7 @@ just render <name>       render a workshop to HTML
 just test <name>         self-test one workshop in a JupyterLab of its own
 just test-lite <name>    self-test one workshop in JupyterLite
 just index               write or refresh every collection index and the catalog
+just shared              copy the files under shared/ into the workshops that ship them
 just site-serve          build the JupyterLite site and serve it locally
 ```
 

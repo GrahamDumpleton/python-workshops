@@ -1,0 +1,64 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: csv-and-json
+title: CSV and JSON
+version: 0.1.0
+description: Learn the two formats that most data files use. Find out what a CSV file is and why splitting each line at the commas is not enough, then read and write CSV files with the module csv. Find out what JSON is and when to use it, then read a file of budgets with the module json, change the budgets and save them in a new file.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/csv-and-json
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, csv, json]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+  data:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+        - { name: data, size: 0.35, tabs: ['file:spending.csv'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now read and write the two formats that most data files use.
+  You know that a CSV file is a table of text, and that the module
+  `csv` reads it and writes it by the rules of the format. You know
+  that every value read from a CSV file is a string. You know that a
+  JSON file keeps dictionaries, lists and numbers as they are, and
+  that the module `json` reads it with `json.load()` and writes it
+  with `json.dump()`.
+
+  The next workshop is **Cleaning messy text**. The file of spending
+  in this workshop was clean. Data that people type is usually untidy:
+  it has extra spaces, and the same word is spelled in several ways.
+  The next workshop shows how a program makes such data clean.
+
+  The Python documentation describes the two modules in
+  [csv: CSV File Reading and Writing](https://docs.python.org/3/library/csv.html)
+  and
+  [json: JSON encoder and decoder](https://docs.python.org/3/library/json.html).
+  They are written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: csv-and-json.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-rows-of-text.md
+  - pages/03-a-comma-inside-a-field.md
+  - pages/04-the-csv-module.md
+  - pages/05-each-row-as-a-dictionary.md
+  - pages/06-writing-a-csv-file.md
+  - pages/07-what-json-is.md
+  - pages/08-reading-json.md
+  - pages/09-changing-and-saving.md
+  - pages/10-finish.md

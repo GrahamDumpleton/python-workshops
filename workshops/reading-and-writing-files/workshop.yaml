@@ -1,0 +1,60 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: reading-and-writing-files
+title: Reading and writing files
+version: 0.1.0
+description: Learn how a program keeps data in a file, so that the data lasts longer than the program. Open a file, read all of its text or one line at a time, turn the text into numbers, write a new file, add lines to a file, and test whether a file exists. You read the spending of one person from a file and add it up.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/reading-and-writing-files
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, files]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+  data:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+        - { name: data, size: 0.35, tabs: ['file:spending.csv'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  Your programs can now use data that is kept in a file. You can open
+  a file with `open()` inside a `with` block, read all of its text or
+  read it one line at a time, remove the newline character with
+  `strip()`, and turn text into numbers with `float()` and `int()`.
+  You can write a new file, add lines to a file, and use `Path` to
+  test whether a file exists.
+
+  The next workshop is **When the data is wrong**. The file in this
+  workshop had no mistakes in it. Real data often has mistakes. The
+  next workshop shows how a program continues to work when a line of
+  the data cannot be read.
+
+  The Python tutorial covers files in
+  [Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: reading-and-writing-files.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-what-a-file-is.md
+  - pages/03-opening-and-reading.md
+  - pages/04-one-line-at-a-time.md
+  - pages/05-text-into-numbers.md
+  - pages/06-writing-a-file.md
+  - pages/07-adding-to-a-file.md
+  - pages/08-paths.md
+  - pages/09-finish.md

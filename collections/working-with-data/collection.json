@@ -14,7 +14,247 @@
   "ordered": true,
   "analytics": {
     "sink": "https://workshop-analytics.grumpys.work/events",
-    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmY2MyYWQ0YmFlYzc0NDFkODFjYzcwOTllOGYxZTUxMCIsInN1YiI6InB5dGhvbi13b3Jrc2hvcHMiLCJzY29wZSI6WyJpbmdlc3QiXSwibGFiZWxzIjp7fSwib3JpZ2lucyI6WyJodHRwczovL2dyYWhhbWR1bXBsZXRvbi5naXRodWIuaW8iXSwiaWF0IjoxNzkxMDkxODQzLCJuYmYiOjE3OTEwOTE4NDMsImV4cCI6MTgyMTU3MTE5OX0.8ynSmj_komUvq0UBC23tS2BvKd5dfFZX2c1nSOzZ3zI"
   },
-  "workshops": []
+  "workshops": [
+    {
+      "name": "reading-and-writing-files",
+      "title": "Reading and writing files",
+      "description": "Learn how a program keeps data in a file, so that the data lasts longer than the program. Open a file, read all of its text or one line at a time, turn the text into numbers, write a new file, add lines to a file, and test whether a file exists. You read the spending of one person from a file and add it up.",
+      "tags": [
+        "python",
+        "beginners",
+        "files"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/reading-and-writing-files",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/reading-and-writing-files"
+          }
+        }
+      ]
+    },
+    {
+      "name": "when-the-data-is-wrong",
+      "title": "When the data is wrong",
+      "description": "Real data has mistakes in it, and a program must not stop at the first one. Learn what an exception is, how to handle one with try and except, why you name the type of exception that you expect, and how to raise an exception of your own. You write a function that reads a file of spending, skips the rows that cannot be read, and counts them.",
+      "tags": [
+        "python",
+        "beginners",
+        "errors",
+        "exceptions"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/when-the-data-is-wrong",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/when-the-data-is-wrong"
+          }
+        }
+      ]
+    },
+    {
+      "name": "the-batteries-included",
+      "title": "The batteries included",
+      "description": "Learn to use code that comes with Python and is ready for your program. Learn what a module is and what import does, then use four modules of the standard library, for mathematics, random choices, dates and counting. At the end you read the Python documentation to find a function that nobody has shown you.",
+      "tags": [
+        "python",
+        "beginners",
+        "modules",
+        "library"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/the-batteries-included",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/the-batteries-included"
+          }
+        }
+      ]
+    },
+    {
+      "name": "csv-and-json",
+      "title": "CSV and JSON",
+      "description": "Learn the two formats that most data files use. Find out what a CSV file is and why splitting each line at the commas is not enough, then read and write CSV files with the module csv. Find out what JSON is and when to use it, then read a file of budgets with the module json, change the budgets and save them in a new file.",
+      "tags": [
+        "python",
+        "beginners",
+        "csv",
+        "json"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/csv-and-json",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/csv-and-json"
+          }
+        }
+      ]
+    },
+    {
+      "name": "cleaning-messy-text",
+      "title": "Cleaning messy text",
+      "description": "Learn why real data is untidy, and how a program makes it clean. Remove extra spaces, give every category one spelling, turn amounts of money into exact numbers with Decimal, and skip the rows that cannot be read. You build a function that cleans one row of a file of spending, step by step, and you write the clean rows to a new file.",
+      "tags": [
+        "python",
+        "beginners",
+        "text",
+        "data"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/cleaning-messy-text",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/cleaning-messy-text"
+          }
+        }
+      ]
+    },
+    {
+      "name": "where-the-money-went",
+      "title": "Where the money went",
+      "description": "Build a complete program in six parts, with hints but without the code. From an untidy file that holds the purchases of one person in three months, and a file of budgets, your program makes a report. The report gives the total for each category, the total for each month, the largest purchase, and the categories that cost more than their budget. It uses files, exceptions, functions and dictionaries together.",
+      "tags": [
+        "python",
+        "beginners",
+        "project",
+        "data"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/where-the-money-went",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/where-the-money-went"
+          }
+        }
+      ]
+    }
+  ]
 }
