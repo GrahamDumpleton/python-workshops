@@ -1,0 +1,58 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: keeping-a-list
+title: Keeping a list
+version: 0.1.0
+description: Learn how a program keeps many values under one name, in a list. Create lists, get one item or a part of a list, change and add items, count the items, ask whether a value is in a list, and put a list in order. Then write a small program of your own.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/keeping-a-list
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, lists]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now keep many values under one name. You know that a list
+  holds items in order, and that an index or a slice gets one item or
+  a part of the list. You can change an item, add an item with
+  `append()`, count the items with `len()`, and ask whether a value is
+  in a list with `in`. You know that `sorted()` makes a new list, and
+  that `.sort()` changes the list and gives back `None`.
+
+  The next workshop is **Doing it again**. Until now your code did
+  something with one item of a list at a time. The next workshop
+  shows how a program repeats the same lines for every item.
+
+  The Python tutorial describes lists in
+  [Lists](https://docs.python.org/3/tutorial/introduction.html#lists)
+  and in
+  [More on Lists](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists).
+  They are written for people who already program, so do not worry if
+  some parts are difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: keeping-a-list.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-many-values-one-name.md
+  - pages/03-one-item-by-its-index.md
+  - pages/04-counting-from-the-end.md
+  - pages/05-a-part-of-a-list.md
+  - pages/06-changing-an-item.md
+  - pages/07-adding-an-item.md
+  - pages/08-questions-about-a-list.md
+  - pages/09-putting-a-list-in-order.md
+  - pages/10-your-own-list.md
+  - pages/11-finish.md

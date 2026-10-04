@@ -92,6 +92,279 @@
           }
         }
       ]
+    },
+    {
+      "name": "naming-things",
+      "title": "Naming things",
+      "description": "Learn how a program remembers a value by giving it a name. Create names, use them in calculations, give a name a new value, choose names that are clear to read, and show values with print(). Then write a small program of your own.",
+      "tags": [
+        "python",
+        "beginners",
+        "names"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "20m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/naming-things",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/naming-things"
+          }
+        }
+      ]
+    },
+    {
+      "name": "working-with-text",
+      "title": "Working with text",
+      "description": "Learn how Python works with words and sentences. Write text as a string, join strings, put values into text with an f-string, count and select characters, and use methods that give back new strings. Then build a line of text of your own from parts.",
+      "tags": [
+        "python",
+        "beginners",
+        "strings"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/working-with-text",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/working-with-text"
+          }
+        }
+      ]
+    },
+    {
+      "name": "when-things-go-wrong",
+      "title": "When things go wrong",
+      "description": "Learn to read the error messages of Python. Every cell in this workshop has a mistake in it. Run each cell, read the type of the error, the line and the message, and correct the mistake. Meet the five errors that a new programmer sees most often.",
+      "tags": [
+        "python",
+        "beginners",
+        "errors"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/when-things-go-wrong",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/when-things-go-wrong"
+          }
+        }
+      ]
+    },
+    {
+      "name": "making-decisions",
+      "title": "Making decisions",
+      "description": "Learn how a program chooses what to do. Compare values to get True or False, choose between lines of code with if, elif and else, see how indentation marks the lines that belong together, and combine conditions with and, or and not. Then write a small program of your own that makes a decision.",
+      "tags": [
+        "python",
+        "beginners",
+        "decisions"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/making-decisions",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/making-decisions"
+          }
+        }
+      ]
+    },
+    {
+      "name": "keeping-a-list",
+      "title": "Keeping a list",
+      "description": "Learn how a program keeps many values under one name, in a list. Create lists, get one item or a part of a list, change and add items, count the items, ask whether a value is in a list, and put a list in order. Then write a small program of your own.",
+      "tags": [
+        "python",
+        "beginners",
+        "lists"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/keeping-a-list",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/keeping-a-list"
+          }
+        }
+      ]
+    },
+    {
+      "name": "doing-it-again",
+      "title": "Doing it again",
+      "description": "Learn how a program repeats work with a loop. Run the same lines for every item of a list, count with range(), add up a total, count the items that pass a test, find the largest value, use two lists together, and repeat with while until a condition becomes false.",
+      "tags": [
+        "python",
+        "beginners",
+        "loops"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/doing-it-again",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/doing-it-again"
+          }
+        }
+      ]
+    },
+    {
+      "name": "a-shopping-receipt",
+      "title": "A shopping receipt",
+      "description": "Build a complete program in six parts, with hints but without the code. From lists of items, quantities and prices, your program prints a shopping receipt with a line for each item, a subtotal, a discount and a total. It uses lists, loops, if and f-strings together.",
+      "tags": [
+        "python",
+        "beginners",
+        "project"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/a-shopping-receipt",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/a-shopping-receipt"
+          }
+        }
+      ]
     }
   ]
 }

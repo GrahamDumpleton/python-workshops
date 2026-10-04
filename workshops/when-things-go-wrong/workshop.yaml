@@ -1,0 +1,56 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: when-things-go-wrong
+title: When things go wrong
+version: 0.1.0
+description: Learn to read the error messages of Python. Every cell in this workshop has a mistake in it. Run each cell, read the type of the error, the line and the message, and correct the mistake. Meet the five errors that a new programmer sees most often.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/when-things-go-wrong
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, errors]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now read an error message. You know that an error message
+  has three parts: the type of the error, the line, and the message.
+  You read the last line first, and then you look at the line that
+  Python marks. You have caused, read and corrected a `NameError`, a
+  `TypeError`, an `IndexError`, a `SyntaxError` and an
+  `IndentationError`. An error is a normal part of programming, and
+  the message is there to help you.
+
+  The next workshop is **Making decisions**. It shows how a program
+  chooses between two actions, so that it can do different things in
+  different situations.
+
+  The Python tutorial covers errors in
+  [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: when-things-go-wrong.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-errors-are-normal.md
+  - pages/03-the-parts-of-an-error-message.md
+  - pages/04-values-that-do-not-fit.md
+  - pages/05-an-index-past-the-end.md
+  - pages/06-code-python-cannot-read.md
+  - pages/07-spaces-at-the-start-of-a-line.md
+  - pages/08-the-type-often-says-enough.md
+  - pages/09-several-errors-in-one-cell.md
+  - pages/10-finish.md

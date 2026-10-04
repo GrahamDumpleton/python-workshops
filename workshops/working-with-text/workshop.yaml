@@ -1,0 +1,57 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: working-with-text
+title: Working with text
+version: 0.1.0
+description: Learn how Python works with words and sentences. Write text as a string, join strings, put values into text with an f-string, count and select characters, and use methods that give back new strings. Then build a line of text of your own from parts.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/working-with-text
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, strings]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now work with text in Python. You know that a string is
+  text between quotes, and that Python treats it differently from a
+  number. You can join strings with `+`, put values into text with an
+  f-string, and show a number with two decimal places. You can count
+  the characters of a string with `len()`, select characters with an
+  index and with a slice, and use methods such as `upper()`,
+  `strip()`, `replace()` and `split()`. You also know that a string
+  never changes: a method gives back a new string.
+
+  The next workshop is **When things go wrong**. Every programmer
+  sees error messages every day. The next workshop shows how to read
+  an error message, and how to correct the code that caused it.
+
+  The Python tutorial covers strings in
+  [Text](https://docs.python.org/3/tutorial/introduction.html#text).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: working-with-text.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-text-is-a-string.md
+  - pages/03-joining-strings.md
+  - pages/04-values-inside-text.md
+  - pages/05-how-long-is-a-string.md
+  - pages/06-characters-by-position.md
+  - pages/07-what-a-method-is.md
+  - pages/08-more-methods.md
+  - pages/09-your-own-line-of-text.md
+  - pages/10-finish.md

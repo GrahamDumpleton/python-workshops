@@ -1,0 +1,55 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: making-decisions
+title: Making decisions
+version: 0.1.0
+description: Learn how a program chooses what to do. Compare values to get True or False, choose between lines of code with if, elif and else, see how indentation marks the lines that belong together, and combine conditions with and, or and not. Then write a small program of your own that makes a decision.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/making-decisions
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, decisions]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now write a program that makes a decision. You know that a
+  comparison gives the boolean `True` or `False`, and that `==`
+  compares two values while `=` is an assignment. You can choose
+  between blocks of code with `if`, `elif` and `else`, you know that
+  the indentation says which lines belong to a block, and you can
+  combine conditions with `and`, `or` and `not`.
+
+  The next workshop is **Keeping a list**. Until now each name
+  referred to one value. The next workshop shows how one name can
+  refer to many values, kept in order.
+
+  The Python tutorial covers decisions in
+  [if Statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: making-decisions.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-true-or-false.md
+  - pages/03-comparing-values.md
+  - pages/04-choosing-with-if.md
+  - pages/05-one-or-two-equals-signs.md
+  - pages/06-one-way-or-the-other.md
+  - pages/07-more-than-two-choices.md
+  - pages/08-combining-conditions.md
+  - pages/09-your-own-program.md
+  - pages/10-finish.md

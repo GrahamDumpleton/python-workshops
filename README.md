@@ -10,8 +10,8 @@ Guided, hands-on workshops that teach the
 have never written a program before. You do not need to know anything
 about programming to start, and you do not need to install anything.
 
-**The workshops are being written.** The first two are ready, and are
-listed under [The course](#the-course). The rest of this page
+**The workshops are being written.** The first part is ready, and its
+nine workshops are listed under [The course](#the-course). The rest of this page
 describes the course as it is planned.
 
 ## How the workshops work
@@ -43,7 +43,7 @@ the next one.
 
 1. **Python first steps.** How these workshops work, and then your
    first Python: numbers, names, text, reading error messages,
-   decisions, lists and loops. In a notebook. Written so far:
+   decisions, lists and loops. In a notebook:
 
    1. **How these workshops work** (`how-this-works`, 15 minutes).
       Start here. Learn how to use the workshops before you learn
@@ -55,6 +55,41 @@ the next one.
       what a program is and what Python does with it. Then use Python
       as a calculator, learn which part of a calculation Python does
       first, and write a calculation of your own.
+
+   3. **Naming things** (`naming-things`, 20 minutes). Learn how a
+      program remembers a value by giving it a name. Use names in
+      calculations, give a name a new value, choose names that are
+      clear to read, and show values with `print()`.
+
+   4. **Working with text** (`working-with-text`, 25 minutes). Learn
+      how Python works with words and sentences. Join strings, put
+      values into text with an f-string, count and select characters,
+      and use methods that give back new strings.
+
+   5. **When things go wrong** (`when-things-go-wrong`, 25 minutes).
+      Learn to read the error messages of Python. Every cell has a
+      mistake in it: run it, read the type of the error, the line and
+      the message, and correct the mistake.
+
+   6. **Making decisions** (`making-decisions`, 25 minutes). Learn how
+      a program chooses what to do. Compare values, choose between
+      lines of code with `if`, `elif` and `else`, and combine
+      conditions with `and`, `or` and `not`.
+
+   7. **Keeping a list** (`keeping-a-list`, 25 minutes). Learn how a
+      program keeps many values under one name. Get one item or a part
+      of a list, change and add items, count them, and put a list in
+      order.
+
+   8. **Doing it again** (`doing-it-again`, 25 minutes). Learn how a
+      program repeats work with a loop. Run the same lines for every
+      item of a list, add up a total, count, find the largest value,
+      and repeat with `while`.
+
+   9. **A shopping receipt** (`a-shopping-receipt`, 25 minutes). Build
+      a complete program in six parts, with hints but without the
+      code: a receipt with a line for each item, a subtotal, a
+      discount and a total.
 
 2. **Python functions and data.** Organising code with functions, and
    data with dictionaries, tuples and sets. Looping over any kind of

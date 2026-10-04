@@ -937,9 +937,8 @@ rules that make that possible: notebook only, no terminal, no
 in the project's environment, and Pyodide's Python in JupyterLite. The
 Pyodide kernel in the pinned release loads Pyodide `v314.0.0`, which by
 Pyodide's version naming is Python 3.14, so both frontends run the
-same version of the language. That was read from the kernel package on
-2026-10-03, not tested by running code in the site; the first workshop
-written confirms it with `sys.version` on both frontends.
+same version of the language. Running `sys.version` in a self-test on
+2026-10-04 gave 3.14.5 in JupyterLab and 3.14.2 in JupyterLite.
 
 **Three ways to run JupyterLab**, all subscribing to the catalog so the
 whole course is listed:
@@ -958,6 +957,18 @@ time of a codespace and of Binder.
 for collections 1 to 4, but any that is found while writing them is
 raised with the course owner and agreed before it is worked around,
 and recorded here. The ones known so far are under open questions.
+
+**Tracebacks are the same on both frontends.** Compared on 2026-10-04,
+before workshop 5 was written, by raising `NameError`, `TypeError`,
+`SyntaxError`, `IndentationError`, `IndexError`, `ZeroDivisionError`
+and `ValueError` in a cell on each frontend. The notebook shows the
+same text for each, with no extra frames from Pyodide. Three things
+follow for the pages. The number in `Cell In[N]` differs, because a
+check also counts as a cell that ran in JupyterLite, so pages do not
+quote it. The notebook does not show Python's "Did you mean"
+suggestions on either frontend. And a bracket left open at the very
+end of a cell gives `_IncompleteInputError: incomplete input` on both,
+not a `SyntaxError`, so no page builds a step on that.
 
 ### Content
 
@@ -1181,6 +1192,17 @@ answer, as on the parentheses step of workshop 2, the message is
 worded to be true in both situations: "The last cell that ran gives
 14".
 
+**Checks that read names.** From workshop 3 a check reads the names
+that a cell left behind. A check that raises shows Python's error as
+its message, so a check never reads a name that may not exist: it
+tests `"total" in globals()` first, or reads `globals().get("total")`,
+and says that the cell has not run yet, or which name is missing and
+how it is spelled. Each step of a workshop uses names of its own, so
+that a later cell cannot change what an earlier check finds. Where
+the learner writes an `if`, the check tests the relation between the
+names the code reads and the names it sets, for whatever values they
+have now, since there is no function to call with several inputs.
+
 **Check messages.** A `learner-kernel` check prints one message when
 it passes and another when it fails, and ends with the expression that
 decides. The failure message says what was found and what to do next.
@@ -1246,7 +1268,18 @@ an action and stay locked; a quiz can take a typed answer; the
 self-test checks a tour's selectors and can point at the panel; an
 `attempt` tests what a check says on a wrong answer; and the
 JupyterLite site starts with jupyterlite-core 0.8.5, so the pin on
-0.8.3 is gone. One entry remains.
+0.8.3 is gone. One entry remained.
+
+Two more were found on 2026-10-04 with 0.21.1, while the rest of
+collection 1 was written, and release 0.21.2 settled both the same
+day. In JupyterLab a check that ended in an expression failed with a
+`TokenError` after the learner ran a cell with an open quote or
+bracket, and in JupyterLite a check that raised `AssertionError`
+showed `<class 'AssertionError'>:` before its message. Both were
+confirmed gone on both frontends with a probe workshop. The workshops
+changed nothing for either: their checks kept the closing expression
+throughout. One thing was shaped by the first and is now a choice, not
+a need: see workshop 5 under open questions.
 
 **Symlinks in `files/` are dropped on install.** See "Shared files are
 copies, not symlinks" above.
@@ -1268,13 +1301,13 @@ First steps:
 | --- | --- | --- |
 | 1 | `how-this-works` | Done |
 | 2 | `talking-to-python` | Done |
-| 3 | `naming-things` | Planned |
-| 4 | `working-with-text` | Planned |
-| 5 | `when-things-go-wrong` | Planned |
-| 6 | `making-decisions` | Planned |
-| 7 | `keeping-a-list` | Planned |
-| 8 | `doing-it-again` | Planned |
-| 9 | `a-shopping-receipt` | Planned |
+| 3 | `naming-things` | Done |
+| 4 | `working-with-text` | Done |
+| 5 | `when-things-go-wrong` | Done |
+| 6 | `making-decisions` | Done |
+| 7 | `keeping-a-list` | Done |
+| 8 | `doing-it-again` | Done |
+| 9 | `a-shopping-receipt` | Done |
 
 Functions and data:
 
@@ -1356,12 +1389,6 @@ These are expected from how JupyterLite works and are not yet confirmed
 by a test. Each needs agreement before a workaround goes into a
 workshop.
 
-- **Tracebacks.** Both frontends run Python 3.14 (see "Python 3.14
-  everywhere"), but a traceback in JupyterLite may still show
-  different file names or extra frames from Pyodide's own code, which
-  matters to workshop 5, where reading a traceback is the lesson. To be
-  compared on both frontends before workshop 5 is written.
-
 - **Reading the shipped files (collection 3).** Opening `spending.csv`
   by a relative path from the notebook should work in JupyterLite as it
   does in JupyterLab, since the kernel starts in the notebook's
@@ -1369,6 +1396,14 @@ workshop.
   written.
 
 ### Other questions
+
+- **Syntax errors in workshop 5.** `when-things-go-wrong` builds its
+  `SyntaxError` step on a missing comma, and describes the open quote
+  and the open bracket in prose with no cell to run, because with
+  0.21.1 a check failed with a `TokenError` after such a cell. Release
+  0.21.2 removed that limit. Whether to add a step for each, since
+  they are the most common syntax errors of a beginner, or to keep the
+  workshop at its present length.
 
 - **The analytics token.** `collection.yaml` holds a placeholder until
   a token is issued for these workshops, with the origin of the

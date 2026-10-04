@@ -1,0 +1,54 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: naming-things
+title: Naming things
+version: 0.1.0
+description: Learn how a program remembers a value by giving it a name. Create names, use them in calculations, give a name a new value, choose names that are clear to read, and show values with print(). Then write a small program of your own.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/naming-things
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, names]
+duration: 20m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now make a program remember a value. You know that an
+  assignment gives a name to a value, that a name can be given a new
+  value later, and that a name is a label on a value. You can choose
+  names that are clear to read, and you can show any value with
+  `print()`.
+
+  The next workshop is **Working with text**. Until now every value
+  was a number. The next workshop shows how Python works with words
+  and sentences.
+
+  The Python tutorial uses names for values in
+  [Using Python as a Calculator](https://docs.python.org/3/tutorial/introduction.html#numbers).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: naming-things.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-a-name-for-a-value.md
+  - pages/03-using-names.md
+  - pages/04-a-new-value.md
+  - pages/05-a-label-not-a-box.md
+  - pages/06-before-a-name-exists.md
+  - pages/07-choosing-good-names.md
+  - pages/08-showing-values.md
+  - pages/09-your-own-program.md
+  - pages/10-finish.md

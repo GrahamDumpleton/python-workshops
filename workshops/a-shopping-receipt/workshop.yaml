@@ -1,0 +1,55 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: a-shopping-receipt
+title: A shopping receipt
+version: 0.1.0
+description: Build a complete program in six parts, with hints but without the code. From lists of items, quantities and prices, your program prints a shopping receipt with a line for each item, a subtotal, a discount and a total. It uses lists, loops, if and f-strings together.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/a-shopping-receipt
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, project]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You have built a complete program from a goal, without being told
+  each step. You can now keep data in lists, repeat work with a loop,
+  make a decision with `if`, and show results as aligned text with an
+  f-string. You can also divide a large task into small parts, and
+  test each part before you write the next one.
+
+  This was the last workshop of **Python first steps**. The next
+  workshop is **Your first function**, the first workshop of **Python
+  functions and data**. It shows how to give a name to a group of
+  lines, so that you write them once and use them many times.
+
+  The Python tutorial covers f-strings and widths in
+  [Formatted String Literals](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: a-shopping-receipt.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-shopping-data.md
+  - pages/03-text-in-columns.md
+  - pages/04-the-cost-of-each-item.md
+  - pages/05-a-line-for-each-item.md
+  - pages/06-the-subtotal.md
+  - pages/07-the-discount.md
+  - pages/08-the-total.md
+  - pages/09-the-finished-receipt.md
+  - pages/10-finish.md

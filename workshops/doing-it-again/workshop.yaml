@@ -1,0 +1,58 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: doing-it-again
+title: Doing it again
+version: 0.1.0
+description: Learn how a program repeats work with a loop. Run the same lines for every item of a list, count with range(), add up a total, count the items that pass a test, find the largest value, use two lists together, and repeat with while until a condition becomes false.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/doing-it-again
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, loops]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now make a program repeat work. You know that a `for` loop
+  runs its block one time for each item of a list, and that `range()`
+  gives a loop the numbers to count with. You can add up a total, count
+  the items that pass a test, and find the largest value. You can use
+  one index with two lists. You also know that a `while` loop repeats
+  until its condition becomes false, so its condition must be able to
+  become false.
+
+  The next workshop is **A shopping receipt**. It is the last workshop
+  of **Python first steps**. In it you build a complete program, with
+  less help than before, from everything that you have learned.
+
+  The Python tutorial describes loops in
+  [for Statements](https://docs.python.org/3/tutorial/controlflow.html#for-statements)
+  and in the section that follows it, about `range()`. It is written
+  for people who already program, so do not worry if some of it is
+  difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: doing-it-again.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-for-every-item.md
+  - pages/03-counting-with-range.md
+  - pages/04-adding-up-a-total.md
+  - pages/05-counting-items.md
+  - pages/06-finding-the-largest.md
+  - pages/07-two-lists-one-index.md
+  - pages/08-repeating-with-while.md
+  - pages/09-a-loop-that-must-end.md
+  - pages/10-your-own-loop.md
+  - pages/11-finish.md
