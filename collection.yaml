@@ -10,4 +10,4 @@
 # to carry it into every collection index.
 analytics:
   sink: https://workshop-analytics.grumpys.work/events
-  token: PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmY2MyYWQ0YmFlYzc0NDFkODFjYzcwOTllOGYxZTUxMCIsInN1YiI6InB5dGhvbi13b3Jrc2hvcHMiLCJzY29wZSI6WyJpbmdlc3QiXSwibGFiZWxzIjp7fSwib3JpZ2lucyI6WyJodHRwczovL2dyYWhhbWR1bXBsZXRvbi5naXRodWIuaW8iXSwiaWF0IjoxNzkxMDkxODQzLCJuYmYiOjE3OTEwOTE4NDMsImV4cCI6MTgyMTU3MTE5OX0.8ynSmj_komUvq0UBC23tS2BvKd5dfFZX2c1nSOzZ3zI
