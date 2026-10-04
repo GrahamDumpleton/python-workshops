@@ -205,6 +205,7 @@ Justfile                  every common task, and the order of each part
 pyproject.toml, uv.lock   JupyterLab and the pinned extension, managed by uv
 jupyter_lab_config.py     opens the workshop browser on the course, locally
 catalog.json              names every part of the course, written by `just index`
+catalog-lite.json         names the four parts the JupyterLite site carries
 collection.yaml           the analytics block carried into every index
 collections/<name>/       the ordered index of each part, written by `just index`
 workshops/<name>/         one workshop: workshop.yaml, pages/ and files/

@@ -7,11 +7,14 @@
 #
 # The build is the same as `just site`. It carries every workshop whose
 # manifest lists jupyterlite in `frontends`, which is the workshops of
-# the first four collections, and the indexes of those four collections,
-# so the workshop browser lists them under each collection's title,
-# numbered in its order. Not the catalog, which would list the last two
-# collections as well, and they cannot run in JupyterLite. Until a
-# workshop that runs there exists, nothing is built or published.
+# the first four collections, and catalog-lite.json, a catalog of those
+# four collections, so the workshop browser lists them under each
+# collection's title, numbered in its order. Not catalog.json, which
+# lists the last two collections as well, and they cannot run in
+# JupyterLite. And not the four indexes with --collection, which would
+# each be carried at the root of the site as collection.json, and the
+# build refuses the second. Until a workshop that runs there exists,
+# nothing is built or published.
 #
 # No trust level is forced, so opening a workshop on the site shows the
 # trust dialog, where the Binder image removes it. A Binder session is a
@@ -89,10 +92,7 @@ jobs:
           uv run jupyter workshop lite "${workshops[@]}" \
             --out dist \
             --no-terminal \
-            --collection collections/first-steps/collection.json \
-            --collection collections/functions-and-data/collection.json \
-            --collection collections/working-with-data/collection.json \
-            --collection collections/your-own-types/collection.json \
+            --catalog catalog-lite.json \
             --settings lite/settings.json \
             --welcome lite/welcome.md
           echo "built=true" >> "$GITHUB_OUTPUT"

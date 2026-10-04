@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "title": "Python fundamentals workshops",
+  "description": "The parts of the course that run in the browser, in a notebook, with nothing to install.",
+  "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+  "collections": [
+    {
+      "url": "collections/first-steps/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/first-steps",
+      "title": "Python first steps",
+      "description": "Guided workshops for people who have never written a program. Learn how these workshops work, then write your first Python: numbers, names, text, error messages, decisions, lists and loops, in a notebook in your browser.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "notebook"
+      ]
+    },
+    {
+      "url": "collections/functions-and-data/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/functions-and-data",
+      "title": "Python functions and data",
+      "description": "Guided workshops that teach you to organise Python code and data: functions, dictionaries, tuples and sets, loops over any kind of data, and how two names can share one list. You write most of the code yourself.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "functions",
+        "notebook"
+      ]
+    },
+    {
+      "url": "collections/working-with-data/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/working-with-data",
+      "title": "Working with real data in Python",
+      "description": "Guided workshops that use Python on real data: reading and writing files, handling errors, the standard library, CSV and JSON, and cleaning untidy text, while building a program that tracks spending.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "files",
+        "data",
+        "notebook"
+      ]
+    },
+    {
+      "url": "collections/your-own-types/collection.json",
+      "id": "grahamdumpleton.me/python-fundamentals/your-own-types",
+      "title": "Your own types in Python",
+      "description": "Guided workshops that introduce classes: what a class is and why you would make one, objects that describe themselves, dataclasses, and building one class on another, using the spending tracker as the example.",
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops",
+      "tags": [
+        "python",
+        "beginners",
+        "classes",
+        "notebook"
+      ]
+    }
+  ]
+}

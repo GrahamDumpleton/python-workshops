@@ -1045,10 +1045,14 @@ The Justfile and the CI workflows read that line to decide which
 workshops to lint and test on JupyterLite, and which the site carries.
 
 **The JupyterLite site carries four collections.** It is built from
-every workshop that runs there, with the indexes of collections 1 to 4
-passed one by one rather than the catalog, which would list
-collections 5 and 6 on a site where they cannot run. Until the first
-such workshop exists, the pages workflow builds nothing.
+every workshop that runs there, with `catalog-lite.json`, a second
+catalog that names collections 1 to 4 only and which `just index`
+writes beside `catalog.json`. The full catalog would list collections
+5 and 6 on a site where they cannot run. The four indexes cannot be
+passed one by one either: the build carries each at the root of the
+site under its file name, and all are named `collection.json`, so it
+refuses the second, which is how the first pages run failed. A catalog
+carries the indexes it names at their relative paths.
 
 **Binder, Codespaces and local runs** subscribe to all six collection
 indexes, as `wrapt-workshops` does, with the same disabled features

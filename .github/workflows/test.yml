@@ -41,6 +41,7 @@ jobs:
           set -euo pipefail
           shopt -s nullglob
           uv run jupyter workshop lint catalog.json
+          uv run jupyter workshop lint catalog-lite.json
           for index in collections/*/collection.json; do
             uv run jupyter workshop lint "$index"
           done

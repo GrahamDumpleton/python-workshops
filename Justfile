@@ -52,10 +52,14 @@ working_like_a_developer := "why-an-environment an-environment-of-your-own insta
 # workflows read it the same way.
 lite_check := "grep -qE '^frontends:.*jupyterlite' \"$dir/workshop.yaml\""
 
-# The collection indexes the JupyterLite site carries, one per collection
-# it has workshops for. Not the catalog, which would list the last two
-# collections as well, and they cannot run there.
-lite_collections := "--collection collections/first-steps/collection.json --collection collections/functions-and-data/collection.json --collection collections/working-with-data/collection.json --collection collections/your-own-types/collection.json"
+# What the JupyterLite site subscribes to: a catalog of its own, naming
+# the four collections that run there. Not catalog.json, which lists the
+# last two collections as well, and they cannot run there. And not the
+# four indexes passed one by one with --collection: each is carried at
+# the root of the site under its own file name, and all four are named
+# collection.json, so the build refuses the second. A catalog carries
+# the indexes it names at their relative paths, so they stay apart.
+lite_collections := "--catalog catalog-lite.json"
 
 # List available targets.
 default:
@@ -106,6 +110,9 @@ lint *NAMES:
     if [ ${#names[@]} -eq 0 ]; then
         if [ -f catalog.json ]; then
             uv run jupyter workshop lint catalog.json
+        fi
+        if [ -f catalog-lite.json ]; then
+            uv run jupyter workshop lint catalog-lite.json
         fi
         for index in collections/*/collection.json; do
             uv run jupyter workshop lint "$index"
@@ -248,8 +255,9 @@ index-notebook-to-program:
 index-working-like-a-developer:
     just index-collection working-like-a-developer "{{working_like_a_developer_id}}" "{{working_like_a_developer_title}}" "{{working_like_a_developer_description}}" "{{working_like_a_developer}}" python beginners packaging testing terminal
 
-# Write or refresh catalog.json from the collection indexes, recorded by relative path.
+# Write or refresh catalog.json and catalog-lite.json from the collection indexes, recorded by relative path.
 catalog:
+    uv run jupyter workshop catalog catalog-lite.json collections/first-steps/collection.json collections/functions-and-data/collection.json collections/working-with-data/collection.json collections/your-own-types/collection.json --relative --title "{{catalog_title}}" --description "The parts of the course that run in the browser, in a notebook, with nothing to install." --homepage "{{repo}}"
     uv run jupyter workshop catalog catalog.json collections/first-steps/collection.json collections/functions-and-data/collection.json collections/working-with-data/collection.json collections/your-own-types/collection.json collections/notebook-to-program/collection.json collections/working-like-a-developer/collection.json --relative --title "{{catalog_title}}" --description "{{catalog_description}}" --homepage "{{repo}}"
 
 # Binder and Codespaces install from binder/requirements.txt, so it is
