@@ -1249,68 +1249,97 @@ copies, not symlinks" above.
 
 ## Status
 
-The repository was set up on 2026-10-03, from `wrapt-workshops` and
-`claude-sdk-workshops`, with the JupyterLite parts from
-`decorator-workshops`: the Justfile, the uv project pinned to
-jupyterlab-workshop 0.20.1 with its reference submodule at the same
-tag (both moved to 0.21.1 on 2026-10-04), the six collection index stubs and the catalog, `collection.yaml`
-with a placeholder token, the Binder, Codespaces and JupyterLite
-files, the two workflows, AGENTS.md and the README. No workshop is
-written yet.
-
 The writing order is the collection order. The first workshop settles
 the manifest, the layout, the page shape and the checks for the rest,
 and the first Write step settles how the exercise modes work in
 practice.
 
-Status is one of: planned, in progress, written (lint clean), tested
-(self-test green), published (indexed and in the README), or committed.
+The numbers are those the workshops have throughout this document,
+which run through the whole course and do not start again with each
+collection.
+
+First steps:
 
 | # | Workshop | Status |
-|---|----------|--------|
-| 1 | `how-this-works` | tested with 0.21.1, 24 pass on both frontends, 1 skipped (the tour) |
-| 2 | `talking-to-python` | tested with 0.21.1, 62 pass on both frontends |
-| 3 | `naming-things` | planned |
-| 4 | `working-with-text` | planned |
-| 5 | `when-things-go-wrong` | planned |
-| 6 | `making-decisions` | planned |
-| 7 | `keeping-a-list` | planned |
-| 8 | `doing-it-again` | planned |
-| 9 | `a-shopping-receipt` | planned |
-| 10 | `your-first-function` | planned |
-| 11 | `functions-with-options` | planned |
-| 12 | `looking-things-up` | planned |
-| 13 | `pairs-and-unique-things` | planned |
-| 14 | `looping-over-anything` | planned |
-| 15 | `building-lists-in-one-line` | planned |
-| 16 | `two-names-one-list` | planned |
-| 17 | `counting-words` | planned |
-| 18 | `reading-and-writing-files` | planned |
-| 19 | `when-the-data-is-wrong` | planned |
-| 20 | `the-batteries-included` | planned |
-| 21 | `csv-and-json` | planned |
-| 22 | `cleaning-messy-text` | planned |
-| 23 | `where-the-money-went` | planned |
-| 24 | `your-first-class` | planned |
-| 25 | `objects-that-explain-themselves` | planned |
-| 26 | `building-on-another-class` | planned |
-| 27 | `spending-as-objects` | planned |
-| 28 | `files-editors-and-terminals` | planned |
-| 29 | `python-in-the-terminal` | planned |
-| 30 | `code-in-a-file` | planned |
-| 31 | `running-a-script` | planned |
-| 32 | `taking-arguments` | planned |
-| 33 | `splitting-into-modules` | planned |
-| 34 | `where-imports-come-from` | planned |
-| 35 | `making-a-package` | planned |
-| 36 | `finding-the-bug` | planned |
-| 37 | `why-an-environment` | planned |
-| 38 | `an-environment-of-your-own` | planned |
-| 39 | `installing-packages` | planned |
-| 40 | `the-same-with-uv` | planned |
-| 41 | `testing-your-code` | planned |
-| 42 | `a-proper-project` | planned |
-| 43 | `your-own-project` | planned |
+| --- | --- | --- |
+| 1 | `how-this-works` | Done |
+| 2 | `talking-to-python` | Done |
+| 3 | `naming-things` | Planned |
+| 4 | `working-with-text` | Planned |
+| 5 | `when-things-go-wrong` | Planned |
+| 6 | `making-decisions` | Planned |
+| 7 | `keeping-a-list` | Planned |
+| 8 | `doing-it-again` | Planned |
+| 9 | `a-shopping-receipt` | Planned |
+
+Functions and data:
+
+| # | Workshop | Status |
+| --- | --- | --- |
+| 10 | `your-first-function` | Planned |
+| 11 | `functions-with-options` | Planned |
+| 12 | `looking-things-up` | Planned |
+| 13 | `pairs-and-unique-things` | Planned |
+| 14 | `looping-over-anything` | Planned |
+| 15 | `building-lists-in-one-line` | Planned |
+| 16 | `two-names-one-list` | Planned |
+| 17 | `counting-words` | Planned |
+
+Working with real data:
+
+| # | Workshop | Status |
+| --- | --- | --- |
+| 18 | `reading-and-writing-files` | Planned |
+| 19 | `when-the-data-is-wrong` | Planned |
+| 20 | `the-batteries-included` | Planned |
+| 21 | `csv-and-json` | Planned |
+| 22 | `cleaning-messy-text` | Planned |
+| 23 | `where-the-money-went` | Planned |
+
+Your own types:
+
+| # | Workshop | Status |
+| --- | --- | --- |
+| 24 | `your-first-class` | Planned |
+| 25 | `objects-that-explain-themselves` | Planned |
+| 26 | `building-on-another-class` | Planned |
+| 27 | `spending-as-objects` | Planned |
+
+From notebook to program:
+
+| # | Workshop | Status |
+| --- | --- | --- |
+| 28 | `files-editors-and-terminals` | Planned |
+| 29 | `python-in-the-terminal` | Planned |
+| 30 | `code-in-a-file` | Planned |
+| 31 | `running-a-script` | Planned |
+| 32 | `taking-arguments` | Planned |
+| 33 | `splitting-into-modules` | Planned |
+| 34 | `where-imports-come-from` | Planned |
+| 35 | `making-a-package` | Planned |
+| 36 | `finding-the-bug` | Planned |
+
+Working like a Python developer:
+
+| # | Workshop | Status |
+| --- | --- | --- |
+| 37 | `why-an-environment` | Planned |
+| 38 | `an-environment-of-your-own` | Planned |
+| 39 | `installing-packages` | Planned |
+| 40 | `the-same-with-uv` | Planned |
+| 41 | `testing-your-code` | Planned |
+| 42 | `a-proper-project` | Planned |
+| 43 | `your-own-project` | Planned |
+
+The status words:
+
+- **Planned:** designed in the outline, not yet written.
+
+- **Written:** the pages exist and lint is clean.
+
+- **Done:** `just test <name>` is green, and `just test-lite <name>`
+  as well for a workshop that runs in JupyterLite, and the workshop is
+  in the index and the README.
 
 ## Open questions
 
