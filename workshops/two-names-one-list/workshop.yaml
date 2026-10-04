@@ -1,0 +1,58 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: two-names-one-list
+title: Two names, one list
+version: 0.1.0
+description: Learn why a change to one list can appear under another name. Predict what each cell shows, see two names that refer to one list, make a real copy, write a function that leaves its argument unchanged, and learn which names exist only inside a function. You meet each mistake on purpose, and then you correct it.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/two-names-one-list
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, lists, names]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You now know why a change to a list can appear under another name.
+  An assignment such as `b = a` makes no copy: it ties a second name
+  to the same list. You can test this with `is`, and you can make a
+  real copy with `.copy()`. You know that lists, dictionaries and sets
+  are mutable, and that numbers, strings and tuples are immutable. You
+  know that a function can change a list that it is given, that a copy
+  of a list of lists still shares the inner lists, and that a name
+  assigned inside a function is a local name.
+
+  The next workshop is **Counting words**. It is the last workshop of
+  **Python functions and data**. In it you build a complete program
+  that counts the words of some short stories, with less help than
+  before.
+
+  The Python documentation answers the question of this workshop in
+  [Why did changing list 'y' also change list 'x'?](https://docs.python.org/3/faq/programming.html#why-did-changing-list-y-also-change-list-x)
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: two-names-one-list.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-one-list-two-names.md
+  - pages/03-the-same-or-equal.md
+  - pages/04-a-real-copy.md
+  - pages/05-values-that-can-change.md
+  - pages/06-a-function-that-changes-its-argument.md
+  - pages/07-a-list-of-lists.md
+  - pages/08-names-inside-a-function.md
+  - pages/09-two-names-with-one-spelling.md
+  - pages/10-finish.md

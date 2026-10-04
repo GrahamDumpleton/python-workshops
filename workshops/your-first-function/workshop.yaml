@@ -1,0 +1,56 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: your-first-function
+title: Your first function
+version: 0.1.0
+description: Learn how to give a name to a group of lines, so that you write them once and use them many times. Define a function, call it, give it values to work with, and make it give a result back with return. Learn why return is not the same as print(), and write five functions of your own.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/your-first-function
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, functions]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now write functions of your own. You know that `def` defines
+  a function, and that a call runs its body. You can give a function
+  values to work with: a parameter is the name in the `def` line, and
+  an argument is the value in the call. You know that `return` gives a
+  result back to the code that called the function, that `print()`
+  only shows a value on the screen, and that a function with no
+  `return` gives the value `None`.
+
+  The next workshop is **Functions with options**. It shows how to
+  give a parameter a value that is used when the call does not give
+  one, and how to describe a function for the people who use it.
+
+  The Python tutorial covers functions in
+  [Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: your-first-function.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-steps-with-a-name.md
+  - pages/03-calling-a-function.md
+  - pages/04-a-value-for-the-function.md
+  - pages/05-two-parameters.md
+  - pages/06-giving-a-result-back.md
+  - pages/07-returning-is-not-showing.md
+  - pages/08-a-function-with-no-return.md
+  - pages/09-a-function-of-your-own.md
+  - pages/10-finish.md

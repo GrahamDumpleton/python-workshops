@@ -13,7 +13,324 @@
   "ordered": true,
   "analytics": {
     "sink": "https://workshop-analytics.grumpys.work/events",
-    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmY2MyYWQ0YmFlYzc0NDFkODFjYzcwOTllOGYxZTUxMCIsInN1YiI6InB5dGhvbi13b3Jrc2hvcHMiLCJzY29wZSI6WyJpbmdlc3QiXSwibGFiZWxzIjp7fSwib3JpZ2lucyI6WyJodHRwczovL2dyYWhhbWR1bXBsZXRvbi5naXRodWIuaW8iXSwiaWF0IjoxNzkxMDkxODQzLCJuYmYiOjE3OTEwOTE4NDMsImV4cCI6MTgyMTU3MTE5OX0.8ynSmj_komUvq0UBC23tS2BvKd5dfFZX2c1nSOzZ3zI"
   },
-  "workshops": []
+  "workshops": [
+    {
+      "name": "your-first-function",
+      "title": "Your first function",
+      "description": "Learn how to give a name to a group of lines, so that you write them once and use them many times. Define a function, call it, give it values to work with, and make it give a result back with return. Learn why return is not the same as print(), and write five functions of your own.",
+      "tags": [
+        "python",
+        "beginners",
+        "functions"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/your-first-function",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/your-first-function"
+          }
+        }
+      ]
+    },
+    {
+      "name": "functions-with-options",
+      "title": "Functions with options",
+      "description": "Learn how to give a function options. Give a parameter a default value, name an argument in a call with a keyword argument, choose which option of a function to change, describe a function with a docstring and read it with help(), and write a function that calls another function.",
+      "tags": [
+        "python",
+        "beginners",
+        "functions"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/functions-with-options",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/functions-with-options"
+          }
+        }
+      ]
+    },
+    {
+      "name": "looking-things-up",
+      "title": "Looking things up",
+      "description": "Learn how a program finds a value by a name instead of a position. Make a dictionary of keys and values, look up a value with its key, read the KeyError that a missing key gives, use get() to give a value for a missing key, add and change values, test for a key with in, and count things with a dictionary.",
+      "tags": [
+        "python",
+        "beginners",
+        "dictionaries"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/looking-things-up",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/looking-things-up"
+          }
+        }
+      ]
+    },
+    {
+      "name": "pairs-and-unique-things",
+      "title": "Pairs and unique things",
+      "description": "Learn two more kinds of value that hold several values. A tuple keeps values that belong together, and a set keeps each value only once. Unpack a tuple into names, write a function that returns two values, remove duplicates from a list, and find what two sets have in common.",
+      "tags": [
+        "python",
+        "beginners",
+        "tuples",
+        "sets"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/pairs-and-unique-things",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/pairs-and-unique-things"
+          }
+        }
+      ]
+    },
+    {
+      "name": "looping-over-anything",
+      "title": "Looping over anything",
+      "description": "Learn how a for loop works with more than lists. Loop over the characters of a string, over the keys of a dictionary, over its values with values(), and over keys and values together with items(). Number the passes of a loop with enumerate(), and use two lists together with zip().",
+      "tags": [
+        "python",
+        "beginners",
+        "loops",
+        "dictionaries"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/looping-over-anything",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/looping-over-anything"
+          }
+        }
+      ]
+    },
+    {
+      "name": "building-lists-in-one-line",
+      "title": "Building lists in one line",
+      "description": "Learn how to build a new list from another list in one line of Python. Write a list comprehension from the loop that it replaces, add a condition that keeps only some items, build a dictionary in the same way, and learn when a loop is the clearer choice.",
+      "tags": [
+        "python",
+        "beginners",
+        "lists",
+        "comprehensions"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/building-lists-in-one-line",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/building-lists-in-one-line"
+          }
+        }
+      ]
+    },
+    {
+      "name": "two-names-one-list",
+      "title": "Two names, one list",
+      "description": "Learn why a change to one list can appear under another name. Predict what each cell shows, see two names that refer to one list, make a real copy, write a function that leaves its argument unchanged, and learn which names exist only inside a function. You meet each mistake on purpose, and then you correct it.",
+      "tags": [
+        "python",
+        "beginners",
+        "lists",
+        "names"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/two-names-one-list",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/two-names-one-list"
+          }
+        }
+      ]
+    },
+    {
+      "name": "counting-words",
+      "title": "Counting words",
+      "description": "Build a complete program in six parts, with hints but without the code. From the text of five of Aesop's fables, your program finds which words are most common, which fable is the longest, and which words are in every fable. It uses functions, dictionaries, sets and loops together.",
+      "tags": [
+        "python",
+        "beginners",
+        "project"
+      ],
+      "platforms": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "frontends": [
+        "jupyterlab",
+        "jupyterlite"
+      ],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/counting-words",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/counting-words"
+          }
+        }
+      ]
+    }
+  ]
 }

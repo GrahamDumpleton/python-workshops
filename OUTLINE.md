@@ -1203,6 +1203,37 @@ the learner writes an `if`, the check tests the relation between the
 names the code reads and the names it sets, for whatever values they
 have now, since there is no function to call with several inputs.
 
+**Checks that call a function.** From workshop 10 the learner writes
+functions, and a check calls them. Such a check is one function named
+`_workshop_check`, which prints one message on every path and returns
+`True` or `False`, and the last line of the check is
+`globals().pop("_workshop_check")()`, which removes the name and calls
+it, so nothing is left in the learner's kernel. Tried on both
+frontends on 2026-10-04. Inside it: every call of the learner's code
+is in a `try`, and the message names the type of the error; every call
+is inside `contextlib.redirect_stdout`, so what the function prints
+does not become the message, and a function that prints its result
+where it should return it is told so; the function is called with
+several inputs, made fresh inside the check; and the number of
+parameters is tested with `inspect.signature(...).bind(...)` before
+the call, so that a `TypeError` from inside the body is not reported
+as a wrong number of parameters. A check that needs values of its own
+while it works uses the same form, function or not.
+
+**Braces in a check.** The body of a check goes through `{{ }}`
+substitution, so an f-string in a check cannot show a literal brace
+with `{{`. A message that must show braces is built from plain
+strings.
+
+**A Watch cell that leaves no name.** A cell that only calls a
+function that prints leaves nothing for a `learner-kernel` check to
+read. Workshop 10 checks six such cells with the `contents` predicate
+`cell-executed`. From release 0.22.0 a `contents` check takes
+`:message:`, the text to show when it fails, so these checks say "The
+cell has not run yet. Click the action above to add the cell and run
+it." as every other check does, where the extension's own words would
+name the tag of the cell.
+
 **Check messages.** A `learner-kernel` check prints one message when
 it passes and another when it fails, and ends with the expression that
 decides. The failure message says what was found and what to do next.
@@ -1281,6 +1312,11 @@ changed nothing for either: their checks kept the closing expression
 throughout. One thing was shaped by the first and is now a choice, not
 a need: see workshop 5 under open questions.
 
+One suggestion was made on 2026-10-04 with 0.21.2, while collection 2
+was written, and release 0.22.0 took it up the same day: a `verify` of
+the `contents` or `ui` substrate takes `:message:`. See "A Watch cell
+that leaves no name" above for where the workshops use it.
+
 **Symlinks in `files/` are dropped on install.** See "Shared files are
 copies, not symlinks" above.
 
@@ -1313,14 +1349,14 @@ Functions and data:
 
 | # | Workshop | Status |
 | --- | --- | --- |
-| 10 | `your-first-function` | Planned |
-| 11 | `functions-with-options` | Planned |
-| 12 | `looking-things-up` | Planned |
-| 13 | `pairs-and-unique-things` | Planned |
-| 14 | `looping-over-anything` | Planned |
-| 15 | `building-lists-in-one-line` | Planned |
-| 16 | `two-names-one-list` | Planned |
-| 17 | `counting-words` | Planned |
+| 10 | `your-first-function` | Done |
+| 11 | `functions-with-options` | Done |
+| 12 | `looking-things-up` | Done |
+| 13 | `pairs-and-unique-things` | Done |
+| 14 | `looping-over-anything` | Done |
+| 15 | `building-lists-in-one-line` | Done |
+| 16 | `two-names-one-list` | Done |
+| 17 | `counting-words` | Done |
 
 Working with real data:
 

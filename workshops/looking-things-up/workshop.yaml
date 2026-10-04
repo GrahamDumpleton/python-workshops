@@ -1,0 +1,56 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: looking-things-up
+title: Looking things up
+version: 0.1.0
+description: Learn how a program finds a value by a name instead of a position. Make a dictionary of keys and values, look up a value with its key, read the KeyError that a missing key gives, use get() to give a value for a missing key, add and change values, test for a key with in, and count things with a dictionary.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/looking-things-up
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, dictionaries]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now keep values that a program finds by a key. You know that
+  a dictionary holds pairs of a key and a value, and that square
+  brackets with a key give the value of that key. You know that a key
+  that does not exist gives a `KeyError`, and that `get()` gives
+  `None` or a value that you choose. You can add a pair, change a
+  value, test for a key with `in`, and count things with a dictionary.
+
+  The next workshop is **Pairs and unique things**. It shows two more
+  ways to keep several values together: one for values that belong
+  together and do not change, and one that keeps each value only one
+  time.
+
+  The Python tutorial describes dictionaries in
+  [Dictionaries](https://docs.python.org/3/tutorial/datastructures.html#dictionaries).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: looking-things-up.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-a-value-for-each-key.md
+  - pages/03-looking-up-a-value.md
+  - pages/04-a-key-that-does-not-exist.md
+  - pages/05-asking-with-get.md
+  - pages/06-adding-and-changing.md
+  - pages/07-is-the-key-there.md
+  - pages/08-counting-with-a-dictionary.md
+  - pages/09-your-own-function.md
+  - pages/10-finish.md

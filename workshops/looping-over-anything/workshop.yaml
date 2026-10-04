@@ -1,0 +1,53 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: looping-over-anything
+title: Looping over anything
+version: 0.1.0
+description: Learn how a for loop works with more than lists. Loop over the characters of a string, over the keys of a dictionary, over its values with values(), and over keys and values together with items(). Number the passes of a loop with enumerate(), and use two lists together with zip().
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/looping-over-anything
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, loops, dictionaries]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now use a `for` loop with more than lists. You know that a
+  loop over a string gives the characters, and that a loop over a
+  dictionary gives the keys. You can loop over the values of a
+  dictionary with `.values()`, and over each key together with its
+  value with `.items()`. You can number the passes of a loop with
+  `enumerate()`, and you can use two lists together with `zip()`.
+
+  The next workshop is **Building lists in one line**. In it you learn
+  a short way to write a loop that builds a new list.
+
+  The Python tutorial describes these loops in
+  [Looping Techniques](https://docs.python.org/3/tutorial/datastructures.html#looping-techniques).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: looping-over-anything.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-every-character.md
+  - pages/03-every-key.md
+  - pages/04-every-value.md
+  - pages/05-keys-and-values-together.md
+  - pages/06-numbering-the-passes.md
+  - pages/07-two-lists-side-by-side.md
+  - pages/08-a-function-with-a-loop.md
+  - pages/09-finish.md

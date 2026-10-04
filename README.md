@@ -10,9 +10,10 @@ Guided, hands-on workshops that teach the
 have never written a program before. You do not need to know anything
 about programming to start, and you do not need to install anything.
 
-**The workshops are being written.** The first part is ready, and its
-nine workshops are listed under [The course](#the-course). The rest of this page
-describes the course as it is planned.
+**The workshops are being written.** The first two parts are ready,
+and their seventeen workshops are listed under
+[The course](#the-course). The rest of this page describes the course
+as it is planned.
 
 ## How the workshops work
 
@@ -94,7 +95,46 @@ the next one.
 2. **Python functions and data.** Organising code with functions, and
    data with dictionaries, tuples and sets. Looping over any kind of
    data, and how two names can share one list. In a notebook, writing
-   most of the code yourself.
+   most of the code yourself:
+
+   10. **Your first function** (`your-first-function`, 25 minutes).
+       Learn how to give a name to a group of lines, so that you write
+       them once and use them many times. Define a function, call it,
+       give it values, and make it give a result back with `return`.
+
+   11. **Functions with options** (`functions-with-options`, 25
+       minutes). Give a parameter a default value, name an argument in
+       a call, describe a function with a docstring, and write a
+       function that calls another function.
+
+   12. **Looking things up** (`looking-things-up`, 25 minutes). Learn
+       how a program finds a value by a name instead of a position.
+       Make a dictionary, look up, add and change values, and count
+       things with a dictionary.
+
+   13. **Pairs and unique things** (`pairs-and-unique-things`, 25
+       minutes). Learn two more kinds of value. A tuple keeps values
+       that belong together, and a set keeps each value only once.
+
+   14. **Looping over anything** (`looping-over-anything`, 25
+       minutes). Loop over the characters of a string and over the
+       keys and values of a dictionary, number the passes of a loop,
+       and use two lists together.
+
+   15. **Building lists in one line** (`building-lists-in-one-line`,
+       25 minutes). Write a list comprehension from the loop that it
+       replaces, keep only some items, build a dictionary in the same
+       way, and learn when a loop is the clearer choice.
+
+   16. **Two names, one list** (`two-names-one-list`, 25 minutes).
+       Learn why a change to one list can appear under another name.
+       You meet each mistake on purpose, and then you correct it.
+
+   17. **Counting words** (`counting-words`, 25 minutes). Build a
+       complete program in six parts, with hints but without the
+       code. From five of Aesop's fables, it finds the most common
+       words, the longest fable, and the words that are in every
+       fable.
 
 3. **Working with real data in Python.** Reading and writing files,
    handling errors, the standard library, CSV and JSON, and cleaning

@@ -1,0 +1,55 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: building-lists-in-one-line
+title: Building lists in one line
+version: 0.1.0
+description: Learn how to build a new list from another list in one line of Python. Write a list comprehension from the loop that it replaces, add a condition that keeps only some items, build a dictionary in the same way, and learn when a loop is the clearer choice.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/building-lists-in-one-line
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, lists, comprehensions]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now build a list in one line. You know that a list
+  comprehension does the same work as a loop that starts with an empty
+  list and uses `.append()` in each pass. You can change each item,
+  keep only the items that pass a test, and do both in one
+  comprehension. You can build a dictionary in the same way. You also
+  know when a loop is the clearer choice.
+
+  The next workshop is **Two names, one list**. It shows what happens
+  when two names refer to the same list, which is the cause of many
+  mistakes that are difficult to find.
+
+  The Python tutorial describes comprehensions in
+  [List Comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: building-lists-in-one-line.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-a-new-list-from-a-list.md
+  - pages/03-the-same-loop-in-one-line.md
+  - pages/04-from-a-loop-to-a-comprehension.md
+  - pages/05-any-expression.md
+  - pages/06-keeping-only-some-items.md
+  - pages/07-changing-and-choosing.md
+  - pages/08-a-dictionary-in-one-line.md
+  - pages/09-when-a-loop-is-clearer.md
+  - pages/10-finish.md

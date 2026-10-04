@@ -1,0 +1,59 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: pairs-and-unique-things
+title: Pairs and unique things
+version: 0.1.0
+description: Learn two more kinds of value that hold several values. A tuple keeps values that belong together, and a set keeps each value only once. Unpack a tuple into names, write a function that returns two values, remove duplicates from a list, and find what two sets have in common.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/pairs-and-unique-things
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, tuples, sets]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You now know two more kinds of value that hold several values. A
+  tuple holds values that belong together, and it cannot be changed.
+  You can unpack a tuple into names, and you can write a function that
+  returns more than one value. A set holds each value only once and
+  has no order. You can remove duplicates with `set()`, add a value
+  with `add`, ask a question with `in`, and compare two sets with `&`
+  and `|`.
+
+  The next workshop is **Looping over anything**. You already know how
+  to loop over a list. The next workshop shows how to loop over
+  strings, dictionaries and other values, and it uses unpacking in
+  many of its loops.
+
+  The Python tutorial covers tuples in
+  [Tuples and Sequences](https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences)
+  and sets in
+  [Sets](https://docs.python.org/3/tutorial/datastructures.html#sets).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: pairs-and-unique-things.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-values-that-belong-together.md
+  - pages/03-a-tuple-cannot-be-changed.md
+  - pages/04-unpacking-a-tuple.md
+  - pages/05-returning-two-values.md
+  - pages/06-each-value-only-once.md
+  - pages/07-a-set-has-no-order.md
+  - pages/08-adding-and-asking.md
+  - pages/09-in-both-or-in-either.md
+  - pages/10-finish.md

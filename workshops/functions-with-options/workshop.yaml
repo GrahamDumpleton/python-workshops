@@ -1,0 +1,57 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: functions-with-options
+title: Functions with options
+version: 0.1.0
+description: Learn how to give a function options. Give a parameter a default value, name an argument in a call with a keyword argument, choose which option of a function to change, describe a function with a docstring and read it with help(), and write a function that calls another function.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/functions-with-options
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, functions]
+duration: 25m
+platforms: [linux, macos, windows]
+frontends: [jupyterlab, jupyterlite]
+capabilities:
+  - write-files
+  - kernel-exec
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now write a function that has options. You know that a
+  parameter can have a default value, which Python uses when a call
+  gives no argument for that parameter. You know that a keyword
+  argument names its parameter in the call, so the call is clear to
+  read and the order does not matter. You can describe a function with
+  a docstring, and read the docstring with `help()`. You can also
+  write a function that calls another function.
+
+  The next workshop is **Looking things up**. Until now you found a
+  value in a list by its position. The next workshop shows how to find
+  a value by a name instead, with a dictionary.
+
+  The Python tutorial describes default values, keyword arguments and
+  docstrings in
+  [More on Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#more-on-defining-functions).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: functions-with-options.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-a-function-again.md
+  - pages/03-a-default-value.md
+  - pages/04-your-own-default-value.md
+  - pages/05-naming-an-argument.md
+  - pages/06-choosing-an-option.md
+  - pages/07-describing-a-function.md
+  - pages/08-a-function-that-calls-a-function.md
+  - pages/09-your-own-functions.md
+  - pages/10-finish.md
