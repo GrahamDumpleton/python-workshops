@@ -1,0 +1,62 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: finding-the-bug
+title: Finding the bug
+version: 0.1.0
+description: Learn how to find a mistake in a program of several files. The spending tracker has three bugs. You find the first with the traceback, which now names files and line numbers, the second with a print() line that shows what the program does, and the third with the Python debugger, which stops the program so that you can look at its values.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/finding-the-bug
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, debugging, traceback]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+sidebar: filebrowser
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now find a bug in a program of several files. You can read a
+  traceback that names files and line numbers, from the last line
+  upward. You can add a `print()` line to see what a program does, and
+  remove it afterwards. You can stop a program with `breakpoint()`, and
+  use the commands `p`, `l`, `n`, `s`, `c` and `q` of the debugger
+  `pdb` to look at its values and to run it one line at a time.
+
+  The set **From a Python notebook to a program** is now complete. Your
+  code has moved from a notebook into a package that you run in a
+  terminal, and you can repair it when it goes wrong.
+
+  The next set of workshops is **Working like a Python developer**. It
+  begins with the workshop **Why an environment**, which shows the
+  problem that appears when every project on a computer shares one
+  Python.
+
+  The Python documentation describes the debugger in
+  [pdb, the Python debugger](https://docs.python.org/3/library/pdb.html),
+  and the tutorial covers error messages in
+  [Errors and exceptions](https://docs.python.org/3/tutorial/errors.html).
+  They are written for people who already program, so do not worry if
+  some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-a-program-with-bugs.md
+  - pages/03-read-a-long-traceback.md
+  - pages/04-repair-the-first-bug.md
+  - pages/05-a-wrong-result.md
+  - pages/06-look-inside-with-print.md
+  - pages/07-repair-the-second-bug.md
+  - pages/08-stop-the-program.md
+  - pages/09-step-into-a-function.md
+  - pages/10-repair-the-third-bug.md
+  - pages/11-finish.md

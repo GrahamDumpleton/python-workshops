@@ -771,8 +771,8 @@ it.
 on `PATH` and nothing more, shown by comparing `which python` and `PATH`
 before and after. Running the environment's Python without activating.
 Deleting an environment and making it again, since it is disposable.
-The manifest sets `environment.terminals: false`, so the terminal has
-the bare Python.
+The manifest declares no `environment`, so the terminal has the bare
+Python.
 
 - Modes: typed commands throughout.
 
@@ -934,6 +934,20 @@ workshop 26; and a method that calls another method of its own object
 in workshop 27. Workshop 26 takes its composition example from a
 receipt that holds products, so that the `Ledger` is new in workshop
 27.
+
+In collections 5 and 6 the tracker is code in files, and its state at
+the start of each workshop is a directory under `shared/tracker/`,
+copied into the workshop by `just shared` from the `shared_trees`
+list in the Justfile: `s0`, one file `spending.py` holding the
+classes of workshop 27 and `read_ledger`, at the start of workshop
+31; `s1`, with `report_lines()`, `main()` and the test of `__name__`;
+`s2`, with `Ledger.select()` and `argparse`; `s3`, four modules; `s4`,
+the package `spending`, run with `python -m spending`; `s5`, with a
+table made by `rich` and `requirements.txt`; and `s6`, with tests. The
+pages of each workshop take the learner from its start stage to the
+next one. The budgets of workshop 27 are left out of these stages, to
+keep the program small. Workshop 36 ships its own copy of `s4` with
+three bugs planted in it.
 
 `rich` is the third-party package, used for printing the report as a
 table, since it installs everywhere and shows a visible change.
@@ -1358,6 +1372,44 @@ since. The default text of an object holds a number that differs on
 every run and between the frontends, so pages write it as `0x...` and
 no quiz or check reads it.
 
+**Terminals in collections 5 and 6.** The probes of these
+collections, run on 2026-10-05 with 0.22.1, settled the patterns. The
+layout has a placeholder area above a terminal named `workshop`, so no
+action names a session. Every `execute` that sends a line to anything
+but the shell (the `>>>` prompt, `(Pdb)`, an answer to `input()`, a
+program that does not end) has an explicit `:wait:`. Every check
+declares a trigger, since the self-test gives a check with none a
+single try and the shell's prompt can arrive late. A check cannot read
+the terminal: it checks what a command left on disk, runs the
+learner's program itself in a fresh process from a `kernel` check, or
+is a typed quiz on what the terminal showed. Commands go from a click
+(`execute`), to typed by the page with the learner pressing Enter
+(`terminal-type`, with a `send-key` in a hint for the self-test), to
+typed by the learner, with the command in a locked hint. Workshop 29
+reads what the learner typed at the `>>>` prompt from
+`.python_history` in the workspace, which the manifest's `env` names.
+
+**Never install into JupyterLab's Python.** In the self-test and under
+`just lab` the terminal's bare `python` is this repository's own
+environment, and on Binder it is the one JupyterLab runs in. So
+packages are installed only into a `.venv` in the workspace, after it
+is activated or by its path, and every manifest of collection 6 sets
+`PIP_REQUIRE_VIRTUALENV`, so pip refuses an install outside a virtual
+environment. Workshop 37 tells its story of one shared Python with an
+environment named `shared-python`, made by click, which stands for
+the one Python of a computer. uv is a runtime dependency of this
+repository, so that Binder, a codespace and the self-test have the
+same uv on the terminal's `PATH`. A uv project command run in a
+workspace with no `pyproject.toml` would find this repository's
+project and change it, so workshop 40 ships a `pyproject.toml` from
+the start and the learner reads it rather than writing it, no page
+runs `uv init`, and this repository's `pyproject.toml` excludes
+`workshops/*/work` from its uv workspace as a second guard.
+
+**Tracks.** The self-test follows the first track of a workshop that
+offers a choice, so `just test-tracks <name>` and the `test` workflow
+test workshop 43 once for each of its four tracks.
+
 **No directory listings.** `os.listdir(".")` shows
 `.ipynb_checkpoints` in JupyterLab and not in JupyterLite, so no page
 prints a listing of the workspace.
@@ -1490,27 +1542,27 @@ From notebook to program:
 
 | # | Workshop | Status |
 | --- | --- | --- |
-| 28 | `files-editors-and-terminals` | Planned |
-| 29 | `python-in-the-terminal` | Planned |
-| 30 | `code-in-a-file` | Planned |
-| 31 | `running-a-script` | Planned |
-| 32 | `taking-arguments` | Planned |
-| 33 | `splitting-into-modules` | Planned |
-| 34 | `where-imports-come-from` | Planned |
-| 35 | `making-a-package` | Planned |
-| 36 | `finding-the-bug` | Planned |
+| 28 | `files-editors-and-terminals` | Done |
+| 29 | `python-in-the-terminal` | Done |
+| 30 | `code-in-a-file` | Done |
+| 31 | `running-a-script` | Done |
+| 32 | `taking-arguments` | Done |
+| 33 | `splitting-into-modules` | Done |
+| 34 | `where-imports-come-from` | Done |
+| 35 | `making-a-package` | Done |
+| 36 | `finding-the-bug` | Done |
 
 Working like a Python developer:
 
 | # | Workshop | Status |
 | --- | --- | --- |
-| 37 | `why-an-environment` | Planned |
-| 38 | `an-environment-of-your-own` | Planned |
-| 39 | `installing-packages` | Planned |
-| 40 | `the-same-with-uv` | Planned |
-| 41 | `testing-your-code` | Planned |
-| 42 | `a-proper-project` | Planned |
-| 43 | `your-own-project` | Planned |
+| 37 | `why-an-environment` | Done |
+| 38 | `an-environment-of-your-own` | Done |
+| 39 | `installing-packages` | Done |
+| 40 | `the-same-with-uv` | Done |
+| 41 | `testing-your-code` | Done |
+| 42 | `a-proper-project` | Done |
+| 43 | `your-own-project` | Done |
 
 The status words:
 
@@ -1562,10 +1614,13 @@ collection 3, is settled: see "Checks on files in collections 3 and
 - **Windows and the learner's own machine.** Whether the course
   supports JupyterLab on Windows, which changes every shell command in
   collections 5 and 6, or keeps to codespaces and Binder and covers
-  the learner's own machine only in workshop 43.
+  the learner's own machine only in workshop 43. Collections 5 and 6
+  are written for Linux and macOS, with commands that behave the same
+  in bash and zsh, and declare `platforms: [linux, macos]`.
 
-- **uv in the image.** Workshop 40 needs uv installed where the
-  learner's terminal can find it, declared in `requires.tools`.
+- **Collections 5 and 6 on Linux.** They were written and self-tested
+  on macOS with zsh. Binder and a codespace are Linux with bash. The
+  `test` workflow on GitHub is the first run of them there.
 
 - **Placement.** Whether a learner who already knows some Python can
   skip ahead, with a short quiz at the start of each collection

@@ -224,6 +224,10 @@ and prefer them over the underlying commands:
 - `just site` builds the JupyterLite site into `dist/` and `just
   site-serve` serves it locally.
 
+- `just test-tracks <name>` self-tests a workshop once for each of
+  its tracks, since the self-test follows only the first; workshop
+  `your-own-project` has four.
+
 - `just shared` copies the files under `shared/` into the workshops
   that ship them, and `just shared-check` fails when a copy differs.
 

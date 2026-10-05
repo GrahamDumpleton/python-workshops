@@ -1,0 +1,57 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: why-an-environment
+title: Why an environment
+version: 0.1.0
+description: See the problem that appears when every project on a computer shares one Python. You install a package for one small project, install a newer version of the same package for a second project, and watch the first project stop working, although you did not change it. You end with the idea that solves the problem, which is a place for installed packages that belongs to one project.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/why-an-environment
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, environments, packages]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+  PIP_REQUIRE_VIRTUALENV: '1'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You have seen the problem that a virtual environment solves. You know
+  that a Python keeps installed packages in its directory
+  `site-packages`, and that this directory holds one version of each
+  package. You installed a package for one project, and then a newer
+  version of it for a second project, and the first project stopped
+  working, although you did not change it. You know why no version was
+  right for both projects, and you know what each project needs: a
+  `site-packages` of its own.
+
+  The next workshop is **An environment of your own**. In it you make a
+  virtual environment for a project yourself, you look at what is
+  inside it, and you learn what it means to activate it.
+
+  The Python tutorial covers this subject in
+  [Virtual Environments and Packages](https://docs.python.org/3/tutorial/venv.html#introduction).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-one-python-for-every-project.md
+  - pages/03-where-the-shared-python-looks.md
+  - pages/04-a-project-that-needs-a-package.md
+  - pages/05-install-the-package.md
+  - pages/06-a-second-project.md
+  - pages/07-install-the-newer-version.md
+  - pages/08-the-project-that-you-did-not-change.md
+  - pages/09-no-version-is-right-for-both.md
+  - pages/10-a-place-for-each-project.md
+  - pages/11-finish.md

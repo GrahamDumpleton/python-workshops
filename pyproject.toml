@@ -6,10 +6,14 @@
 # pinned once, here, and the dev group's extras resolve to the same
 # release.
 #
-# Nothing the workshops teach is installed here. Collections 1 to 5 use
-# the standard library alone, and the packages of collection 6 are
-# installed by the learner, in a virtual environment they make inside
-# the workshop's workspace, since installing them is the lesson.
+# Nothing the workshops teach is installed here, with one exception.
+# Collections 1 to 5 use the standard library alone, and the packages
+# of collection 6 are installed by the learner, in a virtual
+# environment they make inside the workshop's workspace, since
+# installing them is the lesson. The exception is uv itself, the tool
+# that workshop `the-same-with-uv` teaches: it is a runtime dependency
+# so that Binder, a codespace and the self-test all have the same uv
+# on the PATH of the learner's terminal.
 [project]
 name = "python-workshops"
 version = "0.1.0"
@@ -19,6 +23,7 @@ requires-python = ">=3.14"
 dependencies = [
     "jupyterlab>=4.6,<5",
     "jupyterlab-workshop==0.22.1",
+    "uv>=0.12",
 ]
 
 [dependency-groups]
@@ -28,3 +33,12 @@ dev = [
 
 [tool.uv]
 package = false
+
+# A learner who runs `uv init` in a workshop's workspace is inside this
+# checkout on Binder and in a codespace. Without this, uv would make
+# the learner's project a member of this one, edit this file, and
+# install into the environment that runs JupyterLab. Excluded, the
+# learner's project stands alone.
+[tool.uv.workspace]
+members = []
+exclude = ["workshops/*/work", "workshops/*/work/**"]

@@ -10,10 +10,8 @@ Guided, hands-on workshops that teach the
 have never written a program before. You do not need to know anything
 about programming to start, and you do not need to install anything.
 
-**The workshops are being written.** The first four parts are ready,
-and their twenty-seven workshops are listed under
-[The course](#the-course). The rest of this page describes the course
-as it is planned.
+All six parts of the course are written, forty-three workshops in
+all, and they are listed under [The course](#the-course).
 
 ## How the workshops work
 
@@ -204,12 +202,98 @@ the next one.
 5. **From a Python notebook to a program.** Moving your code from a
    notebook into files that you run in a terminal: modules, scripts,
    command line arguments, packages, how Python finds the code you
-   import, and finding bugs.
+   import, and finding bugs. In JupyterLab, with an editor and a
+   terminal:
+
+   28. **Files, editors and terminals** (`files-editors-and-terminals`,
+       25 minutes). Learn the file browser, the editor and the
+       terminal before you use them for Python: find and save files,
+       move between directories, stop a program that does not end, and
+       copy and paste in the terminal.
+
+   29. **Python in the terminal** (`python-in-the-terminal`, 20
+       minutes). Start Python at the `>>>` prompt and type code one
+       line at a time. See what is the same as a notebook cell and
+       what is different, and why code worth keeping belongs in a
+       file.
+
+   30. **Code in a file** (`code-in-a-file`, 25 minutes). Move the
+       code of the spending tracker from a notebook into a file of
+       your own, and import it back. Learn why a module needs its own
+       imports, and why the notebook keeps the old code until its
+       kernel is restarted.
+
+   31. **Running a script** (`running-a-script`, 25 minutes). Run a
+       file as a program from the terminal, write the function where
+       the program starts, and learn what `__name__` is and why most
+       programs end with a test of it.
+
+   32. **Taking arguments** (`taking-arguments`, 25 minutes). Read the
+       words of the command that starts a program, first from
+       `sys.argv` and then with `argparse`, so that one command chooses
+       the file and the month or category to report on.
+
+   33. **Splitting into modules** (`splitting-into-modules`, 25
+       minutes). Split one long program into four modules, each with
+       one job. Make the files yourself, and write the imports that
+       connect them.
+
+   34. **Where imports come from** (`where-imports-come-from`, 25
+       minutes). Learn where Python looks for the file of an import,
+       where the standard library and installed code are kept, and how
+       to find and repair a file of your own that hides a module of
+       Python.
+
+   35. **Making a package** (`making-a-package`, 25 minutes). Keep the
+       modules of one program together in a package, change their
+       imports so that they find each other, and run the whole package
+       by its name.
+
+   36. **Finding the bug** (`finding-the-bug`, 25 minutes). Find three
+       bugs in a program of several files: one with the traceback, one
+       with `print()`, and one with the Python debugger.
 
 6. **Working like a Python developer.** How Python projects are made,
    and why: what a virtual environment is and how it works, installing
    packages with pip and with uv, testing, project layout and tools,
-   and a final project of your own.
+   and a final project of your own. In JupyterLab, with an editor and
+   a terminal, installing packages from PyPI:
+
+   37. **Why an environment** (`why-an-environment`, 25 minutes). See
+       what goes wrong when every project shares one Python: an
+       install for one project breaks another that you did not
+       change.
+
+   38. **An environment of your own** (`an-environment-of-your-own`,
+       25 minutes). Make a virtual environment, look inside it, see
+       what activating it changes, install a package into it, and
+       delete it and make it again.
+
+   39. **Installing packages** (`installing-packages`, 25 minutes).
+       Install a package from PyPI with pip, see where it went, record
+       what the project needs in a requirements file, and use the
+       package `rich` to show the spending as a table.
+
+   40. **The same with uv** (`the-same-with-uv`, 25 minutes). Do the
+       same work with the tool uv, each command matched to the one
+       you know, then let uv record exact versions in a lock file and
+       rebuild the environment with one command.
+
+   41. **Testing your code** (`testing-your-code`, 25 minutes). Learn
+       what a test is for, write tests for the spending tracker with
+       `pytest`, break a method on purpose to read a failing test, and
+       write more tests from a goal.
+
+   42. **A proper project** (`a-proper-project`, 25 minutes). Describe
+       the project in `pyproject.toml`, move its code into a `src`
+       directory, install it into its own environment with a command
+       of its own, and watch a linter, a formatter and a type checker
+       at work.
+
+   43. **Your own project** (`your-own-project`, 25 minutes). Choose
+       one of four programs, a file organiser, a log analyser, a
+       password checker or a flashcard drill, and build it with checks
+       and hints but no code given. Then find out where to go next.
 
 Parts 1 to 4 run in your web browser, with nothing to install. Parts 5
 and 6 need a real computer, because they teach you to run programs in
@@ -341,7 +425,7 @@ catalog-lite.json         names the four parts the JupyterLite site carries
 collection.yaml           the analytics block carried into every index
 collections/<name>/       the ordered index of each part, written by `just index`
 workshops/<name>/         one workshop: workshop.yaml, pages/ and files/
-shared/                   the spending data, copied into workshops by `just shared`
+shared/                   the spending data and the code of the running project at each stage, copied into workshops by `just shared`
 reference/                the jupyterlab-workshop repository, at the pinned release
 binder/                   the Binder image: requirements, settings, welcome message
 .devcontainer/            the codespace: setup, start and welcome message
@@ -364,6 +448,7 @@ just test <name>         self-test one workshop in a JupyterLab of its own
 just test-lite <name>    self-test one workshop in JupyterLite
 just index               write or refresh every collection index and the catalog
 just shared              copy the files under shared/ into the workshops that ship them
+just test-tracks <name>   self-test a workshop once for each of its tracks
 just site-serve          build the JupyterLite site and serve it locally
 ```
 

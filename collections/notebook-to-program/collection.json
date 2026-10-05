@@ -13,7 +13,339 @@
   "ordered": true,
   "analytics": {
     "sink": "https://workshop-analytics.grumpys.work/events",
-    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmY2MyYWQ0YmFlYzc0NDFkODFjYzcwOTllOGYxZTUxMCIsInN1YiI6InB5dGhvbi13b3Jrc2hvcHMiLCJzY29wZSI6WyJpbmdlc3QiXSwibGFiZWxzIjp7fSwib3JpZ2lucyI6WyJodHRwczovL2dyYWhhbWR1bXBsZXRvbi5naXRodWIuaW8iXSwiaWF0IjoxNzkxMDkxODQzLCJuYmYiOjE3OTEwOTE4NDMsImV4cCI6MTgyMTU3MTE5OX0.8ynSmj_komUvq0UBC23tS2BvKd5dfFZX2c1nSOzZ3zI"
   },
-  "workshops": []
+  "workshops": [
+    {
+      "name": "files-editors-and-terminals",
+      "title": "Files, editors and terminals",
+      "description": "Learn the three tools that programmers use every day, before you use them for Python. You find files in the file browser, change a file in the editor and save it, and type commands in a terminal. You learn which directory the terminal is in, how to look at what is there, how to move to another directory, how to stop a program that does not end, and how to copy and paste in the terminal. There is no new Python in this workshop.",
+      "tags": [
+        "python",
+        "beginners",
+        "terminal",
+        "files"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/files-editors-and-terminals",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/files-editors-and-terminals"
+          }
+        }
+      ]
+    },
+    {
+      "name": "python-in-the-terminal",
+      "title": "Python in the terminal",
+      "description": "Use Python without a notebook. You ask the terminal which Python it runs, start the interactive interpreter, and type Python at its prompt, one line at a time. You see what is the same as a notebook cell and what is different, and why code that you want to keep belongs in a file.",
+      "tags": [
+        "python",
+        "beginners",
+        "terminal",
+        "interpreter"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "kernel-exec"
+      ],
+      "duration": "20m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/python-in-the-terminal",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/python-in-the-terminal"
+          }
+        }
+      ]
+    },
+    {
+      "name": "code-in-a-file",
+      "title": "Code in a file",
+      "description": "Move the code of the spending tracker from a notebook into a file of Python code, and use it from the notebook with an import. You learn why code is kept in a file, how to copy code from a cell into the editor, why a module needs import lines of its own, and why a notebook keeps the old code of a module until its kernel is restarted.",
+      "tags": [
+        "python",
+        "beginners",
+        "modules",
+        "import"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/code-in-a-file",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/code-in-a-file"
+          }
+        }
+      ]
+    },
+    {
+      "name": "running-a-script",
+      "title": "Running a script",
+      "description": "Run a file of Python code as a program, from the terminal. You learn that a program shows only what it prints. You write a function that makes a report on the spending of one person, and a function named main where the program starts. Then you learn what the name __name__ is, and why most Python programs end with a test of it.",
+      "tags": [
+        "python",
+        "beginners",
+        "scripts",
+        "terminal"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/running-a-script",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/running-a-script"
+          }
+        }
+      ]
+    },
+    {
+      "name": "taking-arguments",
+      "title": "Taking arguments",
+      "description": "Learn how a program receives words from the command that starts it. You read them first from the list `sys.argv`, and then with the module `argparse`, which also gives your program help text and clear messages. Then you change the spending tracker so that one command chooses the file to read, and reports on one month or on one category.",
+      "tags": [
+        "python",
+        "beginners",
+        "terminal",
+        "argparse"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/taking-arguments",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/taking-arguments"
+          }
+        }
+      ]
+    },
+    {
+      "name": "splitting-into-modules",
+      "title": "Splitting into modules",
+      "description": "Split one long program into four modules, each with one job. You make the files yourself in the file browser, move the code of the spending tracker into them, and write the imports that connect the modules. You learn that each module imports the names that it uses itself, and you learn the errors that Python shows when an import is missing or wrong.",
+      "tags": [
+        "python",
+        "beginners",
+        "modules",
+        "imports"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/splitting-into-modules",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/splitting-into-modules"
+          }
+        }
+      ]
+    },
+    {
+      "name": "where-imports-come-from",
+      "title": "Where imports come from",
+      "description": "Learn how Python finds the file for an import. You look at the list of directories that Python searches, see where the standard library and installed code are kept, find the file that a module came from, and find and repair the bug of a file of your own that hides a module of Python.",
+      "tags": [
+        "python",
+        "beginners",
+        "imports",
+        "modules"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/where-imports-come-from",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/where-imports-come-from"
+          }
+        }
+      ]
+    },
+    {
+      "name": "making-a-package",
+      "title": "Making a package",
+      "description": "Learn how to keep the modules of one program together in a package. You make a directory for the spending tracker, move its four modules into it, change their imports so that each module finds the others, and run the whole package by its name with one command.",
+      "tags": [
+        "python",
+        "beginners",
+        "packages",
+        "imports"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/making-a-package",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/making-a-package"
+          }
+        }
+      ]
+    },
+    {
+      "name": "finding-the-bug",
+      "title": "Finding the bug",
+      "description": "Learn how to find a mistake in a program of several files. The spending tracker has three bugs. You find the first with the traceback, which now names files and line numbers, the second with a print() line that shows what the program does, and the third with the Python debugger, which stops the program so that you can look at its values.",
+      "tags": [
+        "python",
+        "beginners",
+        "debugging",
+        "traceback"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/finding-the-bug",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/finding-the-bug"
+          }
+        }
+      ]
+    }
+  ]
 }

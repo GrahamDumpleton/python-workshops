@@ -36,16 +36,38 @@ jobs:
           uv sync
           uv run playwright install --with-deps chromium
 
+      # The two lists of which workshop ships which shared file are in
+      # the Justfile, as `just shared-check` reads them: files as
+      # `workshop:file,file` and stages of the running project as
+      # `workshop:directory`.
       - name: Check that the copies of the shared files match
         run: |
           set -euo pipefail
           status=0
-          for copy in workshops/*/files/*; do
-            shared="shared/$(basename "$copy")"
-            if [ -f "$shared" ] && ! cmp -s "$shared" "$copy"; then
-              echo "$copy differs from $shared; run 'just shared'"
-              status=1
-            fi
+          files=$(sed -n 's/^shared_files := "\(.*\)"$/\1/p' Justfile)
+          trees=$(sed -n 's/^shared_trees := "\(.*\)"$/\1/p' Justfile)
+          test -n "$files"
+          test -n "$trees"
+          for entry in $files; do
+            name="${entry%%:*}"
+            IFS=',' read -ra list <<< "${entry#*:}"
+            for file in "${list[@]}"; do
+              if ! cmp -s "shared/$file" "workshops/$name/files/$file"; then
+                echo "workshops/$name/files/$file differs from shared/$file; run 'just shared'"
+                status=1
+              fi
+            done
+          done
+          for entry in $trees; do
+            name="${entry%%:*}"
+            tree="shared/${entry#*:}"
+            while IFS= read -r file; do
+              copy="workshops/$name/files/${file#"$tree"/}"
+              if ! cmp -s "$file" "$copy"; then
+                echo "$copy differs from $file; run 'just shared'"
+                status=1
+              fi
+            done < <(find "$tree" -type f -not -path "*/__pycache__/*" | sort)
           done
           exit $status
 
@@ -72,6 +94,9 @@ jobs:
           for workshop in workshops/*/; do
             name=$(basename "$workshop")
             uv run jupyter workshop test "$workshop" --junit "results-$name.xml"
+            if grep -qE '^tracks:' "$workshop/workshop.yaml"; then
+              tools/test-tracks.sh "$workshop"
+            fi
           done
 
       - name: Self-test in JupyterLite every workshop that runs there

@@ -1,0 +1,64 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: code-in-a-file
+title: Code in a file
+version: 0.1.0
+description: Move the code of the spending tracker from a notebook into a file of Python code, and use it from the notebook with an import. You learn why code is kept in a file, how to copy code from a cell into the editor, why a module needs import lines of its own, and why a notebook keeps the old code of a module until its kernel is restarted.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/code-in-a-file
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, modules, import]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+layout: notebook
+layouts:
+  notebook:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+  code:
+    main:
+      areas:
+        - { name: notebook, tabs: [] }
+        - { name: editor, size: 0.45, tabs: ['file:spending.py'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You moved a program from a notebook into a file. You know that a
+  module is a file of Python code, and that you can write one
+  yourself. You can copy code from a cell into the editor and save the
+  file. You know that a module needs import lines of its own. You can
+  use your module with `import spending` and with
+  `from spending import read_ledger`. You also know that Python reads
+  a module one time, so after you change the file you restart the
+  kernel of the notebook.
+
+  The next workshop is **Running a script**. Your file `spending.py`
+  can do more than give its code to a notebook. In the next workshop
+  you run the file as a program of its own, in the terminal, with no
+  notebook at all.
+
+  The Python tutorial covers this topic in
+  [Modules](https://docs.python.org/3/tutorial/modules.html). It is
+  written for people who already program, so do not worry if some of
+  it is difficult to read now.
+variables:
+  - name: notebook
+    type: path
+    default: code-in-a-file.ipynb
+    description: The notebook the exercises are done in
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-code-in-the-notebook.md
+  - pages/03-why-a-file.md
+  - pages/04-copy-a-class-into-the-file.md
+  - pages/05-a-module-has-its-own-imports.md
+  - pages/06-use-your-module.md
+  - pages/07-python-reads-a-module-one-time.md
+  - pages/08-move-the-last-piece.md
+  - pages/09-another-notebook.md
+  - pages/10-finish.md

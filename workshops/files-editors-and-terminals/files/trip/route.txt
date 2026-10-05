@@ -1,0 +1,3 @@
+2026-05-04  Lisbon to Madrid
+2026-05-07  Madrid to Barcelona
+2026-05-10  Barcelona to Lyon

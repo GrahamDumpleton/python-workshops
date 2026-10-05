@@ -14,7 +14,264 @@
   "ordered": true,
   "analytics": {
     "sink": "https://workshop-analytics.grumpys.work/events",
-    "token": "PLACEHOLDER-ISSUE-AN-INGEST-TOKEN-FOR-PYTHON-WORKSHOPS"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmY2MyYWQ0YmFlYzc0NDFkODFjYzcwOTllOGYxZTUxMCIsInN1YiI6InB5dGhvbi13b3Jrc2hvcHMiLCJzY29wZSI6WyJpbmdlc3QiXSwibGFiZWxzIjp7fSwib3JpZ2lucyI6WyJodHRwczovL2dyYWhhbWR1bXBsZXRvbi5naXRodWIuaW8iXSwiaWF0IjoxNzkxMDkxODQzLCJuYmYiOjE3OTEwOTE4NDMsImV4cCI6MTgyMTU3MTE5OX0.8ynSmj_komUvq0UBC23tS2BvKd5dfFZX2c1nSOzZ3zI"
   },
-  "workshops": []
+  "workshops": [
+    {
+      "name": "why-an-environment",
+      "title": "Why an environment",
+      "description": "See the problem that appears when every project on a computer shares one Python. You install a package for one small project, install a newer version of the same package for a second project, and watch the first project stop working, although you did not change it. You end with the idea that solves the problem, which is a place for installed packages that belongs to one project.",
+      "tags": [
+        "python",
+        "beginners",
+        "environments",
+        "packages"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/why-an-environment",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/why-an-environment"
+          }
+        }
+      ]
+    },
+    {
+      "name": "an-environment-of-your-own",
+      "title": "An environment of your own",
+      "description": "Learn how to give one project a Python environment of its own. You make a virtual environment, look at what is inside it, see what activating it changes in the terminal, install one package into it, run its Python without activating it, and then delete the environment and make it again.",
+      "tags": [
+        "python",
+        "beginners",
+        "environments",
+        "venv"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/an-environment-of-your-own",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/an-environment-of-your-own"
+          }
+        }
+      ]
+    },
+    {
+      "name": "installing-packages",
+      "title": "Installing packages",
+      "description": "Learn how to use code that other people have published. You make an environment for the spending tracker, install the package `rich` into it with pip, and see where the package went. You write a requirements file that records what the project needs, delete the environment, and get it back from that file. Then you use `rich` to show the spending as a table.",
+      "tags": [
+        "python",
+        "beginners",
+        "pip",
+        "packages"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/installing-packages",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/installing-packages"
+          }
+        }
+      ]
+    },
+    {
+      "name": "the-same-with-uv",
+      "title": "The same with uv",
+      "description": "Learn the tool uv, which does the work of `python -m venv` and of pip, in less time. You make an environment and install the package that the spending tracker needs, and each command is matched to the command that you already know. Then you read how the file `pyproject.toml` describes the project, let uv record the exact versions in a lock file, run the program with no activation, and delete the environment and get it back with one command.",
+      "tags": [
+        "python",
+        "beginners",
+        "uv",
+        "packages"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/the-same-with-uv",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/the-same-with-uv"
+          }
+        }
+      ]
+    },
+    {
+      "name": "testing-your-code",
+      "title": "Testing your code",
+      "description": "Learn how to write code that checks your other code. You see what a test is for, try the word `assert` in a small file, install the package `pytest` into an environment of your own, and write tests for the spending tracker. You break a method on purpose to read what a failing test shows, and then you write three more tests from a goal.",
+      "tags": [
+        "python",
+        "beginners",
+        "testing",
+        "pytest"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/testing-your-code",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/testing-your-code"
+          }
+        }
+      ]
+    },
+    {
+      "name": "a-proper-project",
+      "title": "A proper project",
+      "description": "Learn how Python programmers organise a project. You describe the spending tracker in the file `pyproject.toml`, move its code into a directory `src`, and install the project into its own environment, so that the tests run against the installed code. You give the program a command of its own. Then you watch three tools at work on your code, a linter, a formatter and a type checker.",
+      "tags": [
+        "python",
+        "beginners",
+        "pyproject",
+        "tools"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/a-proper-project",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/a-proper-project"
+          }
+        }
+      ]
+    },
+    {
+      "name": "your-own-project",
+      "title": "Your own project",
+      "description": "The last workshop of the course. You choose one of four small programs and build it yourself, from a short description, with checks and hints but with no code given. A file organiser sorts a directory of files by their type, and first shows what it would do. A log analyser reads the log of a web server and reports the busiest hours, the most requested pages and the errors. A password checker gives a password a score and says why, and comes with tests. A flashcard drill asks questions in the terminal and asks the wrong ones again. Then you learn where to go next, and how to install Python on your own computer.",
+      "tags": [
+        "python",
+        "beginners",
+        "project"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "frontends": [],
+      "capabilities": [
+        "terminal",
+        "write-files",
+        "kernel-exec"
+      ],
+      "duration": "25m",
+      "authors": [
+        "Graham Dumpleton"
+      ],
+      "homepage": "https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/your-own-project",
+      "issues": "https://github.com/GrahamDumpleton/python-workshops/issues",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "source": {
+            "git": "https://github.com/GrahamDumpleton/python-workshops",
+            "ref": "main",
+            "subdir": "workshops/your-own-project"
+          }
+        }
+      ]
+    }
+  ]
 }

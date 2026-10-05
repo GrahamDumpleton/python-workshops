@@ -1,0 +1,56 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: running-a-script
+title: Running a script
+version: 0.1.0
+description: Run a file of Python code as a program, from the terminal. You learn that a program shows only what it prints. You write a function that makes a report on the spending of one person, and a function named main where the program starts. Then you learn what the name __name__ is, and why most Python programs end with a test of it.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/running-a-script
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, scripts, terminal]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now run a file of Python code as a program. You know that
+  the command `python spending.py` runs every line of the file, and
+  that a program shows only what it prints. You wrote the function
+  `report_lines`, which returns the lines of a report, and the
+  function `main`, where the program starts. You know that Python
+  gives every module the name `__name__`, and that the test
+  `if __name__ == "__main__":` lets one file be a program that you
+  run and also a module that other code imports.
+
+  The next workshop is **Taking arguments**. Your program always
+  reads the same file and always shows the whole report. In the next
+  workshop, the command itself says which file the program reads, and
+  which month or which category the report is about.
+
+  The Python tutorial covers this subject in
+  [Executing modules as scripts](https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-run-the-file.md
+  - pages/03-only-what-it-prints.md
+  - pages/04-a-function-named-main.md
+  - pages/05-a-function-that-returns-the-lines.md
+  - pages/06-more-lines-for-the-report.md
+  - pages/07-a-ledger-with-no-purchases.md
+  - pages/08-the-name-of-a-module.md
+  - pages/09-a-program-and-a-module.md
+  - pages/10-finish.md

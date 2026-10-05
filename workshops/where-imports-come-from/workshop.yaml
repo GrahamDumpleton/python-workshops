@@ -1,0 +1,56 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: where-imports-come-from
+title: Where imports come from
+version: 0.1.0
+description: Learn how Python finds the file for an import. You look at the list of directories that Python searches, see where the standard library and installed code are kept, find the file that a module came from, and find and repair the bug of a file of your own that hides a module of Python.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/where-imports-come-from
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, imports, modules]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+sidebar: filebrowser
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You now know how Python finds the file for an import. You know that
+  `sys.path` is a list of directories, and that Python searches them
+  in order and uses the first file that has the right name. You know
+  that the first directory is the directory of your script, that the
+  standard library has a directory of its own, and that installed
+  code is kept in the directory `site-packages`. You can find the
+  file that a module came from with `__file__`, and you can find and
+  repair the bug of a file of your own that hides a module of Python.
+
+  The next workshop is **Making a package**. The spending tracker is
+  four modules in one directory. In the next workshop you put them
+  into a directory of their own, which can be imported with one
+  name.
+
+  The Python tutorial covers this subject in
+  [The Module Search Path](https://docs.python.org/3/tutorial/modules.html#the-module-search-path).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-an-import-is-a-search.md
+  - pages/03-the-list-of-places.md
+  - pages/04-the-first-place.md
+  - pages/05-the-file-of-a-module.md
+  - pages/06-installed-code.md
+  - pages/07-a-file-with-the-wrong-name.md
+  - pages/08-repair-the-name.md
+  - pages/09-finish.md

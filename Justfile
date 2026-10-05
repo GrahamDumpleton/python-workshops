@@ -156,6 +156,14 @@ test NAME *ARGS:
 test-lite NAME *ARGS:
     shift; uv run jupyter workshop test workshops/{{NAME}} --frontend jupyterlite "$@"
 
+# The self-test follows one track of a workshop that offers a choice of
+# tracks, the first in its manifest. Workshop your-own-project has four,
+# one for each brief, so it is tested once for each.
+# Self-test a workshop once for each of its tracks; extra args go to `jupyter workshop test`.
+[positional-arguments]
+test-tracks NAME *ARGS:
+    shift; tools/test-tracks.sh workshops/{{NAME}} "$@"
+
 # Self-test every workshop, on both frontends where it runs on both, writing a JUnit report for each.
 test-all:
     #!/usr/bin/env bash
@@ -165,6 +173,10 @@ test-all:
         name=$(basename "$dir")
         echo "== $dir (jupyterlab)"
         uv run jupyter workshop test "$dir" --junit "results-$name.xml"
+        if grep -qE '^tracks:' "$dir/workshop.yaml"; then
+            echo "== $dir (each track)"
+            tools/test-tracks.sh "$dir"
+        fi
         if {{lite_check}}; then
             echo "== $dir (jupyterlite)"
             uv run jupyter workshop test "$dir" --frontend jupyterlite --junit "results-$name-lite.xml"
@@ -266,7 +278,15 @@ catalog:
 # symlinks without a word. Each entry of the list below is a workshop
 # and the shared files it ships, as `workshop:file,file`. A workshop
 # not written yet is skipped.
-shared_files := "reading-and-writing-files:spending.csv when-the-data-is-wrong:spending-raw.csv csv-and-json:spending.csv,budgets.json cleaning-messy-text:spending-raw.csv,spending.csv where-the-money-went:spending-raw.csv,budgets.json spending-as-objects:spending.csv,budgets.json"
+shared_files := "reading-and-writing-files:spending.csv when-the-data-is-wrong:spending-raw.csv csv-and-json:spending.csv,budgets.json cleaning-messy-text:spending-raw.csv,spending.csv where-the-money-went:spending-raw.csv,budgets.json spending-as-objects:spending.csv,budgets.json code-in-a-file:spending.csv running-a-script:spending.csv taking-arguments:spending.csv splitting-into-modules:spending.csv making-a-package:spending.csv finding-the-bug:spending.csv installing-packages:spending.csv the-same-with-uv:spending.csv testing-your-code:spending.csv a-proper-project:spending.csv"
+
+# The code of the running project at the start of a workshop is kept
+# in the same way, as a directory under shared/tracker/ for each stage
+# of the program. Each entry below is a workshop and the stage it
+# starts from, as `workshop:directory`; every file under the directory
+# is copied to the same relative path under the workshop's files/. The
+# test workflow reads both lists from this file.
+shared_trees := "running-a-script:tracker/s0 taking-arguments:tracker/s1 splitting-into-modules:tracker/s2 making-a-package:tracker/s3 installing-packages:tracker/s4 the-same-with-uv:tracker/s5 testing-your-code:tracker/s5 a-proper-project:tracker/s6"
 
 # Copy the files under shared/ into the files/ directory of each workshop that ships them.
 shared:
@@ -283,6 +303,19 @@ shared:
             cp "shared/$file" "workshops/$name/files/$file"
             echo "shared/$file -> workshops/$name/files/$file"
         done
+    done
+    for entry in {{shared_trees}}; do
+        name="${entry%%:*}"
+        tree="shared/${entry#*:}"
+        if [ ! -d "workshops/$name" ]; then
+            continue
+        fi
+        while IFS= read -r file; do
+            copy="workshops/$name/files/${file#"$tree"/}"
+            mkdir -p "$(dirname "$copy")"
+            cp "$file" "$copy"
+            echo "$file -> $copy"
+        done < <(find "$tree" -type f -not -path "*/__pycache__/*" | sort)
     done
 
 # Fail if a copy of a shared file in a workshop differs from the one under shared/.
@@ -302,6 +335,20 @@ shared-check:
                 status=1
             fi
         done
+    done
+    for entry in {{shared_trees}}; do
+        name="${entry%%:*}"
+        tree="shared/${entry#*:}"
+        if [ ! -d "workshops/$name" ]; then
+            continue
+        fi
+        while IFS= read -r file; do
+            copy="workshops/$name/files/${file#"$tree"/}"
+            if ! cmp -s "$file" "$copy"; then
+                echo "$copy differs from $file; run 'just shared'"
+                status=1
+            fi
+        done < <(find "$tree" -type f -not -path "*/__pycache__/*" | sort)
     done
     exit $status
 

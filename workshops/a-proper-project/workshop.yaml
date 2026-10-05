@@ -1,0 +1,71 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: a-proper-project
+title: A proper project
+version: 0.1.0
+description: Learn how Python programmers organise a project. You describe the spending tracker in the file `pyproject.toml`, move its code into a directory `src`, and install the project into its own environment, so that the tests run against the installed code. You give the program a command of its own. Then you watch three tools at work on your code, a linter, a formatter and a type checker.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/a-proper-project
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, pyproject, tools]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+  PIP_REQUIRE_VIRTUALENV: '1'
+  PYTEST_ADDOPTS: '-p no:cacheprovider'
+sidebar: filebrowser
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  The spending tracker is now a proper project. You know that the
+  file `pyproject.toml` describes a project: its name, its version,
+  the packages that it needs, and the build system that installs it.
+  You know why the code goes into a directory `src`: then nothing can
+  import it by accident from the directory that the terminal is in,
+  so the tests run against the installed code. You can install a
+  project into its environment with `python -m pip install -e .`,
+  and you know that "editable" means that a change to the code needs
+  no new install. You gave the program a command of its own,
+  `spending`, with the table `[project.scripts]`. You saw a linter
+  (`python -m ruff check`) find a problem, a formatter
+  (`python -m ruff format`) change the layout of long lines, and a
+  type checker (`python -m mypy`) compare the type hints with the
+  code.
+
+  The next workshop is **Your own project**, the last workshop of
+  the course. You choose one of four small programs, and you build it
+  yourself, from a short description.
+
+  The Python Packaging User Guide explains every part of the file in
+  [Writing your pyproject.toml](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/),
+  and the reasons for the directory `src` in
+  [src layout vs flat layout](https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/).
+  The documentation of the tools is at
+  [docs.astral.sh/ruff](https://docs.astral.sh/ruff/) and
+  [mypy.readthedocs.io](https://mypy.readthedocs.io/). These pages
+  are written for people who already program, so do not worry if
+  some of the text is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-project-and-its-environment.md
+  - pages/03-where-the-tests-find-the-code.md
+  - pages/04-the-src-layout.md
+  - pages/05-describe-the-project.md
+  - pages/06-install-the-project.md
+  - pages/07-a-command-of-its-own.md
+  - pages/08-a-linter.md
+  - pages/09-a-formatter.md
+  - pages/10-type-hints-on-functions.md
+  - pages/11-a-type-checker.md
+  - pages/12-finish.md

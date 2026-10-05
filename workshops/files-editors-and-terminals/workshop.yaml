@@ -1,0 +1,58 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: files-editors-and-terminals
+title: Files, editors and terminals
+version: 0.1.0
+description: Learn the three tools that programmers use every day, before you use them for Python. You find files in the file browser, change a file in the editor and save it, and type commands in a terminal. You learn which directory the terminal is in, how to look at what is there, how to move to another directory, how to stop a program that does not end, and how to copy and paste in the terminal. There is no new Python in this workshop.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/files-editors-and-terminals
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, terminal, files]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+sidebar: filebrowser
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now use the three tools that the rest of the course needs.
+  You can find a file in the file browser, change it in the editor and
+  save it. You can type a command in the terminal, and you know that
+  the shell runs it in the current directory. You can show the current
+  directory with `pwd`, show what it holds with `ls`, move with `cd`,
+  and show a file with `cat`. You can stop a program with `Ctrl` and
+  `C`, and you can copy and paste in the terminal.
+
+  The next workshop is **Python in the terminal**. Until now, Python
+  always ran inside a notebook. In the next workshop you start Python
+  in the terminal, and you type Python code there, one line at a time.
+
+  The JupyterLab documentation describes
+  [the terminal](https://jupyterlab.readthedocs.io/en/stable/user/terminal.html),
+  [the file browser](https://jupyterlab.readthedocs.io/en/stable/user/files.html)
+  and
+  [the editor](https://jupyterlab.readthedocs.io/en/stable/user/file_editor.html).
+  It is written for people who already know these tools, so do not
+  worry if some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-file-browser.md
+  - pages/03-the-editor.md
+  - pages/04-the-terminal.md
+  - pages/05-where-the-terminal-is.md
+  - pages/06-another-directory.md
+  - pages/07-a-program-that-does-not-end.md
+  - pages/08-stop-with-ctrl-c.md
+  - pages/09-copy-and-paste.md
+  - pages/10-finish.md

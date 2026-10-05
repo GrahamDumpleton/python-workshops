@@ -1,0 +1,59 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: making-a-package
+title: Making a package
+version: 0.1.0
+description: Learn how to keep the modules of one program together in a package. You make a directory for the spending tracker, move its four modules into it, change their imports so that each module finds the others, and run the whole package by its name with one command.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/making-a-package
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, packages, imports]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now make a package. You know that a package is a directory
+  that holds modules, and that the file `__init__.py` marks the
+  directory as a package. You can make a directory with `mkdir` and
+  move a file with `mv`. You know that a module inside a package
+  imports the other modules of the package with a dot before the name,
+  such as `from .models import Ledger`, and that this is a relative
+  import. You know why a file that has relative imports cannot be run
+  by its path, and you can run a package by its name with
+  `python -m spending`, which runs the file `__main__.py`. You can use
+  the package in another program with
+  `from spending.storage import read_ledger`.
+
+  The next workshop is **Finding the bug**. A program in several files
+  can go wrong in several files. The next workshop shows how to read
+  an error message that names more than one file, and how to look
+  inside a program while it runs.
+
+  The Python tutorial covers packages in
+  [Packages](https://docs.python.org/3/tutorial/modules.html#packages).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-what-a-package-is.md
+  - pages/03-move-the-modules.md
+  - pages/04-the-init-file.md
+  - pages/05-a-module-inside-a-package.md
+  - pages/06-relative-imports.md
+  - pages/07-run-a-file-inside-a-package.md
+  - pages/08-run-the-package-by-its-name.md
+  - pages/09-use-the-package.md
+  - pages/10-finish.md

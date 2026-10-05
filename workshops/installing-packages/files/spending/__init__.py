@@ -1,0 +1,1 @@
+"""The spending tracker."""

@@ -1,0 +1,58 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: taking-arguments
+title: Taking arguments
+version: 0.1.0
+description: Learn how a program receives words from the command that starts it. You read them first from the list `sys.argv`, and then with the module `argparse`, which also gives your program help text and clear messages. Then you change the spending tracker so that one command chooses the file to read, and reports on one month or on one category.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/taking-arguments
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, terminal, argparse]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  Your program now takes its instructions from the command that starts
+  it. You know that a command line argument is a word after the name
+  of the program in a command, and that Python gives all of them to
+  the program as strings, in the list `sys.argv`. You can use the
+  module `argparse` to name the command line arguments, to add options
+  that begin with `--`, and to get help text and clear messages. You
+  wrote a method with two default values of `None`, and you used it
+  to report on one month or on one category.
+
+  The next workshop is **Splitting into modules**. The file
+  `spending.py` now holds the classes, the code that reads the file,
+  the code that makes the report, and the code that reads the command
+  line. In the next workshop you divide it into several files, each
+  with one job, and you write the imports between them.
+
+  The Python documentation covers this topic in the
+  [Argparse Tutorial](https://docs.python.org/3/howto/argparse.html),
+  and it describes the list in
+  [sys.argv](https://docs.python.org/3/library/sys.html#sys.argv).
+  Both are written for people who already program, so do not worry if
+  some of the text is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-what-a-program-receives.md
+  - pages/03-every-one-is-a-string.md
+  - pages/04-argparse.md
+  - pages/05-an-option.md
+  - pages/06-the-file-name.md
+  - pages/07-some-of-the-purchases.md
+  - pages/08-options-for-the-report.md
+  - pages/09-finish.md

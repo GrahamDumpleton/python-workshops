@@ -1,0 +1,67 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: your-own-project
+title: Your own project
+version: 0.1.0
+description: The last workshop of the course. You choose one of four small programs and build it yourself, from a short description, with checks and hints but with no code given. A file organiser sorts a directory of files by their type, and first shows what it would do. A log analyser reads the log of a web server and reports the busiest hours, the most requested pages and the errors. A password checker gives a password a score and says why, and comes with tests. A flashcard drill asks questions in the terminal and asks the wrong ones again. Then you learn where to go next, and how to install Python on your own computer.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/your-own-project
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, project]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+sidebar: filebrowser
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+tracks:
+  - { id: file-organiser, label: A file organiser }
+  - { id: log-analyser, label: A log analyser }
+  - { id: password-checker, label: A password checker }
+  - { id: flashcard-drill, label: A flashcard drill }
+finish: |
+  You have built a complete program of your own, from a short
+  description, with no code given. You made the file, you wrote the
+  code in the editor, you ran it in the terminal, and you used the
+  checks and the error messages to make it correct. That is how
+  programmers work.
+
+  This was the last workshop. The course is complete. You started
+  with one line of Python in a notebook. You can now write programs in
+  files, run them with command line arguments, divide them into
+  modules and packages, find their bugs, install packages into an
+  environment of your own, and test your code.
+
+  To use Python on your own computer, install it from
+  [python.org](https://www.python.org/downloads/). Then make a virtual
+  environment for each project with `python -m venv .venv`, as you
+  learned in these workshops. To keep these workshops on your own
+  computer, follow the steps under "Run locally" in the
+  [README of the course](https://github.com/GrahamDumpleton/python-workshops#run-locally).
+
+  To learn more, read the
+  [Python tutorial](https://docs.python.org/3/tutorial/index.html)
+  from its start. You know most of its first nine chapters already,
+  and it explains each idea in more detail. The
+  [library reference](https://docs.python.org/3/library/index.html)
+  describes every module that comes with Python. Both are written for
+  people who already program, and you are now one of them.
+pages:
+  - pages/01-welcome.md
+  - pages/02-choose-your-project.md
+  - pages/03-a-file-organiser.md
+  - pages/03-a-log-analyser.md
+  - pages/03-a-password-checker.md
+  - pages/03-a-flashcard-drill.md
+  - pages/04-finish.md

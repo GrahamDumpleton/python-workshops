@@ -1,0 +1,59 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: an-environment-of-your-own
+title: An environment of your own
+version: 0.1.0
+description: Learn how to give one project a Python environment of its own. You make a virtual environment, look at what is inside it, see what activating it changes in the terminal, install one package into it, run its Python without activating it, and then delete the environment and make it again.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/an-environment-of-your-own
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, environments, venv]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+  PIP_REQUIRE_VIRTUALENV: '1'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now give a project a Python environment of its own. You
+  know that a virtual environment is a directory, which holds its own
+  `python` and its own `site-packages`. You can make one with
+  `python -m venv .venv`. You know that activating an environment
+  puts its directory `bin` first on `PATH`, so that the word `python`
+  means the Python of the environment, and that `deactivate` puts
+  `PATH` back. You can run the Python of an environment by its path,
+  with no activation. You know that an environment holds nothing that
+  you wrote, so you can delete it and make it again.
+
+  The next workshop is **Installing packages**. In this workshop you
+  installed one package with one command. The next workshop explains
+  that command, shows where packages come from, and shows how a
+  project keeps a list of the packages that it needs.
+
+  The Python tutorial covers this subject in
+  [Virtual Environments and Packages](https://docs.python.org/3/tutorial/venv.html).
+  The library reference explains
+  [how virtual environments work](https://docs.python.org/3/library/venv.html#how-venvs-work).
+  Both are written for people who already program, so do not worry if
+  some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-make-an-environment.md
+  - pages/03-a-look-inside.md
+  - pages/04-how-the-shell-finds-python.md
+  - pages/05-activate-the-environment.md
+  - pages/06-install-a-package.md
+  - pages/07-without-activating.md
+  - pages/08-delete-it-and-make-it-again.md
+  - pages/09-finish.md

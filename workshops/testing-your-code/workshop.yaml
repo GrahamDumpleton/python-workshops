@@ -1,0 +1,65 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: testing-your-code
+title: Testing your code
+version: 0.1.0
+description: Learn how to write code that checks your other code. You see what a test is for, try the word `assert` in a small file, install the package `pytest` into an environment of your own, and write tests for the spending tracker. You break a method on purpose to read what a failing test shows, and then you write three more tests from a goal.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/testing-your-code
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, testing, pytest]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+  PIP_REQUIRE_VIRTUALENV: '1'
+  PYTEST_ADDOPTS: '--rootdir=.'
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+sidebar: filebrowser
+gating: soft
+finish: |
+  You can now test your code. You know that a test is code that checks
+  other code, and that its value comes later, when you change the
+  code and the test tells you at once what you broke. You know that a
+  line that begins with `assert` does nothing when its expression is
+  `True`, and stops the program with an `AssertionError` when the
+  expression is `False`. You can install the package `pytest` into an
+  environment, write a test function in a test file, and run every
+  test of a project with `python -m pytest`. You can read what `pytest`
+  shows when a test fails, and you can write tests of your own from a
+  goal.
+
+  The next workshop is **A proper project**. The spending tracker is
+  now a package, a file of requirements and a directory of tests. The
+  next workshop gives the project one file that describes all of it,
+  so that the project can be installed like any other package.
+
+  The Python documentation describes `assert` in
+  [The assert statement](https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement).
+  The documentation of pytest begins with
+  [Get Started](https://docs.pytest.org/en/stable/getting-started.html).
+  Both are written for people who already program, so do not worry if
+  some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-what-a-test-is-for.md
+  - pages/03-the-word-assert.md
+  - pages/04-an-environment-for-the-project.md
+  - pages/05-install-pytest.md
+  - pages/06-your-first-test-file.md
+  - pages/07-tests-for-the-total.md
+  - pages/08-read-a-failure.md
+  - pages/09-repair-the-method.md
+  - pages/10-tests-for-select.md
+  - pages/11-a-test-for-the-empty-report.md
+  - pages/12-finish.md

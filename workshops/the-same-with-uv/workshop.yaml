@@ -1,0 +1,68 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: the-same-with-uv
+title: The same with uv
+version: 0.1.0
+description: Learn the tool uv, which does the work of `python -m venv` and of pip, in less time. You make an environment and install the package that the spending tracker needs, and each command is matched to the command that you already know. Then you read how the file `pyproject.toml` describes the project, let uv record the exact versions in a lock file, run the program with no activation, and delete the environment and get it back with one command.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/the-same-with-uv
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, uv, packages]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+requires:
+  tools:
+    - { name: uv }
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+  PIP_REQUIRE_VIRTUALENV: '1'
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now use uv. You know that uv is one program that does the
+  work of `python -m venv` and of pip, and that the ideas are the
+  same: a virtual environment is a directory with its own `python`
+  and its own `site-packages`, and a package is installed into it
+  from PyPI. You can make an environment with `uv venv`, and install
+  into it with `uv pip install -r requirements.txt`. You can describe
+  a project in the file `pyproject.toml`, add a dependency with
+  `uv add`, and run a program with `uv run`, with no activation. You
+  know that the lock file `uv.lock` records the exact version of
+  every package, so that every computer gets the same versions, and
+  that `uv sync` makes the environment again from that file.
+
+  The next workshop is **Testing your code**. A program changes many
+  times after you write it, and each change can break something that
+  worked before. The next workshop shows how to write code that
+  checks your code, so that you find such a mistake at once.
+
+  The documentation of uv is at
+  [docs.astral.sh/uv](https://docs.astral.sh/uv/). Its page
+  [Working on projects](https://docs.astral.sh/uv/guides/projects/)
+  covers `pyproject.toml`, `uv add`, `uv run` and `uv sync`. The
+  Python Packaging User Guide explains the file `pyproject.toml` in
+  [Writing your pyproject.toml](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/).
+  These pages are written for people who already program, so do not
+  worry if some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-program-and-what-it-needs.md
+  - pages/03-what-uv-is.md
+  - pages/04-an-environment-with-uv.md
+  - pages/05-install-with-uv.md
+  - pages/06-a-file-that-describes-the-project.md
+  - pages/07-add-a-dependency.md
+  - pages/08-the-lock-file.md
+  - pages/09-run-with-no-activation.md
+  - pages/10-delete-it-and-get-it-back.md
+  - pages/11-finish.md

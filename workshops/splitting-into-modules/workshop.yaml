@@ -1,0 +1,54 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: splitting-into-modules
+title: Splitting into modules
+version: 0.1.0
+description: Split one long program into four modules, each with one job. You make the files yourself in the file browser, move the code of the spending tracker into them, and write the imports that connect the modules. You learn that each module imports the names that it uses itself, and you learn the errors that Python shows when an import is missing or wrong.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/splitting-into-modules
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, modules, imports]
+duration: 25m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - write-files
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+sidebar: filebrowser
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You have split one long program into four modules: `models.py`,
+  `storage.py`, `report.py` and `main.py`. You made each file yourself,
+  you moved the code, and you wrote the imports between the modules.
+  You know that each module has one job, that a module imports every
+  name that it uses itself, and what Python shows when an import is
+  missing or wrong.
+
+  The next workshop is **Where imports come from**. It shows how
+  Python finds a module when it reads an `import` line, and what goes
+  wrong when one of your own files has the same name as a module of
+  Python.
+
+  The Python tutorial covers this topic in
+  [Modules](https://docs.python.org/3/tutorial/modules.html). It is
+  written for people who already program, so do not worry if some of
+  it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-one-job-for-each-module.md
+  - pages/03-make-a-file-yourself.md
+  - pages/04-the-classes.md
+  - pages/05-the-file-reader.md
+  - pages/06-the-report.md
+  - pages/07-the-command-line.md
+  - pages/08-the-old-file.md
+  - pages/09-finish.md

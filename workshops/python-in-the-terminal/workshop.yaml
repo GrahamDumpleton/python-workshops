@@ -1,0 +1,52 @@
+apiVersion: jupyterlab-workshop/v1alpha1
+name: python-in-the-terminal
+title: Python in the terminal
+version: 0.1.0
+description: Use Python without a notebook. You ask the terminal which Python it runs, start the interactive interpreter, and type Python at its prompt, one line at a time. You see what is the same as a notebook cell and what is different, and why code that you want to keep belongs in a file.
+authors: [Graham Dumpleton]
+homepage: https://github.com/GrahamDumpleton/python-workshops/tree/main/workshops/python-in-the-terminal
+issues: https://github.com/GrahamDumpleton/python-workshops/issues
+tags: [python, beginners, terminal, interpreter]
+duration: 20m
+platforms: [linux, macos]
+capabilities:
+  - terminal
+  - kernel-exec
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+  PYTHON_HISTORY: .python_history
+layout: code
+layouts:
+  code:
+    main:
+      areas:
+        - { name: editor, tabs: [] }
+        - { name: terminal, size: 0.4, tabs: ['terminal:workshop'] }
+instructions: { side: right, width: 0.35 }
+gating: soft
+finish: |
+  You can now use Python without a notebook. You know that the
+  interpreter is the program named `python`, and that the terminal
+  runs one particular Python. You can start the interactive
+  interpreter, type Python at the `>>>` prompt, type a block at the
+  `...` prompt, bring back an earlier line with the up arrow, and
+  leave with `exit()`. You also know the limit: when the interpreter
+  ends, it forgets every name.
+
+  The next workshop is **Code in a file**. It answers that limit. You
+  put your code in a file, where it stays, and you use the file from
+  a notebook.
+
+  The Python tutorial covers the interactive interpreter in
+  [Interactive Mode](https://docs.python.org/3/tutorial/interpreter.html#interactive-mode).
+  It is written for people who already program, so do not worry if
+  some of it is difficult to read now.
+pages:
+  - pages/01-welcome.md
+  - pages/02-the-python-of-the-terminal.md
+  - pages/03-the-interactive-interpreter.md
+  - pages/04-each-line-shows-its-value.md
+  - pages/05-a-block-of-lines.md
+  - pages/06-the-up-arrow.md
+  - pages/07-what-the-interpreter-forgets.md
+  - pages/08-finish.md

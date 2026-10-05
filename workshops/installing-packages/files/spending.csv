@@ -1,0 +1,38 @@
+date,description,amount,category
+2026-01-01,Rent for January,650.00,rent
+2026-01-03,Bread and milk,6.40,food
+2026-01-05,Bus ticket,2.80,transport
+2026-01-06,Phone bill,18.00,phone
+2026-01-08,Vegetables,11.25,food
+2026-01-10,Cinema ticket,9.50,hobbies
+2026-01-12,Monthly bus pass,42.00,transport
+2026-01-15,Rice and beans,14.30,food
+2026-01-17,Winter coat,74.90,clothes
+2026-01-20,Fruit and eggs,9.85,food
+2026-01-24,Supermarket,58.60,food
+2026-01-27,Train ticket,12.40,transport
+2026-01-30,Coffee with friends,7.20,food
+2026-02-01,Rent for February,650.00,rent
+2026-02-02,Supermarket,63.15,food
+2026-02-04,Monthly bus pass,42.00,transport
+2026-02-06,Phone bill,18.00,phone
+2026-02-09,Book,13.99,hobbies
+2026-02-11,Bread and cheese,8.75,food
+2026-02-14,Dinner at a restaurant,36.50,food
+2026-02-17,Vegetables,10.40,food
+2026-02-20,Guitar strings,12.00,hobbies
+2026-02-23,Fruit and eggs,9.85,food
+2026-02-26,Socks,6.50,clothes
+2026-02-28,Supermarket,71.20,food
+2026-03-01,Rent for March,650.00,rent
+2026-03-03,Monthly bus pass,42.00,transport
+2026-03-05,Supermarket,55.45,food
+2026-03-06,Phone bill,18.00,phone
+2026-03-09,Running shoes,59.00,clothes
+2026-03-12,Bread and milk,6.40,food
+2026-03-15,Taxi,15.60,transport
+2026-03-18,Vegetables,12.10,food
+2026-03-21,Concert ticket,28.00,hobbies
+2026-03-24,Rice and beans,14.30,food
+2026-03-27,Bicycle repair,24.50,transport
+2026-03-30,Supermarket,49.90,food
