@@ -53,13 +53,17 @@ working_like_a_developer := "why-an-environment an-environment-of-your-own insta
 lite_check := "grep -qE '^frontends:.*jupyterlite' \"$dir/workshop.yaml\""
 
 # What the JupyterLite site subscribes to: a catalog of its own, naming
-# the four collections that run there. Not catalog.json, which lists the
-# last two collections as well, and they cannot run there. And not the
-# four indexes passed one by one with --collection: each is carried at
-# the root of the site under its own file name, and all four are named
-# collection.json, so the build refuses the second. A catalog carries
-# the indexes it names at their relative paths, so they stay apart.
-lite_collections := "--catalog catalog-lite.json"
+# the four collections that run there, and those four collections. Not
+# catalog.json, which lists the last two collections as well, and they
+# cannot run there. The catalog carries the indexes it names at their
+# relative paths, which keeps the four files named collection.json
+# apart. Subscribing to a catalog subscribes to none of its
+# collections: the browser only offers them, and the site disables
+# subscribing, so without the --collection options every workshop is
+# listed under "Other workshops". Each index named with --collection is
+# also one the catalog carries, and the build subscribes to the
+# catalog's copy rather than carrying it a second time.
+lite_collections := "--catalog catalog-lite.json --collection collections/first-steps/collection.json --collection collections/functions-and-data/collection.json --collection collections/working-with-data/collection.json --collection collections/your-own-types/collection.json"
 
 # List available targets.
 default:

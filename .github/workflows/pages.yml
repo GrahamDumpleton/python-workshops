@@ -11,10 +11,12 @@
 # four collections, so the workshop browser lists them under each
 # collection's title, numbered in its order. Not catalog.json, which
 # lists the last two collections as well, and they cannot run in
-# JupyterLite. And not the four indexes with --collection, which would
-# each be carried at the root of the site as collection.json, and the
-# build refuses the second. Until a workshop that runs there exists,
-# nothing is built or published.
+# JupyterLite. The four indexes are also named with --collection:
+# subscribing to a catalog subscribes to none of its collections, and
+# the site disables subscribing, so without them every workshop is
+# listed under "Other workshops". The build subscribes to the copy of
+# each that the catalog carried. Until a workshop that runs there
+# exists, nothing is built or published.
 #
 # No trust level is forced, so opening a workshop on the site shows the
 # trust dialog, where the Binder image removes it. A Binder session is a
@@ -93,6 +95,10 @@ jobs:
             --out dist \
             --no-terminal \
             --catalog catalog-lite.json \
+            --collection collections/first-steps/collection.json \
+            --collection collections/functions-and-data/collection.json \
+            --collection collections/working-with-data/collection.json \
+            --collection collections/your-own-types/collection.json \
             --settings lite/settings.json \
             --welcome lite/welcome.md
           echo "built=true" >> "$GITHUB_OUTPUT"
