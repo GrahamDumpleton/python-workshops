@@ -150,7 +150,7 @@ line of the error message. It can be a different error now.
 
 ````{hint}
 :title: Show me a solution
-:unlock: "pick-works" in failed_checks
+:unlock: "pick-works" in failed_checks or "pick-works" in passed_checks
 :locked: Click Check below first
 
 The first action gives the file `random.py` the name

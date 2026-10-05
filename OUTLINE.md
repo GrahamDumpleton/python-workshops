@@ -1385,7 +1385,16 @@ learner's program itself in a fresh process from a `kernel` check, or
 is a typed quiz on what the terminal showed. Commands go from a click
 (`execute`), to typed by the page with the learner pressing Enter
 (`terminal-type`, with a `send-key` in a hint for the self-test), to
-typed by the learner, with the command in a locked hint. Workshop 29
+typed by the learner, with the command in a locked hint. A hint is
+locked only on a `verify`, which a learner can click to fail, and it
+unlocks when that check has run, passed or failed:
+`"x" in failed_checks or "x" in passed_checks`. A hint that runs the
+command for a step whose only check is a quiz about the command's
+output is not locked. A correct answer puts a quiz in `passed_checks`
+and never in `failed_checks`, and the learner needs the command's
+output to answer, so a lock on the quiz would open only after a wrong
+guess. Workshop 28 was released with such locks, which a learner
+found on 2026-10-05. Workshop 29
 reads what the learner typed at the `>>>` prompt from
 `.python_history` in the workspace, which the manifest's `env` names.
 

@@ -80,8 +80,6 @@ shared-python/bin/python labels/labels.py
 
 ````{hint}
 :title: Run the command for me
-:unlock: "too-old-error" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-labels-old

@@ -76,8 +76,6 @@ python order.py
 
 ````{hint}
 :title: Run the command for me
-:unlock: "order-result" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-order
@@ -134,8 +132,6 @@ python pick.py
 
 ````{hint}
 :title: Run the command for me
-:unlock: "pick-result" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-pick

@@ -140,8 +140,6 @@ ls -a
 
 ````{hint}
 :title: Type the command for me
-:unlock: "hidden-name" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-ls-a

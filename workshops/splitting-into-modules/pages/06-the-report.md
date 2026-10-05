@@ -157,7 +157,7 @@ def report_lines(ledger):
 
 ````{hint}
 :title: Show me a solution
-:unlock: "report-works" in failed_checks
+:unlock: "report-works" in failed_checks or "report-works" in passed_checks
 :locked: Try the task first. This opens after the check below has run.
 
 The action below writes a complete `report.py`. If you have made the

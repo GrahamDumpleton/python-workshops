@@ -66,7 +66,7 @@ terminal shows its prompt again.
 
 ````{hint}
 :title: Press Enter for me
-:unlock: "new-installed" in failed_checks
+:unlock: "new-installed" in failed_checks or "new-installed" in passed_checks
 :locked: Click Check below first
 
 ```{send-key}
@@ -139,8 +139,6 @@ ls shared-python/lib/python3.14/site-packages
 
 ````{hint}
 :title: Run the command for me
-:unlock: "new-version-name" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: list-new
@@ -176,8 +174,6 @@ shared-python/bin/python labels/labels.py
 
 ````{hint}
 :title: Run the command for me
-:unlock: "count-colours" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-labels-new

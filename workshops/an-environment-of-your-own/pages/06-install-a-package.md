@@ -123,8 +123,6 @@ You can also type the command.
 
 ````{hint}
 :title: Type the command for me
-:unlock: "packages-after" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-ls-packages-after
@@ -165,8 +163,6 @@ python prices.py
 
 ````{hint}
 :title: Type the command for me
-:unlock: "table-first-word" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-prices-active

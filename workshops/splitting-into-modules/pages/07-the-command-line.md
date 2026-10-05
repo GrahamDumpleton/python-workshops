@@ -306,7 +306,7 @@ if __name__ == "__main__":
 
 ````{hint}
 :title: Show me a solution
-:unlock: "main-works" in failed_checks
+:unlock: "main-works" in failed_checks or "main-works" in passed_checks
 :locked: Try the task first. This opens after the check below has run.
 
 The action below writes a complete `main.py`. If you have made the

@@ -62,8 +62,6 @@ one time inside the terminal. Then press `Enter`.
 
 ````{hint}
 :title: Press Enter for me
-:unlock: "pwd-in-trip" in failed_checks
-:locked: Answer the question below first
 
 ```{send-key}
 :id: enter-pwd
@@ -96,8 +94,6 @@ ls
 
 ````{hint}
 :title: Press Enter for me
-:unlock: "ls-in-trip" in failed_checks
-:locked: Answer the question below first
 
 ```{send-key}
 :id: enter-ls
@@ -164,8 +160,6 @@ run `pwd` again.
 
 ````{hint}
 :title: Type the two commands for me
-:unlock: "pwd-back" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-cd-back

@@ -173,7 +173,7 @@ needs three `print()` lines. Each `print()` line shows the attribute
 
 ````{hint}
 :title: Show me a solution
-:unlock: "where-three" in failed_checks
+:unlock: "where-three" in failed_checks or "where-three" in passed_checks
 :locked: Click Check below first
 
 The first action writes a working script to `where.py`. The second

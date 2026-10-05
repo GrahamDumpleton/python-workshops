@@ -373,7 +373,7 @@ first = Purchase("2026-01-01")
 
 ````{hint}
 :title: Show me a solution
-:unlock: "models-work" in failed_checks
+:unlock: "models-work" in failed_checks or "models-work" in passed_checks
 :locked: Try the task first. This opens after the check below has run.
 
 The action below writes a complete `models.py`. It replaces the text

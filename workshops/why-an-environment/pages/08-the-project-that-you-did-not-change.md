@@ -38,8 +38,6 @@ shared-python/bin/python poster/poster.py
 
 ````{hint}
 :title: Run the command for me
-:unlock: "missing-attribute" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-poster-new

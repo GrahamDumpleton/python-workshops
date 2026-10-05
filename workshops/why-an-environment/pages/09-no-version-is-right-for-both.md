@@ -54,7 +54,7 @@ shared-python/bin/python -m pip uninstall --yes webcolors
 
 ````{hint}
 :title: Run the command for me
-:unlock: "old-again" in failed_checks
+:unlock: "old-again" in failed_checks or "old-again" in passed_checks
 :locked: Click Check below first
 
 ```{execute}
@@ -108,8 +108,6 @@ shared-python/bin/python labels/labels.py
 
 ````{hint}
 :title: Run the two commands for me
-:unlock: "right-for-both" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-poster-again

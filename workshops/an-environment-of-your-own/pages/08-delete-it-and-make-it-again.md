@@ -92,7 +92,7 @@ command shows nothing when it works. Then click `Check` below.
 
 ````{hint}
 :title: Press Enter for me
-:unlock: "env-deleted" in failed_checks
+:unlock: "env-deleted" in failed_checks or "env-deleted" in passed_checks
 :locked: Click Check below first
 
 ```{send-key}
@@ -133,7 +133,7 @@ python -m venv .venv
 
 ````{hint}
 :title: Show me the command
-:unlock: "env-made-again" in failed_checks
+:unlock: "env-made-again" in failed_checks or "env-made-again" in passed_checks
 :locked: Click Check below first
 
 The action below types the command in the terminal and runs it.
@@ -199,7 +199,7 @@ prompt.
 
 ````{hint}
 :title: Press Enter for me
-:unlock: "tabulate-again" in failed_checks
+:unlock: "tabulate-again" in failed_checks or "tabulate-again" in passed_checks
 :locked: Click Check below first
 
 ```{send-key}

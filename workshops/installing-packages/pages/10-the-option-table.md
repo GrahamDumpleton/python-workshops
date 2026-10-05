@@ -232,8 +232,6 @@ python -m spending spending.csv --month 2026-02 --table
 
 ````{hint}
 :title: Run the command for me
-:unlock: "february-all" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-february

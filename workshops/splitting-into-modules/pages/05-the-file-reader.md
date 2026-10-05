@@ -307,7 +307,7 @@ def read_ledger(filename):
 
 ````{hint}
 :title: Show me a solution
-:unlock: "storage-works" in failed_checks
+:unlock: "storage-works" in failed_checks or "storage-works" in passed_checks
 :locked: Try the task first. This opens after the check below has run.
 
 The action below writes a complete `storage.py`. If you have made the

@@ -83,8 +83,6 @@ directory `poster`.
 
 ````{hint}
 :title: Run the command for me
-:unlock: "missing-error" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-poster-missing

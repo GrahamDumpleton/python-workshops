@@ -140,8 +140,6 @@ ls shared-python/lib/python3.14/site-packages
 
 ````{hint}
 :title: Run the command for me
-:unlock: "old-version-name" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: list-old
@@ -190,8 +188,6 @@ command that you want, press `Enter` to run it.
 
 ````{hint}
 :title: Run the command for me
-:unlock: "teal-code" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-poster-old

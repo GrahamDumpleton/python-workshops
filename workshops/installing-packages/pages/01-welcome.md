@@ -132,8 +132,6 @@ The program shows a report of 17 lines.
 
 ````{hint}
 :title: Run the command for me
-:unlock: "first-line" in failed_checks
-:locked: Answer the question below first
 The action below types the command in the terminal and runs it.
 
 ```{execute}

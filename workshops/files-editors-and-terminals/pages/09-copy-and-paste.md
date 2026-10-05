@@ -66,8 +66,6 @@ every web browser. If nothing works, type the command.
 
 ````{hint}
 :title: Run the command for me
-:unlock: "ticket-passenger" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-cat-ticket
@@ -146,7 +144,7 @@ KX7-4492
 
 ````{hint}
 :title: Show me a solution
-:unlock: "code-pasted" in failed_checks
+:unlock: "code-pasted" in failed_checks or "code-pasted" in passed_checks
 :locked: Click Check below first
 
 This action adds the booking code as a new line at the end of the

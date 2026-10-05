@@ -99,7 +99,7 @@ It opens after you have clicked `Check` one time.
 
 ````{hint}
 :title: Make the file for me
-:unlock: "models-made" in failed_checks
+:unlock: "models-made" in failed_checks or "models-made" in passed_checks
 :locked: Click Check below first
 
 ```{file-write}

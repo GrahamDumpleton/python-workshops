@@ -116,7 +116,7 @@ window, and choose `Save Text`.
 
 ````{hint}
 :title: Show me a solution
-:unlock: "packing-saved" in failed_checks
+:unlock: "packing-saved" in failed_checks or "packing-saved" in passed_checks
 :locked: Click Check below first
 
 This action writes the whole file again, with the new line at the

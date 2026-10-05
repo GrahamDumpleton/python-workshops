@@ -73,7 +73,7 @@ the terminal is not in the directory `work`. Type `pwd` and press
 
 ````{hint}
 :title: Start the program for me
-:unlock: "count-started" in failed_checks
+:unlock: "count-started" in failed_checks or "count-started" in passed_checks
 :locked: Click Check below first
 
 ```{execute}
@@ -124,7 +124,7 @@ press the keys again.
 
 ````{hint}
 :title: Stop the program for me
-:unlock: "count-stopped" in failed_checks
+:unlock: "count-stopped" in failed_checks or "count-stopped" in passed_checks
 :locked: Click Check below first
 
 ```{interrupt}

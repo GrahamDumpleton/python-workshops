@@ -78,7 +78,7 @@ command shows nothing when it works. Then click `Check` below.
 
 ````{hint}
 :title: Press Enter for me
-:unlock: "env-deleted" in failed_checks
+:unlock: "env-deleted" in failed_checks or "env-deleted" in passed_checks
 :locked: Click Check below first
 
 ```{send-key}

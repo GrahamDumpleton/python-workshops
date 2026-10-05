@@ -31,8 +31,6 @@ ls .venv/lib/python3.14/site-packages
 
 ````{hint}
 :title: Run the command for me
-:unlock: "code-directory" in failed_checks
-:locked: Answer the question below first
 The action below types the command in the terminal and runs it.
 
 ```{execute}

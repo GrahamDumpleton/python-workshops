@@ -53,8 +53,6 @@ python prices.py
 
 ````{hint}
 :title: Type the command for me
-:unlock: "error-type" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-prices-bare
@@ -111,8 +109,6 @@ the interpreter of your environment:
 
 ````{hint}
 :title: Type the command for me
-:unlock: "by-path-word" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-prices-by-path

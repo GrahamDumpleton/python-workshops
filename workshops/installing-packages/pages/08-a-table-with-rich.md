@@ -106,8 +106,6 @@ the row `All` are in bold letters.
 
 ````{hint}
 :title: Run the command for me
-:unlock: "prices-last-row" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-prices

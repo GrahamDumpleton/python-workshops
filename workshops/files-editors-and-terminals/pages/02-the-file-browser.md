@@ -84,7 +84,7 @@ look for the name `packing.txt` in the list.
 
 ````{hint}
 :title: Open the file for me
-:unlock: "packing-open" in failed_checks
+:unlock: "packing-open" in failed_checks or "packing-open" in passed_checks
 :locked: Click Check below first
 
 ```{file-open}

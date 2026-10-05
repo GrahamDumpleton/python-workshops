@@ -35,7 +35,7 @@ python -m pip install ruff==0.16.10 mypy==2.4.0
 
 ````{hint}
 :title: Press Enter for me
-:unlock: "tools-installed" in failed_checks
+:unlock: "tools-installed" in failed_checks or "tools-installed" in passed_checks
 :locked: Click Check below first
 
 ```{send-key}

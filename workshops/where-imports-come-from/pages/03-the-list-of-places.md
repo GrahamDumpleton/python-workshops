@@ -48,8 +48,6 @@ python show_path.py
 
 ````{hint}
 :title: Run the command for me
-:unlock: "first-line" in failed_checks
-:locked: Answer the first question below first
 
 ```{execute}
 :id: run-show-path

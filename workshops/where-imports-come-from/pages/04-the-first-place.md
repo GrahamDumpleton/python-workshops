@@ -95,8 +95,6 @@ python kitchen/cook.py
 
 ````{hint}
 :title: Run the command for me
-:unlock: "cook-result" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-cook

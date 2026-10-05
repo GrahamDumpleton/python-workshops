@@ -59,8 +59,6 @@ which python
 
 ````{hint}
 :title: Type the command for me
-:unlock: "which-after" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-which-after
@@ -97,8 +95,6 @@ echo $PATH
 
 ````{hint}
 :title: Type the command for me
-:unlock: "path-first" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-echo-after

@@ -225,7 +225,7 @@ another name from that list in place of `jupyterlab`, in both lines.
 
 ````{hint}
 :title: Show me a solution
-:unlock: "where-installed" in failed_checks
+:unlock: "where-installed" in failed_checks or "where-installed" in passed_checks
 :locked: Click Check below first
 
 The first action writes a working script to `where.py`. The second

@@ -23,8 +23,6 @@ ls .venv
 
 ````{hint}
 :title: Type the command for me
-:unlock: "inside-file" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-ls-venv
@@ -117,8 +115,6 @@ Click one time inside the terminal, and then press `Enter`.
 
 ````{hint}
 :title: Press Enter for me
-:unlock: "inside-packages" in failed_checks
-:locked: Answer the question below first
 
 ```{send-key}
 :id: enter-ls-packages
@@ -158,8 +154,6 @@ cat .venv/pyvenv.cfg
 
 ````{hint}
 :title: Type the command for me
-:unlock: "inside-cfg" in failed_checks
-:locked: Answer the question below first
 
 ```{execute}
 :id: run-cat-cfg

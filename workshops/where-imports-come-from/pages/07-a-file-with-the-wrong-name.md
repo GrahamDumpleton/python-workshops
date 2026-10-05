@@ -215,7 +215,7 @@ of the attribute is `__file__`, with two underscores before the word
 
 ````{hint}
 :title: Show me a solution
-:unlock: "shadow-found" in failed_checks
+:unlock: "shadow-found" in failed_checks or "shadow-found" in passed_checks
 :locked: Click Check below first
 
 The first action writes `pick.py` with the new line. The second
