@@ -244,9 +244,10 @@ already written for every workshop OUTLINE.md plans, so a workshop
 whose name is unchanged is already in place.
 
 `collection.yaml` at the root holds the analytics block, which `just
-index` carries into every collection index. Its token is a
-placeholder until the analytics service issues one. Issuing needs the
-service's signing key, so it is the user's step: never invent a token.
+index` carries into every collection index. Its token was issued by
+the analytics service and expires on 2027-09-21. Issuing a new one
+needs the service's signing key, so it is the user's step: never
+invent or change a token.
 
 ## Writing workshops
 

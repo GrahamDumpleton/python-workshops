@@ -3,11 +3,10 @@
 # Progress events are sent only with the learner's opt-in from the trust
 # dialog, or where a deployment's settings turn reporting on.
 #
-# The token is a placeholder until the analytics service issues one for
-# these workshops. Issuing needs the service's signing key, so it is the
-# owner's step, not an agent's. Until then the sink refuses the events,
-# and nothing is recorded. Replace the token here, then run `just index`
-# to carry it into every collection index.
+# The token was issued by the analytics service on 2026-10-04 and
+# expires on 2027-09-21. Issuing a new one needs the service's signing
+# key, so it is the owner's step, not an agent's. Replace the token
+# here, then run `just index` to carry it into every collection index.
 analytics:
   sink: https://workshop-analytics.grumpys.work/events
   token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmY2MyYWQ0YmFlYzc0NDFkODFjYzcwOTllOGYxZTUxMCIsInN1YiI6InB5dGhvbi13b3Jrc2hvcHMiLCJzY29wZSI6WyJpbmdlc3QiXSwibGFiZWxzIjp7fSwib3JpZ2lucyI6WyJodHRwczovL2dyYWhhbWR1bXBsZXRvbi5naXRodWIuaW8iXSwiaWF0IjoxNzkxMDkxODQzLCJuYmYiOjE3OTEwOTE4NDMsImV4cCI6MTgyMTU3MTE5OX0.8ynSmj_komUvq0UBC23tS2BvKd5dfFZX2c1nSOzZ3zI

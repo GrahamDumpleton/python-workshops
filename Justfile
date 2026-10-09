@@ -376,7 +376,7 @@ bump VERSION:
     git -C reference/jupyterlab-workshop checkout "{{VERSION}}"
     git add reference/jupyterlab-workshop
 
-# Collections 1 to 5 build no environment of their own, so the prune is a
+# Collections I to V build no environment of their own, so the prune is a
 # no-op for them; it is kept so that a kernelspec left pointing at a
 # removed environment never lingers in the launcher.
 # Remove what opening, running and publishing the workshops leaves behind.

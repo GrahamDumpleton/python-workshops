@@ -7,8 +7,8 @@
 # release.
 #
 # Nothing the workshops teach is installed here, with one exception.
-# Collections 1 to 5 use the standard library alone, and the packages
-# of collection 6 are installed by the learner, in a virtual
+# Collections I to V use the standard library alone, and the packages
+# of collection VI are installed by the learner, in a virtual
 # environment they make inside the workshop's workspace, since
 # installing them is the lesson. The exception is uv itself, the tool
 # that workshop `the-same-with-uv` teaches: it is a runtime dependency

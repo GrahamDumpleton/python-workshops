@@ -70,31 +70,31 @@ Fifteen to twenty-five minutes per workshop, since explaining each
 concept properly takes time, and forty-three workshops, so roughly
 thirteen to fifteen hours in total.
 
-**1. First steps** (1 to 9). How the workshop environment works, then
+**I. First steps** (nine workshops). How the workshop environment works, then
 what a program is, values, names, text, errors, decisions, lists and
 loops, in a notebook. Starts almost entirely guided, and by the end the
 learner is writing short cells themselves.
 
-**2. Functions and data** (10 to 17). Functions, dictionaries, tuples
+**II. Functions and data** (eight workshops). Functions, dictionaries, tuples
 and sets, iteration, comprehensions, and how names and mutable values
 behave. Still in a notebook. Most exercises are written by the learner.
 
-**3. Working with real data** (18 to 23). Files, errors as something to
+**III. Working with real data** (six workshops). Files, errors as something to
 handle, the standard library, CSV and JSON. The running project starts
 here. The notebook is still home, but data files and the editor appear.
 
-**4. Your own types** (24 to 27). Classes, introduced in the notebook.
+**IV. Your own types** (four workshops). Classes, introduced in the notebook.
 This is a place where clickable actions earn their keep: a class is a
 lot of lines to type before anything happens, so the boilerplate
 arrives by click and the learner writes the methods that matter.
 
-**5. From notebook to program** (28 to 36). The move from notebook to
+**V. From notebook to program** (nine workshops). The move from notebook to
 files, editor and terminal: modules, scripts, command line arguments,
 packages, how imports are found, and debugging. The clicks that create
 files and run commands are withdrawn over the collection until the
 learner does both.
 
-**6. Working like a Python developer** (37 to 43). Why virtual
+**VI. Working like a Python developer** (seven workshops). Why virtual
 environments exist and how they work, installing packages with pip and
 then uv, testing, project layout and tools, and a project of the
 learner's own from a short brief.
@@ -105,11 +105,11 @@ what to do to why it is done and how it works underneath: a learner who
 knows what activating an environment does to `PATH` can fix it when it
 goes wrong, where one who has only memorised the command cannot.
 
-Collections 1 to 4 run in JupyterLite as well as JupyterLab, so they
-can be opened from a link with nothing to install. Collections 5 and 6
+Collections I to IV run in JupyterLite as well as JupyterLab, so they
+can be opened from a link with nothing to install. Collections V and VI
 need a terminal that can run `python`, which JupyterLite does not have,
 so they run in JupyterLab alone: in a codespace, on Binder, or on the
-learner's own machine. Workshop 28 is where the learner makes that
+learner's own machine. Workshop V.1 is where the learner makes that
 move, and is written for it. See [where the course
 runs](#where-the-course-runs).
 
@@ -135,6 +135,17 @@ directory to a collection by name. The siblings are
 `jupyterlab-workshop-showcase`. On 2026-10-03 none of the forty-three
 names in this outline was used by any of them. Check again before
 adding or renaming a workshop.
+
+Numbering follows what the learner sees. The workshop browser numbers
+each collection from 1, on its own, and a learner may take one
+collection and never see the others. So workshops are numbered from 1
+within each collection, in this outline and the README alike, and the
+collections are numbered in catalog order with roman numerals, I to
+VI. A reference to a workshop of another collection is written III.2
+(workshop 2 of collection III). Within a collection, a workshop of the
+same collection is written with its number alone. The sections after
+the workshops, which belong to no one collection, always use the full
+form.
 
 ## Writing for the reader
 
@@ -297,15 +308,15 @@ The environment is withdrawn in the same way as the code.
 
 | Collection | Code | Files and directories | Commands | Where |
 |------------|------|-----------------------|----------|-------|
-| 1 | inserted, then modified, then short cells written | none | none | notebook |
-| 2 | mostly written | none | none | notebook |
-| 3 | written | data files shipped; `file-write` of boilerplate | none | notebook and editor |
-| 4 | boilerplate inserted, methods written | none | none | notebook |
-| 5 | written | created by click, then by the learner, checked with `exists` | `execute`, then `terminal-type` with the learner pressing Enter, then typed | editor and terminal |
-| 6 | written | created by the learner | typed by the learner | editor and terminal |
+| I | inserted, then modified, then short cells written | none | none | notebook |
+| II | mostly written | none | none | notebook |
+| III | written | data files shipped; `file-write` of boilerplate | none | notebook and editor |
+| IV | boilerplate inserted, methods written | none | none | notebook |
+| V | written | created by click, then by the learner, checked with `exists` | `execute`, then `terminal-type` with the learner pressing Enter, then typed | editor and terminal |
+| VI | written | created by the learner | typed by the learner | editor and terminal |
 
 A collection never withdraws two kinds of help at once. When the
-terminal first appears in collection 5 the code being run is code the
+terminal first appears in collection V the code being run is code the
 learner already knows how to write, and when the learner first has to
 create files themselves the commands that use them are still clicks.
 
@@ -335,7 +346,7 @@ finds out what they can do without being told the next step.
 
 ## The workshops
 
-### Collection 1: First steps
+### Collection I: First steps
 
 #### 1. `how-this-works`: How these workshops work
 
@@ -363,7 +374,7 @@ use Python or the most common: most programs are written in files and
 run from the command line, and Python can also be used directly there.
 The course starts in a notebook because it is the most convenient
 place to learn the first steps, and it moves to files, an editor and
-the terminal later, in collection 5. The Python is the same in both.
+the terminal later, in collection V. The Python is the same in both.
 
 It ends by saying what the course will ask of them: the clicks are
 there to save time on things that are not the lesson, and as the course
@@ -468,9 +479,9 @@ explaining.
 
 - Modes: Make, with checks for each part and layered hints.
 
-### Collection 2: Functions and data
+### Collection II: Functions and data
 
-#### 10. `your-first-function`: Your first function
+#### 1. `your-first-function`: Your first function
 
 Why a function: the same steps written once and used many times, and a
 name that says what they do. Then `def`, parameters, calling.
@@ -480,14 +491,14 @@ that return `None`.
 
 - Modes: Watch, Predict, Write.
 
-#### 11. `functions-with-options`: Functions with options
+#### 2. `functions-with-options`: Functions with options
 
 Default arguments, keyword arguments, docstrings, and calling functions
 from other functions.
 
 - Modes: Modify, Write.
 
-#### 12. `looking-things-up`: Looking things up
+#### 3. `looking-things-up`: Looking things up
 
 Why look values up by a name instead of a position, compared with a
 word and its meaning in a dictionary. Then dictionaries: keys and
@@ -496,27 +507,27 @@ values, lookup, `get`, adding and changing, checking for a key,
 
 - Modes: Predict, Write.
 
-#### 13. `pairs-and-unique-things`: Pairs and unique things
+#### 4. `pairs-and-unique-things`: Pairs and unique things
 
 Tuples and unpacking, returning more than one value, sets and
 membership.
 
 - Modes: Predict, Write.
 
-#### 14. `looping-over-anything`: Looping over anything
+#### 5. `looping-over-anything`: Looping over anything
 
 Iterating over strings, dictionaries (`items`), `enumerate`, `zip`.
 
 - Modes: Modify, Write.
 
-#### 15. `building-lists-in-one-line`: Building lists in one line
+#### 6. `building-lists-in-one-line`: Building lists in one line
 
 List and dictionary comprehensions, written from the loop they replace,
 and when a loop is clearer.
 
 - Modes: Predict, Write.
 
-#### 16. `two-names-one-list`: Two names, one list
+#### 7. `two-names-one-list`: Two names, one list
 
 Mutability and aliasing: two names for one list, a function that
 changes its argument, the copy that was not one, and local against
@@ -525,24 +536,24 @@ purpose rather than later by accident.
 
 - Modes: Predict throughout, then Modify to fix each bug.
 
-#### 17. `counting-words`: Counting words
+#### 8. `counting-words`: Counting words
 
 Capstone. Word frequencies from a set of Aesop's fables, given to the
 learner as a string so that files are not needed yet. Which words are
 most common, which fable is longest, and which words appear in every
-fable, which uses the sets of workshop 13. See
+fable, which uses the sets of workshop 4. See
 [themes](#themes) for why these texts.
 
 - Modes: Make.
 
-### Collection 3: Working with real data
+### Collection III: Working with real data
 
 The running project starts here: a spending tracker, a single program
-that grows over collections 3 to 6. Each workshop ships the project as
+that grows over collections III to VI. Each workshop ships the project as
 it should be at that workshop's start, so a learner who skipped ahead or
 made a mess can restart and carry on. See [themes](#themes).
 
-#### 18. `reading-and-writing-files`: Reading and writing files
+#### 1. `reading-and-writing-files`: Reading and writing files
 
 What a file is, and why a program needs to read and write them: so that
 data lasts longer than the program does. Then `open`, `with`, reading
@@ -552,7 +563,7 @@ their code reads before reading it.
 
 - Modes: Watch, Write.
 
-#### 19. `when-the-data-is-wrong`: When the data is wrong
+#### 2. `when-the-data-is-wrong`: When the data is wrong
 
 `try` and `except`, catching the specific exception, `raise`, and the
 difference between an error to handle and an error that is a bug.
@@ -560,7 +571,7 @@ Shown on rows of the spending data that cannot be read.
 
 - Modes: Predict, Modify, Write.
 
-#### 20. `the-batteries-included`: The batteries included
+#### 3. `the-batteries-included`: The batteries included
 
 What a module is and what `import` does. Then a tour of `math`,
 `random`, `datetime` and `collections`, and reading the library
@@ -568,7 +579,7 @@ documentation to find something out for themselves.
 
 - Modes: Write, with one step that needs the documentation.
 
-#### 21. `csv-and-json`: CSV and JSON
+#### 4. `csv-and-json`: CSV and JSON
 
 What the two formats are and when each is used, then reading and
 writing both with the standard library. The spending data read with
@@ -576,7 +587,7 @@ writing both with the standard library. The spending data read with
 
 - Modes: Modify, Write.
 
-#### 22. `cleaning-messy-text`: Cleaning messy text
+#### 5. `cleaning-messy-text`: Cleaning messy text
 
 Real data is untidy: extra spaces, categories spelled in different
 ways, amounts that arrive as strings. Stripping, splitting, normalising
@@ -585,7 +596,7 @@ untidy rows for exactly this.
 
 - Modes: Write.
 
-#### 23. `where-the-money-went`: Where the money went
+#### 6. `where-the-money-went`: Where the money went
 
 Capstone. From the shipped spending data to a report: total by
 category, total by month, the largest single purchase, and which
@@ -593,9 +604,9 @@ categories went over their budget.
 
 - Modes: Make.
 
-### Collection 4: Your own types
+### Collection IV: Your own types
 
-#### 24. `your-first-class`: Your first class
+#### 1. `your-first-class`: Your first class
 
 What a class is and why you would make one: grouping data and the
 functions that work on it, so a purchase is one thing rather than four
@@ -606,24 +617,24 @@ than how many lines it takes to type one.
 
 - Modes: Watch, Modify, Write.
 
-#### 25. `objects-that-explain-themselves`: Objects that explain themselves
+#### 2. `objects-that-explain-themselves`: Objects that explain themselves
 
 `__repr__` and `__eq__` written by hand, then `dataclasses` doing the
 same, so the learner knows what the decorator saved them.
 
 - Modes: Predict, Write.
 
-#### 26. `building-on-another-class`: Building on another class
+#### 3. `building-on-another-class`: Building on another class
 
 Inheritance and composition, kept light, and when each is the right
 choice.
 
 - Modes: Modify, Write.
 
-#### 27. `spending-as-objects`: Spending as objects
+#### 4. `spending-as-objects`: Spending as objects
 
 Capstone. The spending tracker rebuilt around a `Purchase` class and a
-`Ledger` that holds them, with the report from workshop 23 as methods.
+`Ledger` that holds them, with the report from workshop III.6 as methods.
 
 - Modes: Make.
 
@@ -631,9 +642,9 @@ The finish text of this workshop says that the next collection runs in
 JupyterLab alone, and how to open it there, since a learner in
 JupyterLite cannot continue in the same place.
 
-### Collection 5: From notebook to program
+### Collection V: From notebook to program
 
-#### 28. `files-editors-and-terminals`: Files, editors and terminals
+#### 1. `files-editors-and-terminals`: Files, editors and terminals
 
 A second orientation, since the environment changes here. For a learner
 coming from JupyterLite, first what is different and why: a real
@@ -655,14 +666,14 @@ way. Exactly which keys work for copying and pasting on each platform
 is to be confirmed in JupyterLab before the page is written.
 
 Later workshops that run a program in the terminal, such as a server
-or the flashcard drill of workshop 43, remind the learner of Ctrl+C
+or the flashcard drill of workshop VI.7, remind the learner of Ctrl+C
 the first time it is needed.
 
 - Modes: Watch, then typed commands.
 
-#### 29. `python-in-the-terminal`: Python in the terminal
+#### 2. `python-in-the-terminal`: Python in the terminal
 
-Python without the notebook. Workshop 1 tells the learner that the
+Python without the notebook. Workshop I.1 tells the learner that the
 notebook is a convenience for learning, and that programmers mostly
 use Python from the command line. This is where the course keeps that
 promise.
@@ -670,11 +681,11 @@ promise.
 The learner types `python` in the terminal and meets the `>>>` prompt
 of the interactive interpreter, which is where most Python programmers
 try a line of code. The Python is all familiar, expressions and names
-from collection 1, so that the tool is the only new thing. What is the
+from collection I, so that the tool is the only new thing. What is the
 same as a notebook cell: a line is run and its value is shown. What is
 different: every expression shows its value as soon as it is entered,
 where a notebook cell shows only the value of its last line (workshop
-2 tells the learner that this rule belongs to the notebook, and this
+I.2 tells the learner that this rule belongs to the notebook, and this
 is where they see it, and the workshop that first runs a program from
 a file completes it: a program shows nothing unless it prints); each
 line runs when Enter is pressed, the `...` prompt
@@ -695,7 +706,7 @@ belongs in a file.
   terminal printed, with `terminal-output` triggers, since nothing
   outside the interpreter can see its state.
 
-#### 30. `code-in-a-file`: Code in a file
+#### 3. `code-in-a-file`: Code in a file
 
 Functions moved from the notebook into a `.py` file and imported back
 into the notebook. Why a file: code that outlives a notebook and can be
@@ -703,7 +714,7 @@ shared. The file is created by click; the learner moves the code.
 
 - Modes: Modify, Write.
 
-#### 31. `running-a-script`: Running a script
+#### 4. `running-a-script`: Running a script
 
 `python app.py` in the terminal. What `__name__` is and why
 `if __name__ == "__main__"` exists, shown by importing the same file
@@ -711,60 +722,60 @@ both ways. Commands run by click first, then typed by the learner.
 
 - Modes: Watch, Write, typed commands.
 
-#### 32. `taking-arguments`: Taking arguments
+#### 5. `taking-arguments`: Taking arguments
 
 `sys.argv` first, to see what a program receives, then `argparse`. The
 spending tracker learns to report on one month or one category.
 
 - Modes: Write.
 
-#### 33. `splitting-into-modules`: Splitting into modules
+#### 6. `splitting-into-modules`: Splitting into modules
 
 A program across several files and the imports between them. The
 learner creates the files this time, checked with `exists`.
 
 - Modes: Make, with files created by the learner.
 
-#### 34. `where-imports-come-from`: Where imports come from
+#### 7. `where-imports-come-from`: Where imports come from
 
 How `import` finds a module: `sys.path`, the current directory, the
 standard library, `site-packages`, and the shadowing bug of a file
-called `random.py`. This is the groundwork collection 6 builds on: a
+called `random.py`. This is the groundwork collection VI builds on: a
 virtual environment is a different `site-packages`.
 
 - Modes: Predict, Investigate.
 
-#### 35. `making-a-package`: Making a package
+#### 8. `making-a-package`: Making a package
 
 A package directory, `__init__.py`, relative imports and `python -m`.
 The spending tracker becomes a package.
 
 - Modes: Make.
 
-#### 36. `finding-the-bug`: Finding the bug
+#### 9. `finding-the-bug`: Finding the bug
 
 Tracebacks across several files, `print` debugging, and `breakpoint()`
 with the few `pdb` commands worth knowing.
 
 - Modes: Modify throughout.
 
-### Collection 6: Working like a Python developer
+### Collection VI: Working like a Python developer
 
 The emphasis is on why and how. Every tool here is shown working, then
 opened up so the learner sees what it changed, then broken so they see
 what goes wrong without it.
 
-#### 37. `why-an-environment`: Why an environment
+#### 1. `why-an-environment`: Why an environment
 
 The problem before the solution: one Python shared by every project,
 two projects needing different versions of the same package, and an
 install that breaks something unrelated. Shown with what the learner
-already knows from workshop 34: where `site-packages` is and what is in
+already knows from workshop V.7: where `site-packages` is and what is in
 it.
 
 - Modes: Predict, Investigate.
 
-#### 38. `an-environment-of-your-own`: An environment of your own
+#### 2. `an-environment-of-your-own`: An environment of your own
 
 `python -m venv`, then a look inside: the interpreter, `site-packages`,
 `pyvenv.cfg`. What activating does, which is to put a directory first
@@ -776,7 +787,7 @@ Python.
 
 - Modes: typed commands throughout.
 
-#### 39. `installing-packages`: Installing packages
+#### 3. `installing-packages`: Installing packages
 
 `pip install` into the environment, where the package went, `pip list`
 and `pip freeze`, and `requirements.txt` as a record of what a project
@@ -785,7 +796,7 @@ a table.
 
 - Modes: typed commands, Write.
 
-#### 40. `the-same-with-uv`: The same with uv
+#### 4. `the-same-with-uv`: The same with uv
 
 uv doing what the last three workshops did by hand: making the
 environment, installing, locking. Taught as the same ideas with a
@@ -794,14 +805,14 @@ is matched to the pip workflow it stands for.
 
 - Modes: typed commands, Make.
 
-#### 41. `testing-your-code`: Testing your code
+#### 5. `testing-your-code`: Testing your code
 
 What a test is for, then `assert`, then `pytest`: writing tests for the
 spending tracker and reading a failure.
 
 - Modes: Write, Make.
 
-#### 42. `a-proper-project`: A proper project
+#### 6. `a-proper-project`: A proper project
 
 `pyproject.toml`, the `src` layout and why it exists, installing the
 project into its own environment, a formatter and linter (`ruff`), and
@@ -809,7 +820,7 @@ type hints as documentation that a tool can check.
 
 - Modes: Make.
 
-#### 43. `your-own-project`: Your own project
+#### 7. `your-own-project`: Your own project
 
 Graduation. The learner picks one of four briefs with a `choice`, and
 builds it with checks and nothing else: no inserted code, no clicks
@@ -851,15 +862,15 @@ shopping list, temperatures for a week, the people in a class, the
 stops on a journey. There is no single cast of characters across the
 course, since forcing one costs more than it saves.
 
-### Capstone of collection 1: a shopping receipt
+### Capstone of collection I: a shopping receipt
 
 Chosen over a bill splitter, a grade report and a temperature table. A
-receipt is the same everywhere, needs only what collection 1 teaches,
+receipt is the same everywhere, needs only what collection I teaches,
 and has a visible, checkable result. Grades are left out because
 grading systems differ from country to country, and a temperature table
 is too small to be a capstone.
 
-### Text for workshop 17: Aesop's fables
+### Text for workshop II.8: Aesop's fables
 
 Public domain, so it can be shipped and quoted freely. The fables are
 known in many countries, are short enough to compare against one
@@ -876,14 +887,14 @@ without a currency symbol, and categories in simple words such as
 `food`, `transport` and `rent`.
 
 It was chosen because it fits every collection: lists and totals, then
-files, untidy data, dates and grouping in collection 3, classes in
-collection 4, a command line program in collection 5, and a third-party
-package and tests in collection 6. It also gives the course a reason
+files, untidy data, dates and grouping in collection III, classes in
+collection IV, a command line program in collection V, and a third-party
+package and tests in collection VI. It also gives the course a reason
 to show `Decimal`, which completes the `0.1 + 0.2` story that workshop
-2 starts: money should not be added as floats. It is something a
+I.2 starts: money should not be added as floats. It is something a
 learner can use for their own spending after the course.
 
-The data, written with collection 3, is three files under `shared/`.
+The data, written with collection III, is three files under `shared/`.
 `spending.csv` is the clean data: 37 purchases of one person, Mariam,
 from January to March 2026, in six categories, with no field that
 holds a comma. `spending-raw.csv` is the same purchases as they might
@@ -892,61 +903,61 @@ two other spellings (`groceries` for `food`, `travel` for
 `transport`), amounts written without their decimal places, and three
 rows that cannot be read (an amount that is a word, an amount that is
 empty, and a row with two fields). Cleaning the raw file gives the
-clean file exactly, which workshop 22 uses as its last step.
+clean file exactly, which workshop III.5 uses as its last step.
 `budgets.json` holds the budget of one month for each category, set
-so that four totals of a category in a month go over it. Workshops 18
-and 21 read the clean file, and 19, 22 and 23 the raw one. Workshop 27
+so that four totals of a category in a month go over it. Workshops III.1
+and III.4 read the clean file, and III.2, III.5 and III.6 the raw one. Workshop IV.4
 reads the clean file and the budgets, so that its work is the classes
 and not the cleaning.
 
-`Decimal` is introduced in workshop 22, where amounts are turned from
+`Decimal` is introduced in workshop III.5, where amounts are turned from
 text into numbers. Checks that compare a total compare it rounded to
 two places, so a float and a `Decimal` both pass.
 
 `Decimal("unknown")` raises `decimal.InvalidOperation`, which is not a
-`ValueError`. So workshop 19, which reads amounts with `float()`,
-handles `ValueError`, and workshops 22 and 23, which use `Decimal`,
-handle `InvalidOperation`. Both 22 and 23 say why.
+`ValueError`. So workshop III.2, which reads amounts with `float()`,
+handles `ValueError`, and workshops III.5 and III.6, which use `Decimal`,
+handle `InvalidOperation`. Both III.5 and III.6 say why.
 
-Three things are taught in collection 3 that its entries do not list:
-`file.readline()` in workshop 19, to read the header before the loop;
-the module `statistics` in workshop 20, as the module whose
+Three things are taught in collection III that its entries do not list:
+`file.readline()` in workshop III.2, to read the header before the loop;
+the module `statistics` in workshop III.3, as the module whose
 documentation the learner reads to find `mean()`; and the term
-"attribute" in workshop 20, for `.year`, `.month` and `.day` of a
+"attribute" in workshop III.3, for `.year`, `.month` and `.day` of a
 date.
 
-In collection 4 a purchase is an object of a class `Purchase`, with
+In collection IV a purchase is an object of a class `Purchase`, with
 the attributes `date` (an ISO string), `description`, `amount` (a
-`Decimal`) and `category`, in that order. Workshops 24 and 26 write it
-by hand with `__init__`, workshop 25 writes it by hand and then as a
-dataclass, and workshop 27 writes it as a dataclass, with a `Ledger`
+`Decimal`) and `category`, in that order. Workshops IV.1 and IV.3 write it
+by hand with `__init__`, workshop IV.2 writes it by hand and then as a
+dataclass, and workshop IV.4 writes it as a dataclass, with a `Ledger`
 written by hand that holds the purchases. The collection says
 "object", and says once in each workshop that needs it that
 programmers also say "instance"; "parent class" and "child class";
 "replace" a method, with "override" named once; and "make an object",
 never "instantiate".
 
-Things taught in collection 4 that its entries do not list: `type()`
-and `AttributeError` in workshop 24; `!r` in an f-string, a
+Things taught in collection IV that its entries do not list: `type()`
+and `AttributeError` in workshop IV.1; `!r` in an f-string, a
 "decorator" (only what a line that begins with `@` means), a "type
-hint" and a "field" in workshop 25; `isinstance()` and `super()` in
-workshop 26; and a method that calls another method of its own object
-in workshop 27. Workshop 26 takes its composition example from a
+hint" and a "field" in workshop IV.2; `isinstance()` and `super()` in
+workshop IV.3; and a method that calls another method of its own object
+in workshop IV.4. Workshop IV.3 takes its composition example from a
 receipt that holds products, so that the `Ledger` is new in workshop
-27.
+IV.4.
 
-In collections 5 and 6 the tracker is code in files, and its state at
+In collections V and VI the tracker is code in files, and its state at
 the start of each workshop is a directory under `shared/tracker/`,
 copied into the workshop by `just shared` from the `shared_trees`
 list in the Justfile: `s0`, one file `spending.py` holding the
-classes of workshop 27 and `read_ledger`, at the start of workshop
-31; `s1`, with `report_lines()`, `main()` and the test of `__name__`;
+classes of workshop IV.4 and `read_ledger`, at the start of workshop
+V.4; `s1`, with `report_lines()`, `main()` and the test of `__name__`;
 `s2`, with `Ledger.select()` and `argparse`; `s3`, four modules; `s4`,
 the package `spending`, run with `python -m spending`; `s5`, with a
 table made by `rich` and `requirements.txt`; and `s6`, with tests. The
 pages of each workshop take the learner from its start stage to the
-next one. The budgets of workshop 27 are left out of these stages, to
-keep the program small. Workshop 36 ships its own copy of `s4` with
+next one. The budgets of workshop IV.4 are left out of these stages, to
+keep the program small. Workshop V.9 ships its own copy of `s4` with
 three bugs planted in it.
 
 `rich` is the third-party package, used for printing the report as a
@@ -957,7 +968,7 @@ log, weather readings and a to-do list. The recipe box was the closest
 alternative, but units of measure differ between countries. The others
 each fit only part of the course.
 
-### The briefs for workshop 43
+### The briefs for workshop VI.7
 
 A `choice` at the start picks one of four. A track is worth its cost
 here, since the learner's own choice is much of the point of a final
@@ -989,14 +1000,14 @@ to.
 
 ### Where the course runs
 
-**Collections 1 to 4 in JupyterLite and JupyterLab.** Their manifests
+**Collections I to IV in JupyterLite and JupyterLab.** Their manifests
 declare `frontends: [jupyterlab, jupyterlite]`, and they are published
 as a JupyterLite site on GitHub Pages, so a learner can start from a
 link with nothing to install and nothing to wait for. They keep to the
 rules that make that possible: notebook only, no terminal, no
 `subprocess`, no packages, short sleeps.
 
-**Collections 5 and 6 in JupyterLab alone.** Their manifests list no
+**Collections V and VI in JupyterLab alone.** Their manifests list no
 `frontends`, which means JupyterLab only.
 
 **Python 3.14 everywhere.** CPython 3.14 on Binder, in a codespace and
@@ -1013,19 +1024,19 @@ whole course is listed:
   repositories.
 - Binder, from `binder/`, as in the other workshop repositories.
 - The learner's own machine, with instructions in the README and in
-  workshop 28: `uv tool install "jupyterlab-workshop[lab]"` and
+  workshop V.1: `uv tool install "jupyterlab-workshop[lab]"` and
   `jupyter-workshop launch` with the catalog.
 
 The README and the welcome messages set expectations for the startup
 time of a codespace and of Binder.
 
 **Differences between Pyodide and CPython.** None is expected to matter
-for collections 1 to 4, but any that is found while writing them is
+for collections I to IV, but any that is found while writing them is
 raised with the course owner and agreed before it is worked around,
 and recorded here. The ones known so far are under open questions.
 
 **Tracebacks are the same on both frontends.** Compared on 2026-10-04,
-before workshop 5 was written, by raising `NameError`, `TypeError`,
+before workshop I.5 was written, by raising `NameError`, `TypeError`,
 `SyntaxError`, `IndentationError`, `IndexError`, `ZeroDivisionError`
 and `ValueError` in a cell on each frontend. The notebook shows the
 same text for each, with no extra frames from Pyodide. Three things
@@ -1038,16 +1049,16 @@ not a `SyntaxError`, so no page builds a step on that.
 
 ### Content
 
-**Standard library until collection 6.** Nothing is installed for the
-first five collections. Collection 6 installs packages, and the
+**Standard library until collection VI.** Nothing is installed for the
+first five collections. Collection VI installs packages, and the
 learner installs them, since that is the lesson.
 
 **The notebook is a convenience, and the learner is told so.**
-Collections 1 to 4 use a notebook because it needs no setup, keeps
+Collections I to IV use a notebook because it needs no setup, keeps
 code and result together, and lets the workshop add cells and check
-them. Workshop 1 says this plainly, and says that programmers mostly
-work in files and at the command line. Collection 5 moves there, and
-workshop 29 teaches the interactive interpreter in the terminal, so
+them. Workshop I.1 says this plainly, and says that programmers mostly
+work in files and at the command line. Collection V moves there, and
+workshop V.2 teaches the interactive interpreter in the terminal, so
 that a learner does not finish the course knowing Python only through
 notebooks.
 
@@ -1062,11 +1073,11 @@ above say when.
 ### Building and testing
 
 **Platforms.** To be settled: codespaces and Binder are Linux, but a
-learner on their own machine may be on Windows, and collections 5 and
+learner on their own machine may be on Windows, and collections V and
 6 teach shell commands. See open questions.
 
 **Self-test.** A workshop is done when `jupyter workshop test` is green
-on it, on both frontends for collections 1 to 4. Exercises in Write and
+on it, on both frontends for collections I to IV. Exercises in Write and
 Make mode put their solution before the check on the page, so that
 the self-test runs it and the solution is what passes under test. The
 wrong answers a check has a message for are tested by `attempt` blocks
@@ -1102,12 +1113,12 @@ good:
 
 | # | Directory | Id | Title |
 |---|-----------|----|-------|
-| 1 | `first-steps` | `grahamdumpleton.me/python-fundamentals/first-steps` | Python first steps |
-| 2 | `functions-and-data` | `grahamdumpleton.me/python-fundamentals/functions-and-data` | Python functions and data |
-| 3 | `working-with-data` | `grahamdumpleton.me/python-fundamentals/working-with-data` | Working with real data in Python |
-| 4 | `your-own-types` | `grahamdumpleton.me/python-fundamentals/your-own-types` | Your own types in Python |
-| 5 | `notebook-to-program` | `grahamdumpleton.me/python-fundamentals/notebook-to-program` | From a Python notebook to a program |
-| 6 | `working-like-a-developer` | `grahamdumpleton.me/python-fundamentals/working-like-a-developer` | Working like a Python developer |
+| I | `first-steps` | `grahamdumpleton.me/python-fundamentals/first-steps` | Python first steps |
+| II | `functions-and-data` | `grahamdumpleton.me/python-fundamentals/functions-and-data` | Python functions and data |
+| III | `working-with-data` | `grahamdumpleton.me/python-fundamentals/working-with-data` | Working with real data in Python |
+| IV | `your-own-types` | `grahamdumpleton.me/python-fundamentals/your-own-types` | Your own types in Python |
+| V | `notebook-to-program` | `grahamdumpleton.me/python-fundamentals/notebook-to-program` | From a Python notebook to a program |
+| VI | `working-like-a-developer` | `grahamdumpleton.me/python-fundamentals/working-like-a-developer` | Working like a Python developer |
 
 The product in the id is `python-fundamentals` rather than `python`,
 so that another Python course could have ids of its own later.
@@ -1124,9 +1135,9 @@ workshops to lint and test on JupyterLite, and which the site carries.
 
 **The JupyterLite site carries four collections.** It is built from
 every workshop that runs there, with `catalog-lite.json`, a second
-catalog that names collections 1 to 4 only and which `just index`
+catalog that names collections I to IV only and which `just index`
 writes beside `catalog.json`. The full catalog would list collections
-5 and 6 on a site where they cannot run. The four indexes cannot be
+V and VI on a site where they cannot run. The four indexes cannot be
 passed one by one either: the build carries each at the root of the
 site under its file name, and all are named `collection.json`, so it
 refuses the second, which is how the first pages run failed. A catalog
@@ -1137,7 +1148,7 @@ indexes, as `wrapt-workshops` does, with the same disabled features
 and the same trust policies: forced to trusted on Binder, the
 learner's choice in a codespace, on the site and locally. There is no
 wheelhouse, since no workshop builds an environment from a
-requirements file. If the installs of collection 6 turn out slow on
+requirements file. If the installs of collection VI turn out slow on
 Binder, the packages they name can be put in one.
 
 **Seeing where learners need help.** The extension records a
@@ -1150,10 +1161,13 @@ their solutions, with nothing more to build.
 **Analytics.** `collection.yaml` at the root declares the analytics
 sink once, and `just index` carries the block into every collection
 index. The deployments turn reporting on with `report: always`. The
-token is a placeholder until the analytics service issues one, which
-needs the service's signing key and is the owner's step. Until then
-the sink refuses the events and nothing is recorded, though the
-welcome messages already say that progress is reported.
+token was issued by the analytics service on 2026-10-04, for the
+subject `python-workshops`, with the origin of the JupyterLite site,
+`https://grahamdumpleton.github.io`, allowed to post with it. It
+expires on 2027-09-21, and a new one has to be issued before then,
+which needs the service's signing key and is the owner's step. A new
+token goes into `collection.yaml`, and `just index` carries it into
+every index.
 
 **CI.** `test.yml` lints the catalog, every index and every workshop,
 and self-tests every workshop, on both frontends where it runs on
@@ -1187,13 +1201,13 @@ entry names the mistake that leads to that answer, with entries for a
 decimal comma and other near misses, and `otherwise` gives a pointer
 for any other answer. Every `answer` and `text` is quoted. A question
 whose answer nobody could guess, such as the value of `0.1 + 0.2`,
-keeps its options, as do the recap questions. Workshop 1 teaches both
+keeps its options, as do the recap questions. Workshop I.1 teaches both
 kinds of question.
 
 **A Modify step** inserts the code to change in a cell of its own,
 with `:run: false`. The code is not put in a cell that has already
 run, because the check is triggered when that cell runs, and would
-show a failure before the learner has started. Workshop 1 does this
+show a failure before the learner has started. Workshop I.1 does this
 once on purpose, on the page that follows the one about checks, and
 says so.
 
@@ -1218,7 +1232,7 @@ the check has run once, whatever the result:
 A learner who is stuck before running anything can click `Check`,
 which fails and unlocks the solution. A learner who passed can open it
 too, to compare. Since the solution comes before the check, the
-self-test runs it, and the check passes on it. Workshop 1 explains the
+self-test runs it, and the check passes on it. Workshop I.1 explains the
 lock on the page that introduces hints.
 
 **What an action box shows.** A clicked action shows the word `done`
@@ -1232,20 +1246,20 @@ notebook of every workshop starts with a title cell.
 
 **The tour is checked, not run.** The self-test skips a `tour`, since
 it needs a person, but reports a step whose selector matches nothing.
-The four selectors of the tour in workshop 1 pass that test.
+The four selectors of the tour in workshop I.1 pass that test.
 
 **A step the learner does by hand**, such as running a cell with
 `Shift` and `Enter`, has a `cell-run` action beside it titled "Run the
 cell for me", for the learner who has a problem and for the self-test.
 
-**Checks before names are taught.** Workshop 2 has no variables, so a
+**Checks before names are taught.** Workshop I.2 has no variables, so a
 check cannot read a name. It reads `Out`, the record that the kernel
 keeps of every value a cell has shown, which exists in both the
 JupyterLab kernel and the Pyodide kernel: `44 in Out.values()`. Three
 rules follow. Every value that a check looks for is different from
 every other value the workshop's cells produce, so one cell cannot
 pass the check of another. A check that must tell an integer from a
-float tests the type as well, since `4 == 4.0`. From workshop 3 a
+float tests the type as well, since `4 == 4.0`. From workshop I.3 a
 check reads names.
 
 **Pass on any cell, diagnose the latest.** A check passes when the
@@ -1255,11 +1269,11 @@ so a learner who gets it wrong twice is told about the second mistake
 and not the first again. The extension keeps the check's own closing
 expression out of `Out` and `_`, which is what makes both safe. Where
 the value before the learner has started is itself a likely wrong
-answer, as on the parentheses step of workshop 2, the message is
+answer, as on the parentheses step of workshop I.2, the message is
 worded to be true in both situations: "The last cell that ran gives
 14".
 
-**Checks that read names.** From workshop 3 a check reads the names
+**Checks that read names.** From workshop I.3 a check reads the names
 that a cell left behind. A check that raises shows Python's error as
 its message, so a check never reads a name that may not exist: it
 tests `"total" in globals()` first, or reads `globals().get("total")`,
@@ -1270,7 +1284,7 @@ the learner writes an `if`, the check tests the relation between the
 names the code reads and the names it sets, for whatever values they
 have now, since there is no function to call with several inputs.
 
-**Checks that call a function.** From workshop 10 the learner writes
+**Checks that call a function.** From workshop II.1 the learner writes
 functions, and a check calls them. Such a check is one function named
 `_workshop_check`, which prints one message on every path and returns
 `True` or `False`, and the last line of the check is
@@ -1294,7 +1308,7 @@ strings.
 
 **A Watch cell that leaves no name.** A cell that only calls a
 function that prints leaves nothing for a `learner-kernel` check to
-read. Workshop 10 checks six such cells with the `contents` predicate
+read. Workshop II.1 checks six such cells with the `contents` predicate
 `cell-executed`. From release 0.22.0 a `contents` check takes
 `:message:`, the text to show when it fails, so these checks say "The
 cell has not run yet. Click the action above to add the cell and run
@@ -1305,7 +1319,7 @@ name the tag of the cell.
 it passes and another when it fails, and ends with the expression that
 decides. The failure message says what was found and what to do next.
 Where a wrong answer is likely, the check looks for it and names the
-mistake, as the last check of workshop 2 does for four wrong totals.
+mistake, as the last check of workshop I.2 does for four wrong totals.
 A check assigns no names, so it leaves nothing in the learner's
 kernel.
 
@@ -1321,13 +1335,13 @@ between attempts, so a wrong answer whose value would pass a later
 check on the page cannot be an attempt. The report prints what each
 check said, which is the place to read every message in one pass.
 
-**Layouts.** As in `decorator-workshops`, collections 1 to 4 use a
+**Layouts.** As in `decorator-workshops`, collections I to IV use a
 layout with one named placeholder area for the notebook, never the
 built-in `default` or `terminal-only`, which open a terminal that these
 workshops have no capability for and a JupyterLite site may not have.
-Collections 5 and 6 use a layout with the editor above a terminal.
+Collections V and VI use a layout with the editor above a terminal.
 
-**Checks on files in collections 3 and 4.** These run in JupyterLite,
+**Checks on files in collections III and IV.** These run in JupyterLite,
 where there is no `subprocess` and no `script` check, so files the
 learner writes are checked with `contents` predicates, or by reading
 them from a `learner-kernel` check. Tried on both frontends on
@@ -1340,7 +1354,7 @@ name the learner uses. A file that a check writes for its own input
 has a name that begins with `_check_`, stays in the workspace and is
 removed when the check ends.
 
-**A data file under the notebook.** A workshop of collection 3 that
+**A data file under the notebook.** A workshop of collection III that
 shows a file declares a second layout, `data`, with the notebook's
 placeholder area above an area named `data` that holds the shipped
 file, and the page that first talks about the file applies it with a
@@ -1353,11 +1367,11 @@ the action that applies the layout is followed by a `ui` check,
 `file-open` with the name of the file and a `:message:`, triggered by
 `after:` the action, and the page requires it. From the same release
 an action can write a file that the learner's code has changed while
-it is open in the editor, so workshop 21 puts `budgets.json` back, for
+it is open in the editor, so workshop III.4 puts `budgets.json` back, for
 a learner whose code saved over it, with a `file-write` that copies
 the shipped file with `:from:`.
 
-**Classes in collection 4.** A cell that defines a class again makes
+**Classes in collection IV.** A cell that defines a class again makes
 a new class, and objects made before still belong to the old one. So
 a step in which the learner adds a method works in a cell that holds
 the whole class so far, inserted without being run, with a comment
@@ -1372,7 +1386,7 @@ since. The default text of an object holds a number that differs on
 every run and between the frontends, so pages write it as `0x...` and
 no quiz or check reads it.
 
-**Terminals in collections 5 and 6.** The probes of these
+**Terminals in collections V and VI.** The probes of these
 collections, run on 2026-10-05 with 0.22.1, settled the patterns. The
 layout has a placeholder area above a terminal named `workshop`, so no
 action names a session. Every `execute` that sends a line to anything
@@ -1393,8 +1407,8 @@ command for a step whose only check is a quiz about the command's
 output is not locked. A correct answer puts a quiz in `passed_checks`
 and never in `failed_checks`, and the learner needs the command's
 output to answer, so a lock on the quiz would open only after a wrong
-guess. Workshop 28 was released with such locks, which a learner
-found on 2026-10-05. Workshop 29
+guess. Workshop V.1 was released with such locks, which a learner
+found on 2026-10-05. Workshop V.2
 reads what the learner typed at the `>>>` prompt from
 `.python_history` in the workspace, which the manifest's `env` names.
 
@@ -1402,28 +1416,28 @@ reads what the learner typed at the `>>>` prompt from
 `just lab` the terminal's bare `python` is this repository's own
 environment, and on Binder it is the one JupyterLab runs in. So
 packages are installed only into a `.venv` in the workspace, after it
-is activated or by its path, and every manifest of collection 6 sets
+is activated or by its path, and every manifest of collection VI sets
 `PIP_REQUIRE_VIRTUALENV`, so pip refuses an install outside a virtual
-environment. Workshop 37 tells its story of one shared Python with an
+environment. Workshop VI.1 tells its story of one shared Python with an
 environment named `shared-python`, made by click, which stands for
 the one Python of a computer. uv is a runtime dependency of this
 repository, so that Binder, a codespace and the self-test have the
 same uv on the terminal's `PATH`. A uv project command run in a
 workspace with no `pyproject.toml` would find this repository's
-project and change it, so workshop 40 ships a `pyproject.toml` from
+project and change it, so workshop VI.4 ships a `pyproject.toml` from
 the start and the learner reads it rather than writing it, no page
 runs `uv init`, and this repository's `pyproject.toml` excludes
 `workshops/*/work` from its uv workspace as a second guard.
 
 **Tracks.** The self-test follows the first track of a workshop that
 offers a choice, so `just test-tracks <name>` and the `test` workflow
-test workshop 43 once for each of its four tracks.
+test workshop VI.7 once for each of its four tracks.
 
 **No directory listings.** `os.listdir(".")` shows
 `.ipynb_checkpoints` in JupyterLab and not in JupyterLite, so no page
 prints a listing of the workspace.
 
-**Checks on files in collections 5 and 6.** The learner's code is in
+**Checks on files in collections V and VI.** The learner's code is in
 files. A `kernel` check that imports the learner's module would keep the
 first version it imported, so file checks run the learner's code in a
 fresh process, either from a `kernel` check through `subprocess` or a
@@ -1438,10 +1452,10 @@ Commands go from `execute` to `terminal-type` to typed by the learner,
 with `terminal-output` triggers on the checks that follow.
 
 **Manifest.** `gating: soft`, `duration` and `tags` filled in, `finish`
-naming the next workshop. `resumable` is left unset in collections 1 to
+naming the next workshop. `resumable` is left unset in collections I to
 4, since the pages of a notebook workshop share one kernel. Capabilities
 `write-files` and `kernel-exec` throughout, plus `terminal` from
-collection 5.
+collection V.
 
 ## Extension problems and suggestions
 
@@ -1460,7 +1474,7 @@ JupyterLite site starts with jupyterlite-core 0.8.5, so the pin on
 0.8.3 is gone. One entry remained.
 
 Two more were found on 2026-10-04 with 0.21.1, while the rest of
-collection 1 was written, and release 0.21.2 settled both the same
+collection I was written, and release 0.21.2 settled both the same
 day. In JupyterLab a check that ended in an expression failed with a
 `TokenError` after the learner ran a cell with an open quote or
 bracket, and in JupyterLite a check that raised `AssertionError`
@@ -1468,14 +1482,14 @@ showed `<class 'AssertionError'>:` before its message. Both were
 confirmed gone on both frontends with a probe workshop. The workshops
 changed nothing for either: their checks kept the closing expression
 throughout. One thing was shaped by the first and is now a choice, not
-a need: see workshop 5 under open questions.
+a need: see workshop I.5 under open questions.
 
-One suggestion was made on 2026-10-04 with 0.21.2, while collection 2
+One suggestion was made on 2026-10-04 with 0.21.2, while collection II
 was written, and release 0.22.0 took it up the same day: a `verify` of
 the `contents` or `ui` substrate takes `:message:`. See "A Watch cell
 that leaves no name" above for where the workshops use it.
 
-Two problems were found on 2026-10-04 with 0.22.0, while collection 3
+Two problems were found on 2026-10-04 with 0.22.0, while collection III
 was written, and release 0.22.1 settled both the next day. A `ui`
 check with `file-open spending.csv` said that the file was not open
 when it was open in the text editor, because the predicate looked only
@@ -1496,11 +1510,10 @@ the manifest, the layout, the page shape and the checks for the rest,
 and the first Write step settles how the exercise modes work in
 practice.
 
-The numbers are those the workshops have throughout this document,
-which run through the whole course and do not start again with each
-collection.
+The numbers start again at 1 in each collection, as they do in the
+workshop browser. See [naming](#naming).
 
-First steps:
+**Collection I: First steps**
 
 | # | Workshop | Status |
 | --- | --- | --- |
@@ -1514,64 +1527,64 @@ First steps:
 | 8 | `doing-it-again` | Done |
 | 9 | `a-shopping-receipt` | Done |
 
-Functions and data:
+**Collection II: Functions and data**
 
 | # | Workshop | Status |
 | --- | --- | --- |
-| 10 | `your-first-function` | Done |
-| 11 | `functions-with-options` | Done |
-| 12 | `looking-things-up` | Done |
-| 13 | `pairs-and-unique-things` | Done |
-| 14 | `looping-over-anything` | Done |
-| 15 | `building-lists-in-one-line` | Done |
-| 16 | `two-names-one-list` | Done |
-| 17 | `counting-words` | Done |
+| 1 | `your-first-function` | Done |
+| 2 | `functions-with-options` | Done |
+| 3 | `looking-things-up` | Done |
+| 4 | `pairs-and-unique-things` | Done |
+| 5 | `looping-over-anything` | Done |
+| 6 | `building-lists-in-one-line` | Done |
+| 7 | `two-names-one-list` | Done |
+| 8 | `counting-words` | Done |
 
-Working with real data:
-
-| # | Workshop | Status |
-| --- | --- | --- |
-| 18 | `reading-and-writing-files` | Done |
-| 19 | `when-the-data-is-wrong` | Done |
-| 20 | `the-batteries-included` | Done |
-| 21 | `csv-and-json` | Done |
-| 22 | `cleaning-messy-text` | Done |
-| 23 | `where-the-money-went` | Done |
-
-Your own types:
+**Collection III: Working with real data**
 
 | # | Workshop | Status |
 | --- | --- | --- |
-| 24 | `your-first-class` | Done |
-| 25 | `objects-that-explain-themselves` | Done |
-| 26 | `building-on-another-class` | Done |
-| 27 | `spending-as-objects` | Done |
+| 1 | `reading-and-writing-files` | Done |
+| 2 | `when-the-data-is-wrong` | Done |
+| 3 | `the-batteries-included` | Done |
+| 4 | `csv-and-json` | Done |
+| 5 | `cleaning-messy-text` | Done |
+| 6 | `where-the-money-went` | Done |
 
-From notebook to program:
-
-| # | Workshop | Status |
-| --- | --- | --- |
-| 28 | `files-editors-and-terminals` | Done |
-| 29 | `python-in-the-terminal` | Done |
-| 30 | `code-in-a-file` | Done |
-| 31 | `running-a-script` | Done |
-| 32 | `taking-arguments` | Done |
-| 33 | `splitting-into-modules` | Done |
-| 34 | `where-imports-come-from` | Done |
-| 35 | `making-a-package` | Done |
-| 36 | `finding-the-bug` | Done |
-
-Working like a Python developer:
+**Collection IV: Your own types**
 
 | # | Workshop | Status |
 | --- | --- | --- |
-| 37 | `why-an-environment` | Done |
-| 38 | `an-environment-of-your-own` | Done |
-| 39 | `installing-packages` | Done |
-| 40 | `the-same-with-uv` | Done |
-| 41 | `testing-your-code` | Done |
-| 42 | `a-proper-project` | Done |
-| 43 | `your-own-project` | Done |
+| 1 | `your-first-class` | Done |
+| 2 | `objects-that-explain-themselves` | Done |
+| 3 | `building-on-another-class` | Done |
+| 4 | `spending-as-objects` | Done |
+
+**Collection V: From notebook to program**
+
+| # | Workshop | Status |
+| --- | --- | --- |
+| 1 | `files-editors-and-terminals` | Done |
+| 2 | `python-in-the-terminal` | Done |
+| 3 | `code-in-a-file` | Done |
+| 4 | `running-a-script` | Done |
+| 5 | `taking-arguments` | Done |
+| 6 | `splitting-into-modules` | Done |
+| 7 | `where-imports-come-from` | Done |
+| 8 | `making-a-package` | Done |
+| 9 | `finding-the-bug` | Done |
+
+**Collection VI: Working like a Python developer**
+
+| # | Workshop | Status |
+| --- | --- | --- |
+| 1 | `why-an-environment` | Done |
+| 2 | `an-environment-of-your-own` | Done |
+| 3 | `installing-packages` | Done |
+| 4 | `the-same-with-uv` | Done |
+| 5 | `testing-your-code` | Done |
+| 6 | `a-proper-project` | Done |
+| 7 | `your-own-project` | Done |
 
 The status words:
 
@@ -1593,21 +1606,21 @@ answer in the section it belongs to.
 Each needs agreement before a workaround goes into a workshop.
 
 - **The number in a `FileNotFoundError`.** Found on 2026-10-04 while
-  collection 3 was written. Opening a file that does not exist gives
+  collection III was written. Opening a file that does not exist gives
   `[Errno 2] No such file or directory: 'missing.txt'` in JupyterLab
   and `[Errno 44] No such file or directory: 'missing.txt'` in
   JupyterLite, since Emscripten numbers its errors differently. The
-  pages of collection 3 that show this error say that the number can
+  pages of collection III that show this error say that the number can
   differ and does not matter, and no quiz or check reads it. To be
   agreed, since it is a way round a difference.
 
 Reading the shipped files, which was the question here before
-collection 3, is settled: see "Checks on files in collections 3 and
+collection III, is settled: see "Checks on files in collections III and
 4".
 
 ### Other questions
 
-- **Syntax errors in workshop 5.** `when-things-go-wrong` builds its
+- **Syntax errors in workshop I.5.** `when-things-go-wrong` builds its
   `SyntaxError` step on a missing comma, and describes the open quote
   and the open bracket in prose with no cell to run, because with
   0.21.1 a check failed with a `TokenError` after such a cell. Release
@@ -1615,19 +1628,14 @@ collection 3, is settled: see "Checks on files in collections 3 and
   they are the most common syntax errors of a beginner, or to keep the
   workshop at its present length.
 
-- **The analytics token.** `collection.yaml` holds a placeholder until
-  a token is issued for these workshops, with the origin of the
-  JupyterLite site, `https://grahamdumpleton.github.io`, allowed to
-  post with it.
-
 - **Windows and the learner's own machine.** Whether the course
   supports JupyterLab on Windows, which changes every shell command in
-  collections 5 and 6, or keeps to codespaces and Binder and covers
-  the learner's own machine only in workshop 43. Collections 5 and 6
+  collections V and VI, or keeps to codespaces and Binder and covers
+  the learner's own machine only in workshop VI.7. Collections V and VI
   are written for Linux and macOS, with commands that behave the same
   in bash and zsh, and declare `platforms: [linux, macos]`.
 
-- **Collections 5 and 6 on Linux.** They were written and self-tested
+- **Collections V and VI on Linux.** They were written and self-tested
   on macOS with zsh. Binder and a codespace are Linux with bash. The
   `test` workflow on GitHub is the first run of them there.
 
