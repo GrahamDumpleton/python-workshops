@@ -20,6 +20,9 @@ workshops/*/scratch/
 results-*.xml
 test-results/
 
+# The workshop authoring conversation's state, kept beside the course
+.workshop/
+
 # The JupyterLite site, built by `just site` and by the pages workflow
 dist/
 
